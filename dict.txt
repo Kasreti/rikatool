@@ -131,13 +131,9 @@ For verbs, irr. represents irregular inflections that can be found at the end of
 
 
 Aa
-a- hon. // 
-used to refer to the actor or recipient of a verb when unsure of the recipient’s noun class; awafai loved ones or possessions, as compared to separately stating isuafai/yawafai loved ones or enuafai prized possessions;
-prefix to demonstrate respect to a noun or verb, particularly when the subject is revered;  
-archaic definite article used as an honorific.
+a- hon. // used to refer to the actor or recipient of a verb when unsure of the recipient’s noun class; awafai loved ones or possessions, as compared to separately stating isuafai/yawafai loved ones or enuafai prized possessions; prefix to demonstrate respect to a noun or verb, particularly when the subject is revered; archaic definite article used as an honorific.
 ac num. // (alt. aci) six.
 adaya pron. // we, first person inclusive plural pronoun.
-inflections: adé (accusative), adayan (ablative), adiya (lative), udáya (genitive). plural pronoun, neutral respect level.
 agari stv. // to be restricted, to be tied down
 agarui stv. // negative, to be free.
 agaruim stv. // negative causative, to liberate.
@@ -161,7 +157,6 @@ akyexamé n. iii. // confluence, derived from て-shape on a palm, from akye + x
 aldeva v. // to contradict, derived from deva.
 alé v. // to be upon, to be a matter that someone will experience soon to bear the quality of (formal). sometimes used to act as a copula when the sentence's meaning is unclear.
 ali pron. // I, me, first person singular pronoun, neutral respect level.
-	inflections: alye (accusative), alán (ablative), ariya (lative), welya (genitive). 
 al- aff. // reflexive prefix for verbs. 
 alke- aff. // back and forth, actions conducted both ways.
 alisugiki n. ii. // carefreeness; caring about oneself in a non-selfish manner, self-care to some extent, from ali + suki + ki (for I to exist alone).
@@ -220,7 +215,6 @@ asyani stv. // to be first, formal synonym of ukamé for i-class nouns.
 atari v. // to adorn on one’s head, to wear upon one’s head.
 atassyat n. iii. // train.
 atua pron. // we, first person exclusive plural pronoun.
-inflections: atté (accusative), atuan (ablative), atica (lative), utsu (genitive). 
 atoi v. // to wake up.
 avi n. i. // female.
 awe num. // seven.
@@ -240,7 +234,7 @@ azéson n. iii. // company, corporation.
 	isazéson n. i. // office worker, salaryman.
 azesoré v. // to conduct, hold, allow something to occur.
 azeunté v. // to suspect.
-azéyure n. iii. //occupation, job.
+azéyure n. iii. // occupation, job.
 azuérei v. // to suspect one’s innocence.
 
 Ää
@@ -289,7 +283,7 @@ cïrin n. iii. // butterfly.
 civiri n. iii. // can, tin.
 cïxyazirré n. iii. // hospital, lit. building where .
 corro n. iii. // disturbance; rowdiness, annoyance.
-corrosy v.// to argue with, other person takes accusative.
+corrosy v. // to argue with, other person takes accusative.
 corryï v. // to disturb; to cause a ruckus.
 cosy v. // to enter, to go into an enclosed space; to join.
 	-cosy aux. // into.
@@ -306,10 +300,10 @@ cumé stv. // to be fast, generic.
 
 
 Dd 
-dá n.  iii// transportation station.
+dá n.  iii // transportation station.
 dahan n. iii. // problem.
 dahanqedi v. // to report issues.
-damat n.  ii// sin, moral crime.
+damat n.  ii // sin, moral crime.
 dami n. iii. // stream, small river.
 dár n. iii. // book, literary word borrowed from Asbirqänna dars, typically referring to holy or important books.
 dasaqa verb. // to drown, submerge.
@@ -340,7 +334,7 @@ digafi v. // to pass by, walk past.
 digasuki v. // to be located alongside, next to, side-by-side with.
 digasuki ka conj. // similarly, along the same lines.
 dilya n. iii. // story, tale.
-díta n. ii.// door; shrine or garden gates, alternatively dista.
+díta n. ii. // door; shrine or garden gates, alternatively dista.
 dokumende n. iii. // document, borrowed from English document.
 dosu n. iii. // record.
 dosyï v. // to record down, record events.
@@ -383,7 +377,7 @@ ezaré v. // to bless.
 
 Ff
 fambé v. // to visit.
-	fambéya n. i.// visitor.
+	fambéya n. i. // visitor.
 fan n. iii. // store, shop.
 fai n. iii. // possession, noun form of fi.
 fayá n. iii. // box.
@@ -542,7 +536,6 @@ imai n. i. // noon.
 imé stv. // to be wise.
 imi v. // to try, attempt.
 ina pron. // he, third person singular for class II.
-	inflections: inye (accusative), inán (ablative), inaya (lative), önaya (genitive).
 inda part. // but, however, clause-final in a copula clause, otherwise -nda is suffixed.
 innui n. // swamp, mangrove.
 insi n. // spirit, soul.
@@ -612,12 +605,7 @@ jizi v. // to grind.
 juri v. // to pulverize, to turn into powder, to crush.
 
 Kk 
-ka part. //
-clause separator: typically used to disambiguate vague sentences by separating parts of speech; 
-complementizer: used to mark the complement of a sentence; to ali ghun téda kan syïda he said that I saw the cow.
-emphasis marker: particle used to emphasize the topic or subject of a sentence in a verbless copula-sentence; söruaz ka Hayalese the next [station] is Hayalese. 
-emphasis marker: particle used to emphasize a part of speech; ali ka azuéda it was not me that did it.
-subject marker: particle used to mark subject when displaced from the traditional SOV order (formal); deida ka pisan what I ate was pizza.
+ka part. // clause separator: typically used to disambiguate vague sentences by separating parts of speech; complementizer: used to mark the complement of a sentence; emphasis marker: particle used to emphasize the topic or subject of a sentence in a verbless copula-sentence; emphasis marker: particle used to emphasize a part of speech; subject marker: particle used to mark subject when displaced from the traditional SOV order (formal).
 ká n. iii. // claw.
 kac v. // to listen, to hear.
 kacyarré v. // to resonate (non-figuratively), to echo, from kacï + irarré (to listen to again).
@@ -659,7 +647,6 @@ kavi v. // to scold.
 kawi v. // to understand.
 kaworanari conj. // that is in between, contraction of ka ora ari.
 ke pron. // you, second person singular pronoun, with generic honorific level.
-	inflections: kei (accusative), ken (ablative), kéya (lative), ukya (genitive). 
 ké v. // (alt. ket) to be above.
 	ke v. // causative form: to go up.
 	kem v. // duo-causative form: informal, to raise.
@@ -675,7 +662,6 @@ kenai n. i. // leg.
 kenayema n. i. // knee.
 kerai n. iii. // melon
 kesa pron. // you all, you guys, second person plural pronoun.
-	inflections: kese (accusative), kesan (ablative), kéyas (lative), ukyas (genitive).
 kesy v. // (transitive) to bind, to connect, to tie together, (intransitive) to be connected, to have relation.
 	-i kesyïran intj. // in relation to, about.
 kesyenari n. i. // related persons or matters.
@@ -762,9 +748,8 @@ kya n. iii. // front.
 kyani v. // to pay.
 kye n. i. // generic title used after one’s surname, Mr., Ms., Mrs..
 kyedo n. iii. // burden, tiresome matter.
-kyedoqarra n. iii. // revolution, in the sense of taking down something negative;
-kyedoqarré has the connotations of overthrowing an evil or removing something that has negative connotations. this would not be used for revolutions where innovations were created, and the previous conditions were not necessarily negative, for instance, the industrial revolution. the appropriate word in the latter case would be kiryavaté.
-kyedoqarré v. // instigate a revolution. see kyedoqarra.
+kyedoqarra n. iii. // revolution, in the sense of taking down something negative; kyedoqarré has the connotations of overthrowing an evil or removing something that has negative connotations. this would not be used for revolutions where innovations were created, and the previous conditions were not necessarily negative, for instance, the industrial revolution. the appropriate word in the latter case would be kiryavaté.
+kyedoqarré v. // instigate a revolution, see kyedoqarra.
 kyedovaté v. // to reform.
 kyero n. iii. // gray.
 kyiva n. iii. // sentence.
@@ -783,7 +768,7 @@ lesmana n. i. // toe, from lese + mana.
 lesmec stv. // to be lost.
 lesy v. // to go onwards, progress, derived from lesé.
 lï v. // to give.
--lï aux. //to express doing an action for the sake of another person.
+-lï aux. // to express doing an action for the sake of another person.
 lima v. // to request.
 lisa n. iii. // table.
 lunda v. // profane, to have intercourse.
@@ -811,12 +796,7 @@ men n. iii. // half.
 mi num. // five.
 mic v. // to reside, live in.
 mikanda num. // ten thousand, myriad; forever, eternity (dated); thousands of generations.
-min part. // context marker, used in the format a min b, signifying in context a, b, used after pronouns, nouns and proper nouns. for verbs in case i., the suffix -nde is used instead. always pronounced with an weakened i.
-denotes a non-hypothetical conditional construction, syemi ré min syemikövi sekyeu when it rains, please use an umbrella. the situation is non-hypothetical as it has occurred beforehand.
-denotes the topic or condition of discussion, similar to as for, vyocari min heyeló haxasi as for [if we’re talking about] vyochari, Heyelo has the best
-forms a comparison in the format a min b adj, where a is the actor with a lower quality of the quality, b the higher, and adj the adjective denoting the quality. amí va min ve kirya this house is newer than that one.
-used to stress personal opinion, ali min né sa syam tuyá syirui personally I don’t like as much as he does.
-forms a superlative clause in the format a min b adj, nema min ke cijimi you’re the stupidest person in the world.
+min part. // context marker, used in the format a min b, signifying in context a, b, used after pronouns, nouns and proper nouns. for verbs in case i., the suffix -nde is used instead. always pronounced with an weakened i; denotes a non-hypothetical conditional construction, syemi ré min syemikövi sekyeu when it rains, please use an umbrella. the situation is non-hypothetical as it has occurred beforehand; denotes the topic or condition of discussion, similar to as for, vyocari min heyeló haxasi as for [if we’re talking about] vyochari, Heyelo has the best; forms a comparison in the format a min b adj, where a is the actor with a lower quality of the quality, b the higher, and adj the adjective denoting the quality. amí va min ve kirya this house is newer than that one; used to stress personal opinion, ali min né sa syam tuyá syirui personally I don’t like as much as he does; forms a superlative clause in the format a min b adj, nema min ke cijimi you’re the stupidest person in the world.
 	minari conj. // as long as, while, used in the same way as min.
 mïn n. iii. // beef.
 minai v. // to count.
@@ -871,7 +851,6 @@ nemyásyici n. ii. // blood spilled in battle, sacrifice, vain.
 neyaré v. // to fulfill one’s desire.
 	neyara intj. // imperative, please, alternate form to -i imperatives.
 ni pron. // third person singular pronoun for class III.
-	inflections: né (accusative), niyan (ablative), niya (lative), onyá (genitive).
 ni conj. // like, similar to.
 nic v. // to mourn, grieve.
 niccé v. // to howl.
@@ -894,8 +873,7 @@ ora n. iii. // centre, middle.
 orakövi v. // to mediate, compromise, negotiate (server).
 orakövikata n. iii. // treaty.
 orataki v. // to edit, modify.
-oré v. // to surround, enclose, encircle, root: ora. 
-synonyms with oratai and oraqasy.
+oré v. // to surround, enclose, encircle, root: ora. synonyms with oratai and oraqasy.
 orayá ka conj. // with regards to, about, regarding.
 ori n. iii. // pink.
 osyama n. iii. // milk.
@@ -997,10 +975,7 @@ rye n. iii. // emerald, jade
 
 Ss
 sa n. iii. // day, referring to the 24-hour day-night cycle.
-sa part. // (alt. s’ before a non-a vowel onset) with, instrumental particle, follows a verb, modified word follows the particle:
-denotes the use of a tool or medium;
-adverbial particle, denotes the manner in which an action is conducted;
-denotes direction or movement, syïzye sa akye turn right.
+sa part. // (alt. s’ before a non-a vowel onset) with, instrumental particle, follows a verb, modified word follows the particle; denotes the use of a tool or medium; adverbial particle, denotes the manner in which an action is conducted; denotes direction or movement, syïzye sa akye turn right.
 	sa su sonokos conj. // in other words, that is to say.
 sän n. iii. // hook, sharp bend.
 sabarrák intj. // profane, fuck you, lit. may you be cursed, derived as a contraction of savarrai ke.
@@ -1034,7 +1009,7 @@ sat n. iii. // truth.
 sat conj. // until.
 satasy n. iii. // date, as in writing that specifies the day of the year.
 satehiya v. // to be close to truth, accurate. 
-satha n. iii. //area, general section of land.
+satha n. iii. // area, general section of land.
 sathanya n. iii. // map.
 satsé n. iii. // summer.
 säva n. iii. // server (computer), from English server.
@@ -1229,7 +1204,6 @@ teza n. iii. // bowl.
 ti n. i. // guard, defender, upholder of what is bestowed. honorific nominal form of toji, descended from Classical form toti. reserved for those of Saya class in the imperial era, commoners took sakkyá (i.e. sakkyákoto).
 tisa n. i. // uncooked rice, rice crop.
 to pron. // he, she, gender-neutral third person singular pronoun.
-inflections: tue (accusative), torhán(ablative), torya (lative), uto/tuyá (genitive).
 tobé v. // (alt. tou-) to group, to come together, to assemble, to collect.
 tobéze v. // to do together, collaborate, colloquially touzé.
 toj v. // to keep, maintain, uphold, also toji.
@@ -1318,9 +1292,9 @@ vïsré v. // to permit, allow, synonym of vïm.
 vottok n. iii. // onomatopoeia for the sound of wood being struck.
 vú n. iii. // ability, skill.
 vuimi n. iii. // practice, test of skills, exercise.
-vuri n. i // man.
+vuri n. i. // man.
 vyocari n. iii. // pork liver noodles, commonly spelled vyochari due to English influence, derived from vyomcari.
-vyo furi u-vyocari hye ko nai phr. // losing its defining aspect means losing their entire character, one must stay unique, literally vyochari without its vyo (livers) amounts to nothing.
+vyo furi u-vyocari hye ko nai phr. // losing its defining aspect means losing their entire character, one must stay unique, lit. vyochari without its vyo (livers) amounts to nothing.
 vyom n. i // liver.
 
 Ww
@@ -1382,10 +1356,10 @@ ya-, -ya, n. i // in combination with a verb, describes a person who conducts th
 	is- n. i // form of ya- when preceding a vowel; archaic formation of ya, i.e. in isrika, refers to people from a certain nation, when reduplicated isi.
 yafé n. i // doctor, see fé.
 yami n. iii. // sweetness.
-yamïlké n. iii.// lychee, from yami + u + olkahi (heavenly sweetness).
+yamïlké n. iii. // lychee, from yami + u + olkahi (heavenly sweetness).
 yamïlokésyim n. iii. // lychee tree.
 yari v. // to let someone do something to the speaker, to give up and allow something to befall someone.
-yaréitasy n. i. //a driver, pilot.
+yaréitasy n. i. // a driver, pilot.
 yarhanire n. ii // deity of the earth
 yawai n. iii. // egg.
 yelo n. iii. // forest, jungle.
@@ -1405,7 +1379,7 @@ zaqaisyï n. iii. // telephone.
 zeri n. iii. // sunflower.
 zi v. // to stand.
 	zim v. // causative, to establish.
-
+a
 ZYzy
 zyadi n. iii. // birch.
 zyeta n. iii. // exercise, sports.
@@ -1415,7 +1389,6 @@ rhain n. i. // nose.
 rhaini v. // to smell, sniff.
 rhainkartaughó n. i. // derogatory, person clueless to their surroundings and scapegoats issues on the first person they see, from ainen karta u-ghó (dog with their nose chopped off).
 rhaxa n. i. // close friend, borrowed from Hwelhosian, kaxqa (female friend).
-rhazat n. iii. // 
 rhiji v. // to pull apart.
 rhijákasan n. iii. // divorced family with split up children.
 rhuvá n. iii. // boundary, limit, extent.

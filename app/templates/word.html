@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href='/static/style.css' />
     <title>{{ word }}</title>
 </head>
     <body>
+    {% extends "base.html" %}
+    {% block content %}
         <h1>{{ word }}</h1>
         <hr>
         <h2>Pronunciation</h2>
@@ -14,5 +15,52 @@
             <li><i>(Distaye)</i>: /{{ ipa_c }}/</li>
             <li><i>(Hasiph)</i>: /{{ ipa_e }}/</li>
         </ul>
+        {% if etym %}
+        <h2>Etymology</h2>
+        <p>{{ etym }}</p>
+        {% endif %}
+        <h2>{{ pos }}</h2>
+        {% if root %}
+        <p><b>{{ word }} </b><i>{{ anim }}</i> {{ alt }} (<i>stem</i> {{ root }}, <i>negative stem</i> {{ neg }})</p>
+        {% endif %}
+        {% if root == "" %}
+        <p><b>{{ word }} </b><i>{{ anim }}</i> {{ alt }}</p>
+        {% endif %}
+        <ol>
+            {% for match in defin %}
+            <li>{{ match }}</li>
+            {% endfor %}
+        </ol>
+        {% if pos == "Noun" %}
+    <p><b>Declension</b></p>
+        <table><tbody>
+        <tr>
+            <td><b>nominative</b></td>
+            <td>{{ word }}</td>
+        </tr>
+        <tr>
+            <td><b>accusative</b></td>
+            <td>{{ word }}{{ inf[0] }}</td>
+        </tr>
+        <tr>
+            <td><b>locative</b></td>
+            <td>{{ word }}{{ inf[1] }}</td>
+        </tr>
+        <tr>
+            <td><b>ablative</b></td>
+            <td>{{ word }}{{ inf[2] }}</td>
+        </tr>
+        <tr>
+            <td><b>lative</b></td>
+            <td>{{ word }}{{ inf[3] }}</td>
+        </tr>
+        <tr>
+            <td><b>instrumental</b></td>
+            <td>{{ inf[4] }}{{ word }}</td>
+        </tr>
+        </tbody>
+        </table>
+        {% endif %}
+    {% endblock %}
     </body>
 </html>

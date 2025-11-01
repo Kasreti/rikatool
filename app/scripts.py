@@ -1,4 +1,8 @@
 import re
+from app import app, db
+from app.models import Dictionary
+import sqlalchemy as sa
+import sqlalchemy.orm as so
 
 cons_b = 'mnbtdkgqTzcjsɕʑfvθðxɣhywʕlrʔɹʷʲ'
 son_b = 'yu'
@@ -50,10 +54,11 @@ ipa_f = {
     "ä": "ɑ",
     "g": "k",
     "ʔʲ": "j",
-    "ʔʷ": "w"
+    "ʔʷ": "w",
+    "ʰ.": "."
 }
 ipa_c = {
-    "n.k": "ŋ.g",
+    "n.k": "ŋ.k",
     "ʷi": "ɨi",
     "ɛi": "eː",
     "ai": "eː",
@@ -68,8 +73,10 @@ ipa_c = {
     "uŋ": "ʊ̃(ŋ)",
     "au": "ʌw",
     "l.": "ɹ.",
-    "kʰɪ.ˈ": "kʰɪ̥.ˈ",
-    "kʰʊ̥.ˈ": "kʰɯ̥.ˈ",
+    "ʰɪ": "ʰɪ̥",
+    "ʰʊ": "ʰɯ̥",
+    "ʰi": "ʰi̥",
+    "ʰu": "ʰɯ̥",
     "adz": "az",
     "ar": "ɑː",
     "ær": "ɑː",
@@ -86,7 +93,6 @@ ipa_e = {
     "q": "k",
     "tsʰ": "s",
     "dz": "z",
-    "ɵ": "ɚ",
     "æ": "ɛ",
     "r": "ɹ",
     "tʰ": "T",
@@ -98,7 +104,21 @@ ipa_e = {
     "ɣ": "g",
     "ʕ": "h",
     "ɕ": "ʃ",
-    "ʑ": "ʒ"
+    "ʑ": "ʒ",
+    "dʃ": "tʃ",
+    "ʲ": "j",
+    "ʷ": "w",
+    "au": "aʊ",
+    "ai": "aɪ",
+    "ei": "eɪ",
+    "ɵ": "ɚ",
+    "uɹ": "ɚ",
+    "ʰ": "",
+    "ʔ": "",
+    "g.": "k.",
+    "d.": "t.",
+    "ɐ": "a",
+    "x": "h"
 }
 
 
@@ -121,7 +141,7 @@ def sylla(x):
     if (x[0] in cons_b) and (x[1] in son_b):
         if x[1] == "y":
             x = x[:1] + "ʲ" + x[2:]
-        elif x[1] == "u":
+        elif x[1] == "u" and (x[2] in vowels):
             x = x[:1] + "ʷ" + x[2:]
     i = 1
     x = x + " "
@@ -151,7 +171,10 @@ def sylla(x):
             break
         i += 1
         # print(i)
-    return x[:-1]
+    if (x[len(x) - 3] == '.') and (x[len(x)-2] in cons_b):
+        return x[:len(x)-3] + x[len(x)-2]
+    else:
+        return x[:-1]
 
 def stress(x):
     sty = re.split("\\.", x)
@@ -175,6 +198,7 @@ def stress(x):
                         fin = i
                 break
         i += 1
+
     if found != "":
         copys = sty[fin-1]
         for cons in cons_b:
@@ -215,8 +239,10 @@ def genIPA(name):
     res = ""
     i=0
     while i<len(splitname):
-        res = res + ipa(splitname[i]) + " "
+        res = res + ipa(splitname[i])
         i += 1
+        if i<len(splitname):
+            res = res + " "
     return res
 
 def genIPA_collo(name):
@@ -229,14 +255,64 @@ def genIPA_eng(name):
         name = name.replace(st, co)
     return name
 
-with open('dict.txt', 'r', encoding='utf-8') as f:
-    dict = f.read()
-with open("new.txt", "w", encoding='utf-8') as f:
-    dict = dict.split("Inflections\n\nAppendix A")[0]
-    dict = dict.split("Aa\n")[1]
-    for i in dtitles:
-        dict = dict.replace("\n" + i,"")
-    dict = dict.strip()
-    dict = dict.replace("\n\n","\n")
-    f.write(dict)
+def refreshDict():
+    Dictionary.query.delete()
+    with open('dict.txt', 'r', encoding='utf-8') as f:
+        dict = f.read()
+    with open("new.txt", "w", encoding='utf-8') as f:
+        dict = dict.split("Inflections\n\nAppendix A")[0]
+        dict = dict.split("Aa\n")[1]
+        for i in dtitles:
+            dict = dict.replace("\n" + i,"")
+        dict = dict.strip()
+        dict = dict.replace("\n\n","\n")
+        f.write(dict)
+    with open("new.txt", "r", encoding='utf-8') as f:
+        ndict = [line.rstrip() for line in f]
+        for x in ndict:
+            if x != "":
+                x = x.split(" // ")
+                tx = x[0].split(" ")
+                if(tx[len(tx)-1] == "i.") or (tx[len(tx)-1] == "ii.") or (tx[len(tx)-1] == "iii."):
+                    word = tx[:len(tx)-2]
+                    pos = tx[len(tx)-2]
+                    anim = tx[len(tx)-1]
+                    nw = ""
+                    for j in word:
+                        nw += j
+                        print(nw)
+                        currentword = Dictionary(nw.strip(), x[1], anim, pos, "")
+                else:
+                    word = tx[:len(tx)-1]
+                    pos = tx[len(tx)-1]
+                    nw = ""
+                    for j in word:
+                        nw += j
+                        print(nw)
+                        currentword = Dictionary(nw.strip(), x[1], "", pos, "")
+                db.session.add(currentword)
+        db.session.commit()
 
+def posword(x):
+    match x:
+        case "n.":
+            return "Noun"
+        case "v.":
+            return "Verb"
+        case "stv.":
+            return "Stative verb"
+        case "intj.":
+            return "Interjection"
+        case "conj.":
+            return "Conjunction"
+        case _:
+            return "Unimplemented"
+
+def getInf(x):
+    if x.pos == "n.":
+        match x.anim:
+            case "i.":
+                if x.word[0] in vowels:
+                    return ["in","ket","kiec","lï","s'"]
+                else:
+                    return ["in", "ket", "kiec", "lï", "sa "]

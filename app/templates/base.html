@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href='/static/style.css' />
+    <title>Base template</title>
+</head>
+<body>
+ <div class="navbar" style="display: flex; margin-left:8%">
+        <form action="" method="post" novalidate style="text-align:center, margin:auto">
+            {{ form.hidden_tag() }}
+             <h3>{{ form.word(size=16) }} {{ form.submit }}</h3>
+        </form>
+        <button href="{{ url_for('refresh_dict') }}">Refresh Dict</button>
+</div>
+<hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <p>
+            {% for message in messages %}
+            {{ message }}
+            {% endfor %}
+        </p>
+        <hr>
+        {% endif %}
+        {% endwith %}
+{% block content %}{% endblock %}
+</body>
+</html>
