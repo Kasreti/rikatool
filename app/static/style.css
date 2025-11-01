@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+/* Text Formatting */
+
+p, th, td {
+  color: black;
+  font-family: "Arial", serif;
+  font-size: 14pt;
+  font-weight: 400;
+  text-align: left;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+subp {
+  color: black;
+  font-family: "Arial", serif;
+  font-size: 12pt;
+  font-weight: 200;
+  text-align: left;
+  margin-left: 0%;
+  margin-right: 0%;
+  text-indent: 0px;
+}
+
+lightp {
+  color: black;
+  font-family: "Arial", serif;
+  font-size: 14pt;
+  text-align: left;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+h1 {
+  color: black;
+  font-family: "Georgia", serif;
+  font-size: 24pt;
+  text-align: left;
+  font-weight: left;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+h3 {
+  color: black;
+  font-family: "Arial", sans-serif;
+  font-size: 16pt;
+  text-align: left;
+  font-weight: 500;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+rh1 {
+  color: red;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 18pt;
+  text-align: center;
+  margin-left: 35%;
+}
+
+h4 {
+  color: black;
+  font-family: "Lora", serif;
+  font-size: 12pt;
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
+  font-weight: 400;
+}
+
+h2 {
+  color: black;
+  font-family: "Arial", sans-serif;
+  font-size: 20pt;
+  text-align: left;
+  font-weight: 700;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+h2s {
+  color: black;
+  font-family: "Lora", sans-serif;
+  font-size: 16pt;
+  text-align: left;
+  font-weight: 700;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+p2 {
+  color: black;
+  font-family: "Lora", serif;
+  font-size: 14pt;
+  text-align: center;
+  margin-left: 35%;
+  margin-right: 35%;
+}
+
+li {
+  color: black;
+  font-family: "Arial", sans-serif;
+  font-size: 14pt;
+  font-weight: 400;
+  text-align: left;
+}
+
+ul {
+  color: black;
+  font-family: "Arial", sans-serif;
+  font-size: 12pt;
+  font-weight: 200;
+  text-align: left;
+  margin-left: 10%;
+}
+
+snavbold {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Image Divs */
+
+.image {
+  margin-left: 20%; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  object-fit: contain;
+}
+
+.container {
+  margin-left: 20%;
+  position: relative;
+  text-align: center;
+  color: black;
+}
+
+.gall {
+  margin-left: 15%;
+  position: relative;
+  color: black;
+  height: 20%;
+  width: 80;
+}
+
+.imagecentered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mainimg {
+  display: flex;
+  justify-content: center;
+}
+
+/* Divs */
+
+.main {
+  margin-left: 20%; /* Same as the width of the sidenav */
+  width: 80%;
+  height: 100%;
+  object-fit: fill;
+  text-align: center;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 24px;}
+}
+
+/* Sidebar */
+.navbar {
+  width: 100%;
+  background-color: white;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  color: black;
+  font-family: "Lora";
+  text-decoration: none;
+  font-size: 17px;
+  width: 20%; /* Four links of equal widths */
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.navbar a:hover {
+  background-color: #adadad;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+
+/* Element ordering */
+.sbs{
+    display: flex;
+}
+.center{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Word page */
+wordh1{
+    font-family: "Georgia", serif;
+    color: black;
+    font-size: 32px;
+}
+
+wordh2{
+    font-family: "Arial", sans-serif;
+    color: black;
+    font-weight: bold;
+    line-height: 20px;
+    font-size: 20px;
+}
+
+wordp{
+    font-family: "Arial", sans-serif;
+    color: black;
+    font-size: 16px;
+}
+
+.inftable tr, .inftable th, .inftable td{
+    font-family: "Arial", sans-serif;
+    color: black;
+    font-size: 16px;
+    background-color: #f0f0f0;
+}
+
+/* Phonology */
+.grb {
+    background-color: #e7e7e7;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: "Lora", serif
+}
+.gena {  /* green enable*/
+    background-color: #04AA6D;
+    color: white;
+}
+.red {
+    background-color: #f44336;
+    color: white;
+}
+
+td, th, td[colspan="3"]{
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+table{
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.graybg {
+  background-color: #bababa;
+}
+
+/* ADAPTED BUTTON */
+.ipa-button {
+    margin:auto;
+    display: block;
+    background-color:#e7e7e7;
+    border-radius:4px;
+    border:1px solid #D0D0D0;
+    overflow:auto;
+    float:left;
+}
+
+.ipa-button label {
+    float:left;
+    width:4.0em;
+}
+
+.ipa-button span {
+    text-align:center;
+    padding:3px 0px;
+    display:block;
+}
+
+.ipa-button label input {
+    position:absolute;
+    top:-20px;
+}
+
+.ipa-button input:checked+span {
+    background-color:#04aa6d;
+    color:#ffffff;
+}
+
+div label input {
+   margin-right:100px;
+}
+
+.ipa-button, .tnr {
+    font-family: "Times New Roman", serif;
+}
