@@ -87,7 +87,7 @@ def show_definition(word):
                     anim = "class ii. deitic"
                 case "iii.":
                     anim = "class iii. inanimate and non-human animate"
-        elif x.pos == "v." or "stv.":
+        elif x.pos == "v." or x.pos == "stv.":
             match x.word[len(x.word)-1]:
                 case "i":
                     anim = "i-type"
