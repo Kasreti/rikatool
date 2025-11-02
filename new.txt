@@ -1,6 +1,7 @@
-a- hon. // used to refer to the actor or recipient of a verb when unsure of the recipient’s noun class; awafai loved ones or possessions, as compared to separately stating isuafai/yawafai loved ones or enuafai prized possessions; prefix to demonstrate respect to a noun or verb, particularly when the subject is revered; archaic definite article used as an honorific.
+a- hon. // used to refer to the actor or recipient of a verb when unsure of the recipient’s noun class, awafai loved ones or possessions, as compared to separately stating isuafai/yawafai loved ones or enuafai prized possessions; prefix to demonstrate respect to a noun or verb, particularly when the subject is revered;  archaic definite article used as an honorific.
 ac num. // (alt. aci) six.
 adaya pron. // we, first person inclusive plural pronoun.
+inflections: adé (accusative), adayan (ablative), adiya (lative), udáya (genitive). plural pronoun, neutral respect level.
 agari stv. // to be restricted, to be tied down
 agarui stv. // negative, to be free.
 agaruim stv. // negative causative, to liberate.
@@ -24,6 +25,7 @@ akyexamé n. iii. // confluence, derived from て-shape on a palm, from akye + x
 aldeva v. // to contradict, derived from deva.
 alé v. // to be upon, to be a matter that someone will experience soon to bear the quality of (formal). sometimes used to act as a copula when the sentence's meaning is unclear.
 ali pron. // I, me, first person singular pronoun, neutral respect level.
+	inflections: alye (accusative), alán (ablative), ariya (lative), welya (genitive). 
 al- aff. // reflexive prefix for verbs. 
 alke- aff. // back and forth, actions conducted both ways.
 alisugiki n. ii. // carefreeness; caring about oneself in a non-selfish manner, self-care to some extent, from ali + suki + ki (for I to exist alone).
@@ -44,7 +46,7 @@ amimi v. // to sleep; to fall asleep, colloquially ammi.
 eamimimecem n. iii. // sleep deprivation, lit. sleep loss.
 amisakki v. // to take care of one’s house, housekeeping.
 	isamisakki n. iii. // homemaker, housewife etc.
-amsa n. iiii. // large swathe of land, typically uninhabited or agricultural.
+amsa n. iii. // large swathe of land, typically uninhabited or agricultural.
 ammasyanke n. iii. // teahouse, tea parlour, establishment where tea is drunk. 
 amyazé n. iii. // homework, work to be done at home given from outside one’s residence
 amissursakki n. iii. // police station, garrison; militant headquarters, typically informal.
@@ -82,6 +84,7 @@ asyani stv. // to be first, formal synonym of ukamé for i-class nouns.
 atari v. // to adorn on one’s head, to wear upon one’s head.
 atassyat n. iii. // train.
 atua pron. // we, first person exclusive plural pronoun.
+inflections: atté (accusative), atuan (ablative), atica (lative), utsu (genitive). 
 atoi v. // to wake up.
 avi n. i. // female.
 awe num. // seven.
@@ -160,10 +163,10 @@ covosiratte n. iii. // crown, tiara.
 cue n. iii. // meat, intended for eating.
 cumé stv. // to be fast, generic.
  
-dá n.  iii // transportation station.
+dá n. iii. // transportation station.
 dahan n. iii. // problem.
 dahanqedi v. // to report issues.
-damat n.  ii // sin, moral crime.
+damat n.  ii. // sin, moral crime.
 dami n. iii. // stream, small river.
 dár n. iii. // book, literary word borrowed from Asbirqänna dars, typically referring to holy or important books.
 dasaqa verb. // to drown, submerge.
@@ -382,6 +385,7 @@ imai n. i. // noon.
 imé stv. // to be wise.
 imi v. // to try, attempt.
 ina pron. // he, third person singular for class II.
+	inflections: inye (accusative), inán (ablative), inaya (lative), önaya (genitive).
 inda part. // but, however, clause-final in a copula clause, otherwise -nda is suffixed.
 innui n. // swamp, mangrove.
 insi n. // spirit, soul.
@@ -447,7 +451,7 @@ jirri n. iii. // generic term for bug, insect.
 jizi v. // to grind.
 juri v. // to pulverize, to turn into powder, to crush.
  
-ka part. // clause separator: typically used to disambiguate vague sentences by separating parts of speech; complementizer: used to mark the complement of a sentence; emphasis marker: particle used to emphasize the topic or subject of a sentence in a verbless copula-sentence; emphasis marker: particle used to emphasize a part of speech; subject marker: particle used to mark subject when displaced from the traditional SOV order (formal).
+ka part. // clause separator: typically used to disambiguate vague sentences by separating parts of speech; complementizer: used to mark the complement of a sentence. to ali ghun téda kan syïda he said that I saw the cow; emphasis marker: particle used to emphasize the topic or subject of a sentence in a verbless copula-sentence. söruaz ka Hayalese the next [station] is Hayalese; emphasis marker: particle used to emphasize a part of speech. ali ka azuéda it was not me that did it; subject marker: particle used to mark subject when displaced from the traditional SOV order (formal). deida ka pisan what I ate was pizza.
 ká n. iii. // claw.
 kac v. // to listen, to hear.
 kacyarré v. // to resonate (non-figuratively), to echo, from kacï + irarré (to listen to again).
@@ -489,6 +493,7 @@ kavi v. // to scold.
 kawi v. // to understand.
 kaworanari conj. // that is in between, contraction of ka ora ari.
 ke pron. // you, second person singular pronoun, with generic honorific level.
+	inflections: kei (accusative), ken (ablative), kéya (lative), ukya (genitive). 
 ké v. // (alt. ket) to be above.
 	ke v. // causative form: to go up.
 	kem v. // duo-causative form: informal, to raise.
@@ -504,6 +509,7 @@ kenai n. i. // leg.
 kenayema n. i. // knee.
 kerai n. iii. // melon
 kesa pron. // you all, you guys, second person plural pronoun.
+	inflections: kese (accusative), kesan (ablative), kéyas (lative), ukyas (genitive).
 kesy v. // (transitive) to bind, to connect, to tie together, (intransitive) to be connected, to have relation.
 	-i kesyïran intj. // in relation to, about.
 kesyenari n. i. // related persons or matters.
@@ -590,8 +596,8 @@ kya n. iii. // front.
 kyani v. // to pay.
 kye n. i. // generic title used after one’s surname, Mr., Ms., Mrs..
 kyedo n. iii. // burden, tiresome matter.
-kyedoqarra n. iii. // revolution, in the sense of taking down something negative; kyedoqarré has the connotations of overthrowing an evil or removing something that has negative connotations. this would not be used for revolutions where innovations were created, and the previous conditions were not necessarily negative, for instance, the industrial revolution. the appropriate word in the latter case would be kiryavaté.
-kyedoqarré v. // instigate a revolution, see kyedoqarra.
+kyedoqarra n. iii. // revolution, in the sense of taking down something negative. kyedoqarré has the connotations of overthrowing an evil or removing something that has negative connotations. this would not be used for revolutions where innovations were created, and the previous conditions were not necessarily negative, for instance, the industrial revolution. the appropriate word in the latter case would be kiryavaté.
+kyedoqarré v. // instigate a revolution. see kyedoqarra.
 kyedovaté v. // to reform.
 kyero n. iii. // gray.
 kyiva n. iii. // sentence.
@@ -687,6 +693,7 @@ nemyásyici n. ii. // blood spilled in battle, sacrifice, vain.
 neyaré v. // to fulfill one’s desire.
 	neyara intj. // imperative, please, alternate form to -i imperatives.
 ni pron. // third person singular pronoun for class III.
+	inflections: né (accusative), niyan (ablative), niya (lative), onyá (genitive).
 ni conj. // like, similar to.
 nic v. // to mourn, grieve.
 niccé v. // to howl.
@@ -707,7 +714,7 @@ ora n. iii. // centre, middle.
 orakövi v. // to mediate, compromise, negotiate (server).
 orakövikata n. iii. // treaty.
 orataki v. // to edit, modify.
-oré v. // to surround, enclose, encircle, root: ora. synonyms with oratai and oraqasy.
+oré v. // to surround, enclose, encircle, root: ora. synonymous with oratai and oraqasy.
 orayá ka conj. // with regards to, about, regarding.
 ori n. iii. // pink.
 osyama n. iii. // milk.
@@ -802,7 +809,7 @@ routo n. iii. // yellow.
 ruxé v. // to sit, sit down.
 rye n. iii. // emerald, jade 
 sa n. iii. // day, referring to the 24-hour day-night cycle.
-sa part. // (alt. s’ before a non-a vowel onset) with, instrumental particle, follows a verb, modified word follows the particle; denotes the use of a tool or medium; adverbial particle, denotes the manner in which an action is conducted; denotes direction or movement, syïzye sa akye turn right.
+sa part. // (alt. s’ before a non-a vowel onset) with, instrumental particle, follows a verb, modified word follows the particle: denotes the use of a tool or medium; adverbial particle, denotes the manner in which an action is conducted; denotes direction or movement, syïzye sa akye turn right.
 	sa su sonokos conj. // in other words, that is to say.
 sän n. iii. // hook, sharp bend.
 sabarrák intj. // profane, fuck you, lit. may you be cursed, derived as a contraction of savarrai ke.
@@ -1027,6 +1034,7 @@ teza n. iii. // bowl.
 ti n. i. // guard, defender, upholder of what is bestowed. honorific nominal form of toji, descended from Classical form toti. reserved for those of Saya class in the imperial era, commoners took sakkyá (i.e. sakkyákoto).
 tisa n. i. // uncooked rice, rice crop.
 to pron. // he, she, gender-neutral third person singular pronoun.
+inflections: tue (accusative), torhán(ablative), torya (lative), uto/tuyá (genitive).
 tobé v. // (alt. tou-) to group, to come together, to assemble, to collect.
 tobéze v. // to do together, collaborate, colloquially touzé.
 toj v. // to keep, maintain, uphold, also toji.
@@ -1186,7 +1194,6 @@ zaqaisyï n. iii. // telephone.
 zeri n. iii. // sunflower.
 zi v. // to stand.
 	zim v. // causative, to establish.
-a
 zyadi n. iii. // birch.
 zyeta n. iii. // exercise, sports.
 zyeté v. // to exercise, to do sports.

@@ -21,7 +21,7 @@ h1 {
 h3 {
   color: black;
   font-family: "Arial", sans-serif;
-  font-size: 16pt;
+  font-size: 14pt;
   text-align: left;
   font-weight: 500;
   margin-left: 10%;
@@ -102,7 +102,7 @@ snavbold {
   font-family: "Arial";
   text-decoration: none;
   font-size: 12px;
-  width: 20%; /* Four links of equal widths */
+  width: 10%; /* Four links of equal widths */
   text-align: center;
   padding-top: 15px;
   padding-bottom: 15px;

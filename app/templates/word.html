@@ -2,65 +2,195 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ word }}</title>
+    <title>{{ retword[0].word }}</title>
 </head>
     <body>
     {% extends "base.html" %}
     {% block content %}
-        <h1>{{ word }}</h1>
+        <h1>{{ retword[0].word }}</h1>
         <hr>
         <h2>Pronunciation</h2>
         <ul>
-            <li><i>(Hayalese)</i>: /{{ ipa }}/</li>
-            <li><i>(Distaye)</i>: /{{ ipa_c }}/</li>
-            <li><i>(Hasiph)</i>: /{{ ipa_e }}/</li>
+            <li><i>(Hayalese)</i>: /{{ retword[0].ipa }}/</li>
+            <li><i>(Distaye)</i>: /{{ retword[0].ipa_c }}/</li>
+            <li><i>(Hasiph)</i>: /{{ retword[0].ipa_e }}/</li>
         </ul>
-        {% if etym %}
+        {% for word in retword %}
+        {% if word.etym %}
         <h2>Etymology</h2>
-        <p>{{ etym }}</p>
+        <p>{{ word.etym }}</p>
         {% endif %}
-        <h2>{{ pos }}</h2>
-        {% if root %}
-        <p><b>{{ word }} </b><i>{{ anim }}</i> {{ alt }} (<i>stem</i> {{ root }}, <i>negative stem</i> {{ neg }})</p>
+        <h2>{{ word.pos }}</h2>
+        {% if word.root %}
+        <p><b>{{ word.word }} </b><i>{{ word.anim }}</i> {{ word.alt }} (<i>stem</i> {{ word.root }}, <i>negative stem</i> {{ word.neg }}, <i>reduplicative</i> {{word.redup}})</p>
         {% endif %}
-        {% if root == "" %}
-        <p><b>{{ word }} </b><i>{{ anim }}</i> {{ alt }}</p>
+        {% if word.root == "" %}
+        <p><b>{{ word.word }} </b><i>{{ word.anim }}</i> {{ word.alt }} (<i>reduplicative</i> {{word.redup}})</p>
         {% endif %}
         <ol>
-            {% for match in defin %}
+            {% for match in word.defin %}
             <li>{{ match }}</li>
             {% endfor %}
         </ol>
-        {% if pos == "Noun" %}
+    {% if word.pos == "Noun" %}
     <p><b>Declension</b></p>
         <table><tbody>
         <tr>
             <td><b>nominative</b></td>
-            <td>{{ word }}</td>
+            <td>{{ word.word }}</td>
         </tr>
         <tr>
             <td><b>accusative</b></td>
-            <td>{{ word }}{{ inf[0] }}</td>
+            <td>{{ word.word }}{{ word.inf[0] }}</td>
         </tr>
         <tr>
             <td><b>locative</b></td>
-            <td>{{ word }}{{ inf[1] }}</td>
+            <td>{{ word.word }}{{ word.inf[1] }}</td>
         </tr>
         <tr>
             <td><b>ablative</b></td>
-            <td>{{ word }}{{ inf[2] }}</td>
+            <td>{{ word.word }}{{ word.inf[2] }}</td>
         </tr>
         <tr>
             <td><b>lative</b></td>
-            <td>{{ word }}{{ inf[3] }}</td>
+            <td>{{ word.word }}{{ word.inf[3] }}</td>
         </tr>
         <tr>
             <td><b>instrumental</b></td>
-            <td>{{ inf[4] }}{{ word }}</td>
+            <td>{{ word.inf[4] }}{{ word.word }}</td>
         </tr>
         </tbody>
         </table>
-        {% endif %}
+    {% endif %}
+    {% if word.pos == "Verb" or word.pos == "Stative verb" %}
+    <p><b>Inflection</b></p>
+        <table><tbody>
+          <tr>
+            <td colspan="5"><b>Stem Forms</b></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><b>positive</b></td>
+            <td><b>possible</b></td>
+            <td><b>doubt</b></td>
+            <td><b>negative</b></td>
+          </tr>
+          <tr>
+            <td><b>active</b></td>
+            <td>{{ word.inf[0] }}</td>
+            <td>{{ word.inf[0] }}{{ word.inf[11] }}</td>
+            <td>{{ word.inf[0] }}{{ word.inf[12] }}</td>
+            <td>{{ word.inf[1] }}</td>
+          </tr>
+          <tr>
+            <td><b>hypothetical-conditional</b></td>
+            <td>{{ word.inf[2] }}</td>
+            <td>{{ word.inf[2] }}{{ word.inf[11] }}</td>
+            <td>{{ word.inf[2] }}{{ word.inf[12] }}</td>
+            <td>{{ word.inf[3] }}</td>
+          </tr>
+          <tr>
+            <td><b>passive</b></td>
+            <td>{{ word.inf[4] }}</td>
+            <td>{{ word.inf[4] }}{{ word.inf[11] }}</td>
+            <td>{{ word.inf[4] }}{{ word.inf[12] }}</td>
+            <td>{{ word.inf[5] }}</td>
+          </tr>
+          <tr>
+            <td><b>imperative</b></td>
+            <td>{{ word.inf[6] }}</td>
+            <td>{{ word.inf[6] }}{{ word.inf[11] }}</td>
+            <td>{{ word.inf[6] }}{{ word.inf[12] }}</td>
+            <td>{{ word.inf[7] }}</td>
+          </tr>
+          <tr>
+            <td><b>causative</b></td>
+            <td>{{ word.inf[8] }}</td>
+            <td>{{ word.inf[10] }}{{ word.inf[11] }}</td>
+            <td>{{ word.inf[10] }}{{ word.inf[12] }}</td>
+            <td>{{ word.inf[9] }}</td>
+          </tr>
+        </tbody>
+        </table>
+        <br><br>
+        <table><tbody>
+          <tr>
+            <td colspan="5"><b>Aspect-Tense Forms</b></td>
+          </tr>
+          <tr>
+            <td colspan="2"><b>simultaneous</b></td>
+            <td colspan="3">{{ word.inf[10] }}</td>
+          </tr>
+          <tr>
+            <td colspan="2"><b>generic stative</b></td>
+            <td colspan="3">{{ word.word }}yaz/{{ word.root }}{{ word.inf[13] }}</td>
+          </tr>
+          <tr>
+            <td colspan="2"><b>middle voice</b></td>
+            <td colspan="3">{{ word.inf[14] }}</td>
+          </tr>
+          <tr>
+            <td colspan="2"><b>resultative</b></td>
+            <td colspan="3">{{ word.inf[15] }}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><b>perfective</b></td>
+            <td><b>possible</b></td>
+            <td><b>doubt</b></td>
+            <td><b>negative</b></td>
+          </tr>
+          <tr>
+            <td><b>kawifduan</b></td>
+            <td>{{ word.word }}syet</td>
+            <td>{{ word.word }}sye</td>
+            <td>{{ word.word }}sran</td>
+            <td>{{ word.word }}srö</td>
+          </tr>
+          <tr>
+            <td><b>present</b></td>
+            <td>{{ word.word }}da</td>
+            <td>{{ word.word }}</td>
+            <td>{{ word.word }}ran</td>
+            <td>{{ word.word }}rö</td>
+          </tr>
+          <tr>
+            <td><b>past</b></td>
+            <td>{{ word.word }}da</td>
+            <td>{{ word.word }}de</td>
+            <td>{{ word.word }}den</td>
+            <td>{{ word.word }}dö</td>
+          </tr>
+        </tbody>
+        </table>
+    {% endif %}
+    {% if word.pos == "Noun" or word.pos == "Verb" or word.pos == "Stative verb" %}
+    <p><b>Adjectival derivation</b></p>
+        <table><tbody>
+        <tr>
+            <td><b>colour</b></td>
+            <td>{{ word.word }}sui</td>
+        </tr>
+        <tr>
+            <td><b>material, behaviour</b></td>
+            <td>{{ word.word }}kos</td>
+        </tr>
+        <tr>
+            <td><b>origin</b></td>
+            <td>{{ word.word }}syan</td>
+        </tr>
+        <tr>
+            <td><b>size, location</b></td>
+            <td>{{ word.word }}sin</td>
+        </tr>
+        <tr>
+            <td><b>degree, magnitude</b></td>
+            <td>{{ word.word }}git</td>
+        </tr>
+        </tbody>
+        </table>
+    {% endif %}
+    {% endfor %}
     {% endblock %}
     </body>
 </html>

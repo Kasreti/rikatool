@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results for {{ term }}</title>
+    </head>
+    <body>
+        {% extends "base.html" %}
+        {% block content %}
+        <h1>Results for {{ term }}</h1>
+        {% for match in matches %}
+        <a href="{{ url_for('show_definition', word=match.word) }}"><h3><b>{{ match.word }}</b></h3></a>
+        <p>{{ match.pos }} {{ match.defin }}</p>
+        {% endfor %}
+        {% endblock %}
+    </body>
+</html>
