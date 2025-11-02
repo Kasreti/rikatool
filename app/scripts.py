@@ -92,7 +92,13 @@ ipa_c = {
     "ur": "yː",
     "ɛr": "ɵː",
     "ɵr": "ɵː",
-    "ɔr": "ɵː"
+    "ɔr": "ɵː",
+    "ɕr": "ʂ",
+    "ʑr": "ʐ",
+    "ɕ.r": ".ʂ",
+    "ʑ.r": ".ʐ",
+    "ɕ.ˈr": ".ˈʂ",
+    "ʑ.ˈr": ".ˈʐ"
 }
 ipa_e = {
     "y": "u",
@@ -353,7 +359,7 @@ def getInf(x):
                     return ["in", "ket", "kiec", "lï", "sa "]
             case "ii.":
                 return ["un", "ki", "kei", "tua", "sa "]
-            case "iii.":
+            case _:
                 if x.word[0] in vowels:
                     if x.word[len(x.word)-1] in vowels:
                         return ["n", "ja", "jai", "ni", "s'"]

@@ -15,7 +15,7 @@ aiwa intj. // ok, alright.
 akan n. iii. // direction.
 akan ve hye va phr. // both parties, both the speaker and listener, all involved parties.
 akari v. // to calculate.
-akaun n. // account, borrowed from English account.
+akaun n. iii. // account, borrowed from English account.
 aki v. // to be big physically.
 akim part. // refers to the preceding statement; akim datari forgive (me) for the preceding statement.
 akitto n. iii. // left, direction, from aki + kito (back of the palm), colloquially shortened to kito.
@@ -172,7 +172,7 @@ dár n. iii. // book, literary word borrowed from Asbirqänna dars, typically re
 dasaqa verb. // to drown, submerge.
 daté v. // to forgive someone for an offense.
 	datari intj. // sorry, lit. forgive me. 
-dau n. // food, drink, edible goods.
+dau n. iii. // food, drink, edible goods.
 dé stv. // (alt. det) to be situated below, lower; down.
 deci v. // to move down, lower, from deti.
 deciyari v. // to shine down, typically sunlight; to observe from above, look down.
@@ -214,7 +214,7 @@ ec stv. // to be light in mass.
 edari stv. // to be heavy; to be important.
 edon n. iii. // tip, peak.
 ei intj. // greeting in response to aici, hello, hi, see aici.
-eira n. // swamp, mangrove. only in place names.
+eira n. iii. // swamp, mangrove. only in place names.
 egi v. // to be alive, to live.
 egiyïka n. iii. // biology.
 eki stv. // to be mysterious, unknown.
@@ -298,7 +298,7 @@ haimi v. // to suppress yourself to remain quiet.
 hairén n. iii. // the past, lit. completed time.
 hairenïké n. iii. // the study of history, the study of the past.
 hani v. // to create.
-hanni n. // room.
+hanni n. iii. // room.
 hanuari adv. // most of the time, usually.
 hanya n. iii. // image, picture.
 hanyé v. // to describe.
@@ -380,15 +380,15 @@ ikirïka n. iii. // physics.
 il- n. i. // (alt. al-, an-, in-) descendant of, common prefix for surnames, likely descending from an assimilated form of an.
 inaqa n. iii. // injury, damage.
 inaqa v. // to damage, hurt, cause injury to.
-indau n. // (alt. imdau) lunch, contraction of imaidau.
+indau n. iii. // (alt. imdau) lunch, contraction of imaidau.
 imai n. i. // noon.
 imé stv. // to be wise.
 imi v. // to try, attempt.
 ina pron. // he, third person singular for class II.
 	inflections: inye (accusative), inán (ablative), inaya (lative), önaya (genitive).
 inda part. // but, however, clause-final in a copula clause, otherwise -nda is suffixed.
-innui n. // swamp, mangrove.
-insi n. // spirit, soul.
+innui n. iii. // swamp, mangrove.
+insi n. ii. // spirit, soul.
 insikiec phr. // wholeheartedly, sincerely.
 -i insi lï phr. // to pay attention to.
 insyi v. // to be courageous, brave, valiant.
@@ -445,7 +445,7 @@ jävi v. // to pass through; to experience.
 jaber n. iii. // island.
 jader n. iii. // uncleanness, dirtiness, the quality of being unclean.
 jadri stv. // to be unclean, dirty. root: jader.
-jeda n. // wish, hope.
+jeda n. iii. // wish, hope.
 jeda v. // to wish, hope.
 jirri n. iii. // generic term for bug, insect.
 jizi v. // to grind.
@@ -571,7 +571,7 @@ kon n. iii. // chicken.
 konai stv. // to be angry, root: konau.
 konau n. iii. // anger.
 konj v. // to advance, go forwards.
-kora n. // the quality of being bad.
+kora n. iii. // the quality of being bad.
 kori n. iii. // west.
 kosa n. iii. // behaviour.
 kosé v. // to behave.
@@ -651,7 +651,7 @@ möfi v. // to blanket, cover completely.
 möfyáfi v. // to possess something in secrecy, not overtly.
 mon n. iii. // period of time, term.
 monnen n. iii. // periodical basis, periodically, regularly.
-mouve n. // incumbent term, current term, from monve.
+mouve n. iii. // incumbent term, current term, from monve.
 myï v. // to buy.
 myïbrí n. iii. // bazaar, market.
 myo n. iii. // cat.
@@ -729,7 +729,7 @@ isoseryá n. i. // outcast.
 öqédi n. iii. // exit.
 ösali n. iii. // position in a workplace or organization.
 ötokyï n. iii. // resort, place of relaxation
-ötte n. // layout.
+ötte n. iii. // layout.
 öttei v. // to layout.
 qada n. iii. // opposite, contrary.
 qadai v. // to oppose, flow against, go against.
@@ -777,7 +777,7 @@ rénnai n. iii. // the past.
 réngizun n. iii. // temporary period of time, impermanent period, from rén + kizú + ni (of a segment of time).
 réntar n. iii. // clock.
 rénre n. iii. // future.
-renrén n. // always, all the time, readily.
+renrén n. iii. // always, all the time, readily.
 rénve n. iii. // now, current time.
 rénvei conj. // up until this point.
 rénwafyaza n. iii. // schedule.
@@ -815,7 +815,7 @@ sän n. iii. // hook, sharp bend.
 sabarrák intj. // profane, fuck you, lit. may you be cursed, derived as a contraction of savarrai ke.
 sadre n. iii. // (alt. -sr-) justice, correctness.
 sadretoja n. iii. // judge, from sàrhe + todi + ya (person who upholds justice).
-sadosu n. // diary.
+sadosu n. iii. // diary.
 saet conj. // or (exclusive).
 saeth n. iii. // scenario,  situation.
 sahaim conj. // hereby, by completing this.
@@ -872,7 +872,7 @@ sesai n. iii. // magic.
 seta n. iii. // orchid.
 sete n. iii. // tower, pagoda.
 setti n. iii. // sound.
-sevi n. // control.
+sevi n. iii. // control.
 sevi v. // to control, manage.
 seya n. iii. // weakness.
 seyé stv. // to be weak, root: seya.
@@ -886,9 +886,9 @@ sïka stv. // to be tall, high in terms of height or altitude.
 	sïkagit n. iii. // height, altitude.
 sïkamaskarté v. // to veto.
 sima n. iii. // straight.
-sinna n. // development.
+sinna n. iii. // development.
 sinné v. // to grow, develop; to raise another, from si + na’e (to lengthen a life)
-siph n. // port, appears in place names, see nahari, shortening of sifïra.
+siph n. iii. // port, appears in place names, see nahari, shortening of sifïra.
 sirakkai v. // to revive, bring back to life.
 siri v. // to offer, renounce, abnegate, to give to a higher power, to offer a sacrifice.
 sïri v. // to deserve; to be fate.
@@ -1043,7 +1043,7 @@ toki v. // to travel in a general direction.
 tokyï stv. // to be loose; relaxed.
 tollota n. iii. // the maintenance of something in the same manner, unchanging. verb form: tolloté.
 torié v. // to support, to help.
-torya n. // support, help.
+torya n. iii. // support, help.
 tosa num. // ten (archaic), relic of the duodecimal system, prevalent in western dialects.
 tossen n. iii. // age.
 tosseni v. // to age, to grow older.
@@ -1125,7 +1125,7 @@ wafi v. // to anticipate, to expect before it comes.
 wafyenhayé v. // to prevent.
 wafyaza n. iii. // plan.
 wafyazé v. // to plan, literally to do before it comes.
-wakami n. // dance.
+wakami n. iii. // dance.
 wakami v. // to dance.
 wakó n. iii. // vertical.
 waph v. // to want, desire.

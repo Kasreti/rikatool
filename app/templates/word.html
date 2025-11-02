@@ -24,8 +24,11 @@
         {% if word.root %}
         <p><b>{{ word.word }} </b><i>{{ word.anim }}</i> {{ word.alt }} (<i>stem</i> {{ word.root }}, <i>negative stem</i> {{ word.neg }}, <i>reduplicative</i> {{word.redup}})</p>
         {% endif %}
-        {% if word.root == "" %}
+        {% if word.root == "" and word.pos != "Affix" %}
         <p><b>{{ word.word }} </b><i>{{ word.anim }}</i> {{ word.alt }} (<i>reduplicative</i> {{word.redup}})</p>
+        {% endif %}
+        {% if word.root == "" and word.pos == "Affix" %}
+        <p><b>{{ word.word }} </b><i>{{ word.anim }}</i> {{ word.alt }}</p>
         {% endif %}
         <ol>
             {% for match in word.defin %}
@@ -127,11 +130,11 @@
           </tr>
           <tr>
             <td colspan="2"><b>middle voice</b></td>
-            <td colspan="3">{{ word.inf[14] }}</td>
+            <td colspan="3">{{ word.root }}{{ word.inf[14] }}</td>
           </tr>
           <tr>
             <td colspan="2"><b>resultative</b></td>
-            <td colspan="3">{{ word.inf[15] }}</td>
+            <td colspan="3">{{ word.root }}{{ word.inf[15] }}</td>
           </tr>
           <tr>
             <td></td>
