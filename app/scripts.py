@@ -21,7 +21,8 @@ dia_b = {
     "dy": "j",
     "kh": "x",
     "ae": "æ",
-    "aa": "ä"
+    "aa": "ä",
+    "ph": "f"
 }
 dia_c = {
     "ty": "c",
@@ -160,7 +161,10 @@ stc_pair = {
 }
 
 dtitles = ["Ää","Ææ","Bb","Cc","Dd","DHdh","Ee","Ff","Gg","GHgh","Hh","Ii","Ïï","Jj","Kk","Ll","Mm","Nn","Oo","Öö","Qq","Rr","Ss","SYsy","Tt","THth","TSts","Uu","Vv","Ww","Xx","Yy","Zz","ZYzy","RHrh"]
-inflist = ["syet", "sye", "sran", "sro", "da", "de", "ran", "ro", "den", "do", "sui", "kos", "syan", "sin", "git", "jai", "ja", "lï"]
+inflist = ["syet", "sye", "sran", "sro", "da", "de", "ran", "ro", "den", "do", "sui", "kos", "syan", "sin", "git", "jai", "ja", "lï", "in","ket","kiec","lï", "un", "ki", "kei", "tua", "en", "yaz"]
+inf2list = ["i", "n", "nde", "nda", "ri", "fïn", "uaz", "yari", "yaki", "ru", "gan", "äri", "äki", "waz", "waki", "wari", "unaz"]
+infilist = ["i", "wi", "u", "winu", "yá", "wayá", "e", "wiye", "im", "wim", "yu", "i", "ui", "yo", "ou", "yá", "uyá", "e", "ue", "im", "uim", "yu"]
+infylist = ["ï", "iyï", "ir", "irhï", "á", "iyá", "e", "iye", "ïm", "iyïm", "yiyï","yï", "yiyï", "ï", "iyï", "yá", "iyá", "ye", "iye", "yïm", "iyïm", "yiyï"]
 
 def ipa(x):
     x = x.lower()
@@ -361,13 +365,17 @@ def getInf(x):
                 return ["un", "ki", "kei", "tua", "sa "]
             case _:
                 if x.word[0] in vowels:
-                    if x.word[len(x.word)-1] in vowels:
+                    if x.word[len(x.word) - 1] == "i":
                         return ["n", "ja", "jai", "ni", "s'"]
+                    elif x.word[len(x.word) - 1] in vowels:
+                        return ["n", "ja", "jai", "i", "s'"]
                     else:
                         return ["en", "ja", "jai", "i", "s'"]
                 else:
-                    if x.word[len(x.word)-1] in vowels:
+                    if x.word[len(x.word)-1] == "i":
                         return ["n", "ja", "jai", "ni", "sa "]
+                    elif x.word[len(x.word)-1] in vowels:
+                        return ["n", "ja", "jai", "i", "sa "]
                     else:
                         return ["en", "ja", "jai", "i", "sa "]
     elif x.pos == "v." or "stv.":
@@ -384,13 +392,13 @@ def getInf(x):
                         if i == 4 or i == 5:
                             list[i] = unsroot[:len(unsroot) - 1] + list[i]
                             if i == 5:
-                                list[i] = unsroot[:len(unsroot) - 2] + list2[int(i / 2)] + "/" + list[i]
+                                list[i] = list[i] + "/" + unsroot[:len(unsroot) - 2] + list2[int(i / 2)]
                             for j, k in dia_c.items():
                                 list[i] = list[i].replace(j, k)
                         else:
                             list[i] = x.word[:len(x.word) - 1] + list[i]
                             if i%2==1:
-                                list[i] = x.word[:len(x.word) - 2]+list2[int(i/2)] + "/" + list[i]
+                                list[i] = list[i] + "/" + x.word[:len(x.word) - 2]+list2[int(i/2)]
                             for j, k in dia_c.items():
                                 list[i] = list[i].replace(j, k)
                     list.append("ri")
@@ -606,8 +614,56 @@ def removeInf(x):
     if x.startswith("s'"):
         x = x.replace("s'","")
         return x
+    if len(Dictionary.query.filter(Dictionary.word == deredup(x.strip())).all()) > 0:
+        return deredup(x.strip())
+    elif len(Dictionary.query.filter(Dictionary.defin.icontains("alt. " + x.strip())).all()) > 0:
+        return Dictionary.query.filter(Dictionary.defin.icontains("alt. " + x.strip())).first().word
     for inf in inflist:
         if x.endswith(inf):
-            x = ''.join(x.rsplit(inf,1))
-            return x
+            y = ''.join(x.rsplit(inf,1))
+            if len(Dictionary.query.filter(Dictionary.word == y.strip()).all()) > 0:
+                return y
+    for inf in inf2list:
+        if x.endswith(inf):
+            y = ''.join(x.rsplit(inf,1))
+            if len(Dictionary.query.filter(Dictionary.word == y.strip()).all()) > 0:
+                return y
+            for vinf in infilist:
+                if y.endswith(vinf):
+                    z = ''.join(x.rsplit(vinf,2))
+                    if len(Dictionary.query.filter(Dictionary.word == z.strip() + "i").all()) > 0:
+                        return z + "i"
+            for vinf in infylist:
+                if y.endswith(vinf):
+                    z = ''.join(x.rsplit(vinf,2))
+                    if len(Dictionary.query.filter(Dictionary.word == z.strip() + "ï").all()) > 0:
+                        return z + "ï"
+                    elif len(Dictionary.query.filter(Dictionary.word == z.strip() + "yï").all()) > 0:
+                        return z + "yï"
     return x
+
+def deredup(x):
+    if x[0] == x[2]:
+        return x[2:]
+    else:
+        for dia, mon in dia_b.items():
+            x = x.replace(dia, mon)
+        seccos = x[2]
+        if (x[0] in cons_b) and (x[1] not in son_b):
+            for vo, un in stc_pair.items():
+                seccos = seccos.replace(vo,un)
+            for dia, mon in dia_b.items():
+                seccos = seccos.replace(dia, mon)
+            if(seccos == x[0]):
+                for dia, mon in dia_b.items():
+                    x = x.replace(mon, dia)
+                if x[1] == "s":
+                    return x[:3] + x[5:]
+                elif x[1] == "h":
+                    return x[:3] + x[6:]
+                elif x[0] == "z":
+                    return x[:2] + x[5:]
+                else:
+                    return x[:1] + x[3:]
+            else:
+                return ""

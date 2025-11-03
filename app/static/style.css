@@ -13,7 +13,17 @@ h1 {
   font-family: "Georgia", serif;
   font-size: 24pt;
   text-align: left;
-  font-weight: left;
+  font-weight: 500;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+h2 {
+  color: black;
+  font-family: "Arial", sans-serif;
+  font-size: 16pt;
+  text-align: left;
+  font-weight: 700;
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -38,15 +48,7 @@ h4 {
   font-weight: 400;
 }
 
-h2 {
-  color: black;
-  font-family: "Arial", sans-serif;
-  font-size: 20pt;
-  text-align: left;
-  font-weight: 700;
-  margin-left: 10%;
-  margin-right: 10%;
-}
+
 
 p2 {
   color: black;

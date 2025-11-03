@@ -7,11 +7,17 @@ from sqlalchemy.sql import collate
 
 @app.route("/")
 def hello_world():
-    return "<p>y u here mf</p>"
+    return redirect(url_for('show_definition', word="aici"))
 
-@app.route("/f5")
-def refresh_dict():
-    cs.refreshDict()
+@app.errorhandler(404)
+def page_not_found(e):
+    flash("thats not a real page bro :skull:")
+    return redirect(url_for('show_definition', word="aici"))
+
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    flash("uhh server messed up, dm kasreti about this")
     return redirect(url_for('show_definition', word="aici"))
 
 @app.route("/search/")
@@ -19,10 +25,12 @@ def refresh_dict():
 def wresults(term):
     form = searchWord()
     if form.validate_on_submit():
+        session['prev'] = form.word.data.strip()
         located = Dictionary.query.filter(Dictionary.word == form.word.data.strip()).all()
         located2 = Dictionary.query.filter(Dictionary.word == cs.removeInf(form.word.data.strip())).all()
         if form.refresh.data:
-            return redirect(url_for('refresh_dict'))
+            cs.refreshDict()
+            flash("dictionary refreshed!!")
         elif len(located) == 0 and len(located2) > 0:
             return redirect(url_for('show_definition', word=cs.removeInf(form.word.data.strip())))
         elif len(located) == 0 and len(located2) == 0:
@@ -33,15 +41,18 @@ def wresults(term):
         else:
             return redirect(url_for('show_definition', word=form.word.data.strip()))
     matches = Dictionary.query.filter(Dictionary.word.icontains(term)).order_by(collate(Dictionary.word, 'NOCASE')).all()
+    form.word.data = session['prev']
     return render_template('results.html', term=term, matches=matches, form=form)
 @app.route("/search/<term>?st=def", methods=['GET', 'POST'])
 def dresults(term):
     form = searchWord()
     if form.validate_on_submit():
+        session['prev'] = form.word.data.strip()
         located = Dictionary.query.filter(Dictionary.word == form.word.data.strip()).all()
         located2 = Dictionary.query.filter(Dictionary.word == cs.removeInf(form.word.data.strip())).all()
         if form.refresh.data:
-            return redirect(url_for('refresh_dict'))
+            cs.refreshDict()
+            flash("dictionary refreshed!!")
         elif len(located) == 0 and len(located2) > 0:
             return redirect(url_for('show_definition', word=cs.removeInf(form.word.data.strip())))
         elif len(located) == 0 and len(located2) == 0:
@@ -52,6 +63,7 @@ def dresults(term):
         else:
             return redirect(url_for('show_definition', word=form.word.data.strip()))
     matches = Dictionary.query.filter(Dictionary.defin.icontains(term)).order_by(collate(Dictionary.word, 'NOCASE')).all()
+    form.word.data = session['prev']
     return render_template('results.html', term=term, matches=matches, form=form)
 
 @app.route("/wiki/")
@@ -61,10 +73,15 @@ def show_definition(word):
     located = Dictionary.query.filter(Dictionary.word == word.strip()).all()
     retword = []
     if form.validate_on_submit():
+        session['prev'] = form.word.data.strip()
         located = Dictionary.query.filter(Dictionary.word == form.word.data.strip()).all()
-        located2 = Dictionary.query.filter(Dictionary.word == cs.removeInf(form.word.data.strip())).all()
+        located2 = []
+        if len(located) == 0:
+            located2 = Dictionary.query.filter(Dictionary.word == cs.removeInf(form.word.data.strip())).all()
+            print(cs.removeInf(form.word.data.strip()))
         if form.refresh.data:
-            return redirect(url_for('refresh_dict'))
+            cs.refreshDict()
+            flash("dictionary refreshed!!")
         elif len(located) == 0 and len(located2) > 0:
             return redirect(url_for('show_definition', word=cs.removeInf(form.word.data.strip())))
         elif len(located) == 0 and len(located2) == 0:
@@ -132,4 +149,5 @@ def show_definition(word):
         else:
             etym = ""
         retword.append(cs.definition(x.word.strip(),cs.genIPA(word),cs.genIPA_collo(cs.genIPA(word)),cs.genIPA_eng(cs.genIPA(word)),defin,anim,cs.posword(x.pos),etym,root,cs.getInf(x), alt, neg, cs.redup(x)))
+    form.word.data = session['prev']
     return render_template('word.html', retword=retword, form=form)

@@ -39,7 +39,7 @@ alihorï n. ii. // worldly issues, materialistic issues, issues relating to life
 alnema v. // to get lost, lit. throw oneself out, derogatory.
 ame n. iii. // town, large village.
 ami n. iii. // (alt. amik) house, physical home; building.
-amin n. iii.. // literary, people of a race, country, citizens, borrowed from Cantonese.
+amin n. iii. // literary, people of a race, country, citizens, borrowed from Cantonese.
 amiccamín n. iii. // library, place where books can be browsed but not bought or sold.
 amikic n. ii. // temple.
 amimi v. // to sleep; to fall asleep, colloquially ammi.
@@ -108,8 +108,8 @@ azéyure n. iii. // occupation, job.
 azuérei v. // to suspect one’s innocence.
 ädas n. iii. // cliff.
 	ädassiya stv. // severe, nearing collapse.
-ända n. i // elder sister.
-ändi n. i // younger sister.
+ända n. i. // elder sister.
+ändi n. i. // younger sister.
 ära n. iii. // example.
 äravan n. ii. // eternity, forever.
 äru n. iii. // verdant green.
@@ -136,7 +136,7 @@ cali v. // to bend, to curve.
 calmané v. // to imply, describe indirectly.
 camín n. iii. // book.
 cari n. iii. // noodles.
-caró n. i // physical body; physical health.
+caró n. i. // physical body; physical health.
 carótoji v. // to perform maintenance.
 carótoji n. iii. // maintenance.
 cï n. iii. // building, enclosed structure.
@@ -166,7 +166,7 @@ cumé stv. // to be fast, generic.
 dá n. iii. // transportation station.
 dahan n. iii. // problem.
 dahanqedi v. // to report issues.
-damat n.  ii. // sin, moral crime.
+damat n. ii. // sin, moral crime.
 dami n. iii. // stream, small river.
 dár n. iii. // book, literary word borrowed from Asbirqänna dars, typically referring to holy or important books.
 dasaqa verb. // to drown, submerge.
@@ -413,7 +413,7 @@ isa n. iii. // northeast direction.
 isa part. // with, denoting the use of a tool or medium, instrumental particle, instrumental precedes the particle, variant of sa.
 isamisakki n. i. // homemaker
 isazéson n. i. // office worker.
-isriká n. i // citizen of a nation, see riká.
+isriká n. i. // citizen of a nation, see riká.
 isyaxé n. iii. // pen, ballpoint pen; generic writing tool.
 isyï n. iii. // language, derived from i + syï (lit. tool for speaking).
 isyïtaki v. // to translate between languages.
@@ -619,10 +619,10 @@ lima v. // to request.
 lisa n. iii. // table.
 lunda v. // profane, to have intercourse.
 lota n. iii. // the same state, unchanged state.
-mai n. i // mother.
+mai n. i. // mother.
 	na- aff. // maternal prefix for familiar terms.
 man part. // although.
-mana n. i // finger; anatomical digit.
+mana n. i. // finger; anatomical digit.
 mandé v. // to complete the remaining part of something, to make something full.
 mané v. // to point at or towards something; root: mana.
 maneré v. // to point out something, to identify, call out.
@@ -630,8 +630,8 @@ masi n. iii. // choice, decision.
 masi v. // to choose, select, decide.
 maskarté v. // to reject, cut down an idea.
 masta n. iii. // fish.
-matá n. ii // reigning monarch of a kingdom, gender neutral so can apply to both kings and queens, depending on whether the society is patriarchal or matriarchal, emperor.
-matárasai n. ii // spouse of the reigning monarch, refers to the first or highest-ranking spouse if multiple partners are taken.
+matá n. ii. // reigning monarch of a kingdom, gender neutral so can apply to both kings and queens, depending on whether the society is patriarchal or matriarchal, emperor.
+matárasai n. ii. // spouse of the reigning monarch, refers to the first or highest-ranking spouse if multiple partners are taken.
 matárika n. ii. // kingdom, empire, imperial nation.
 mé v. // to fight.
 meté v. // to do to one’s upper limit, to the point of death.
@@ -660,11 +660,11 @@ naeki stv. // to be small; of a small amount.
 naekikuitasy n. iii. // Calculus, small accumulating numbers.
 naeren n. iii. // minute.
 nahari n. iii. // port.
-nahos n. i // maternal grandfather.
+nahos n. i. // maternal grandfather.
 nai v. // to not be, negative copula, colloquially pronounced ne.
 naihai v. // to fail, colloquial, lit. to become nothing, see xarikké.
 nairi v. // to cry, weep, sob.
-namai n. i // maternal grandmother.
+namai n. i. // maternal grandmother.
 naqän n. iii. // tall mountains.
 natu n. iii. // question.
 naihe conj. // instead.
@@ -682,8 +682,8 @@ ne v. // poetic negative imperative marker.
 né n. iii. // northwest.
 negi n. iii. // strength, power.
 nei conj. // like, similar to.
-neki n. ii // planet Earth.
-nekiyïka n. ii // geography.
+neki n. ii. // planet Earth.
+nekiyïka n. ii. // geography.
 nekyorasi n. iii. // equator.
 nema n. ii // world.
 nemat n. iii. // trash, rubbish
@@ -707,7 +707,7 @@ nurui n. iii. // mangrove wood.
 ocan n. iii. // job.
 ocanson n. iii. // business.
 oci v. // to hang, dangle.
-ofu num.  // zero.
+ofu num. // zero.
 on n. iii. // pig.
 ora n. iii. // centre, middle.
 	-ora aux. // inside of, in, within.
@@ -723,7 +723,7 @@ isoseryá n. i. // outcast.
 ö n. iii. // place, land.
 ödon n. iii. // bone.
 ökegure n. iii. // quay.
-ökeran n. ii // heaven, unreachable realm.
+ökeran n. ii. // heaven, unreachable realm.
 ölyamari stv. // to bear fruit, to produce an effect; to be effective.
 ölyami n. iii. // fruit, from öl + yami (thing of sweetness).
 öqédi n. iii. // exit.
@@ -753,7 +753,7 @@ qet n. iii. // departure, nominal form of qédi.
 qodi stv. // to be strong.
 qodisy n. iii. // soup, stock, broth, typically referring to meat-based soups.
 qul adv. // all, borrowed from Mahasi kulsh, reduplication formation heavily preferred.
-qulim n. i // community, commune, borrowed from Mahasi kulima.
+qulim n. i. // community, commune, borrowed from Mahasi kulima.
 quse n. iii. // oak.
 qoban n. iii. // fence.
  
@@ -792,8 +792,7 @@ ridaga n. iii. // cruelty.
 ridagé stv. // to be cruel.
 ridarrei v. // to torture.
 rieph n. iii. // fire, synonym of xäs.
-riká  n. ii // (alt. rikat) nation, large group of people bounded by culture and identity; country to an extent.	
-	isriká n. i // citizen of a nation.
+riká n. ii. // (alt. rikat) nation, large group of people bounded by culture and identity; country to an extent.	
 rikaph n. iii. // ownership by the nation, national entity, contraction of rikafi.
 rikánaul n. iii. // politics, matters to do with the governance of a nation.
 rikattovan n. iii. // province, state, often shortened to tovan. (lit: country + section)
@@ -893,7 +892,7 @@ sirakkai v. // to revive, bring back to life.
 siri v. // to offer, renounce, abnegate, to give to a higher power, to offer a sacrifice.
 sïri v. // to deserve; to be fate.
 sirra n. i. // natural death, death as an innocent.
-sirré v.  // to die, from si + irarré (to return a life), rooted in a belief that spirits eventually return to the same place, only used for deaths of moral people.
+sirré v. // to die, from si + irarré (to return a life), rooted in a belief that spirits eventually return to the same place, only used for deaths of moral people.
 sisa n. iii. // sand.
 siva n. iii. // cheese.
 stv. // to be scarred, have a permanent injury, lit. tear on life.
@@ -906,7 +905,7 @@ son n. iii. // group.
 sono n. iii. // twin, double.
 sonoira n. iii. // bicycle, abbreviated form of sonoiratassyat lit. double-wheel car.
 sörarua v. // to inherit.
-söran n. i // daughter.
+söran n. i. // daughter.
 söraza n. iii. // tradition.
 soré v. // to  someone go ahead, yield.
 	sorenaza intj. // by all means, go ahead.
@@ -922,7 +921,7 @@ sözöri stv. // to be traditional.
 -ssa intj. // so, prompting the listener to respond.
 su n. iii. // word; speech.
 sun onya söri phr. // literally, as the name implies, in a literal sense.
-sue n. i // distinguished person, person related to the government or palace.
+sue n. i. // distinguished person, person related to the government or palace.
 	asue hon. // mister, miss, honorific for a person.
 suerika n. i. // parliamentarian.
 suki v. // to be located at, to exist at a place.
@@ -942,7 +941,7 @@ syánenité v. // script, document containing the dialogue and actions for a per
 syarré v. // to save someone; to bandage.
 syarrï n. iii. // month.
 	-syrï aff. // suffix used for months of the year.
-syarta n. ii // religious ceremony used to bless future operations.
+syarta n. ii. // religious ceremony used to bless future operations.
 syasi v. // to flow; to follow, abide by rules, operate according to.
 	syasim v. // to operate, to run.
 syaxé v. // to write onto paper, type up.
@@ -953,7 +952,7 @@ syemikövi n. iii. // umbrella, from syemi + i + kövi (tool to push rain away)
 syemmyï v. // to trade, exchange, from syeta + myï (to sell and buy).
 syenahari n. iii. // airport, claque of English airport.
 syeqan num. // hundred million.
-syesíhka n. i // derogatory, a person who frequently gets themselves in arguments.
+syesíhka n. i. // derogatory, a person who frequently gets themselves in arguments.
 syeta n. iii. // to sell.
 syï v. // to speak, say, tell.
 syici n. i. // blood.
@@ -1118,7 +1117,7 @@ vuimi n. iii. // practice, test of skills, exercise.
 vuri n. i. // man.
 vyocari n. iii. // pork liver noodles, commonly spelled vyochari due to English influence, derived from vyomcari.
 vyo furi u-vyocari hye ko nai phr. // losing its defining aspect means losing their entire character, one must stay unique, lit. vyochari without its vyo (livers) amounts to nothing.
-vyom n. i // liver.
+vyom n. i. // liver.
 wa n. iii. // north, formerly referred to the direction of the tip of Mount Hoso, from Aṡbirqänna.
 wafai v. // to love.
 wafi v. // to anticipate, to expect before it comes.
@@ -1140,8 +1139,8 @@ wica n. iii. // punishment.
 wicé v. // to punish.
 woci v. // to command.
 wuré v. // to starve.
-xärra n. i // elder brother.
-xärri n. i // younger brother.
+xärra n. i. // elder brother.
+xärri n. i. // younger brother.
 xäri n. iii. // flag.
 xäs n. iii. // fire, synonym of rieph.
 xäsa v. // to burn.
@@ -1160,24 +1159,24 @@ xira n. iii. // star.
 xiraiya n. iii. // glory, nominal form of stative verb to be glorious.
 xisy v. // to boil.
 xo n. iii. // downwards.
-xohos n. i // paternal grandfather.
-xomai n. i // paternal grandmother.
+xohos n. i. // paternal grandfather.
+xomai n. i. // paternal grandmother.
 xodde n. iii. // barbarian, creature, beast.
 xoj v. // to force.
 xojilï v. // to inflict, force upon someone, forcefully do something against another’s will.
 xozyïreva n. iii. // propaganda, formerly xojsyïreva.
 xyazi v. // to tear, to inflict a cut (on a person or animal), to slash causing injury.
 xyazirré v. // to save someone from death, revive, resuscitate, lit. to undo injuries.
-ya n. i // person, human. when reduplicated, yana.
-ya-, -ya, n. i // in combination with a verb, describes a person who conducts the attached verb, i.e. in nauliya, leader. 
-	is- n. i // form of ya- when preceding a vowel; archaic formation of ya, i.e. in isrika, refers to people from a certain nation, when reduplicated isi.
-yafé n. i // doctor, see fé.
+ya n. i. // person, human. when reduplicated, yana.
+ya-, -ya, n. i. // in combination with a verb, describes a person who conducts the attached verb, i.e. in nauliya, leader. 
+	is- n. i. // form of ya- when preceding a vowel; archaic formation of ya, i.e. in isrika, refers to people from a certain nation, when reduplicated isi.
+yafé n. i. // doctor, see fé.
 yami n. iii. // sweetness.
 yamïlké n. iii. // lychee, from yami + u + olkahi (heavenly sweetness).
 yamïlokésyim n. iii. // lychee tree.
 yari v. // to let someone do something to the speaker, to give up and allow something to befall someone.
 yaréitasy n. i. // a driver, pilot.
-yarhanire n. ii // deity of the earth
+yarhanire n. ii. // deity of the earth
 yawai n. iii. // egg.
 yelo n. iii. // forest, jungle.
 yere n. i. // mouth.

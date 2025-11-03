@@ -139,9 +139,9 @@
           <tr>
             <td></td>
             <td><b>perfective</b></td>
-            <td><b>possible</b></td>
-            <td><b>doubt</b></td>
-            <td><b>negative</b></td>
+            <td><b>imperfective</b></td>
+            <td><b>continuative</b></td>
+            <td><b>progressive</b></td>
           </tr>
           <tr>
             <td><b>kawifduan</b></td>
@@ -170,6 +170,10 @@
     {% if word.pos == "Noun" or word.pos == "Verb" or word.pos == "Stative verb" %}
     <p><b>Adjectival derivation</b></p>
         <table><tbody>
+        <tr>
+            <td><b>generic</b></td>
+            <td>{{ word.word }}yaz</td>
+        </tr>
         <tr>
             <td><b>colour</b></td>
             <td>{{ word.word }}sui</td>
