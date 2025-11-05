@@ -53,11 +53,11 @@ stv_pair = {
 ipa_f = {
     "b": "p",
     "t": "tʰ",
-    "T": "tsʰ",
-    "c": "tɕʰ",
+    "T": "t͡sʰ",
+    "c": "t͡ɕʰ",
     "d": "t",
-    "j": "dʑ",
-    "z": "dz",
+    "j": "d͡ʑ",
+    "z": "d͡z",
     "k": "kʰ",
     "y": "j",
     "xä": "χä",
@@ -94,14 +94,18 @@ ipa_c = {
     "ʰʊ": "ʰɯ̥",
     "ʰi": "ʰi̥",
     "ʰu": "ʰɯ̥",
-    "adz": "az",
+    "ad͡z": "az",
     "ɕr": "ʂ",
     "ʑr": "ʐ",
     "ɕ.r": ".ʂ",
     "ʑ.r": ".ʐ",
     "ɕ.ˈr": ".ˈʂ",
     "ʑ.ˈr": ".ˈʐ",
-    "qa": "qɑ"
+    "qa": "qɑ",
+    "fu": "f̩",
+    "hi": "çi̥",
+    "hʲi": "çi̥",
+    "hʲɛ": "çe"
 }
 ipa_c2 = {
     "ar": "ɑː",
@@ -117,8 +121,8 @@ ipa_c2 = {
 ipa_e = {
     "y": "u",
     "q": "k",
-    "tsʰ": "s",
-    "dz": "z",
+    "t͡sʰ": "s",
+    "d͡z": "z",
     "æ": "ɛ",
     "r": "ɹ",
     "tʰ": "T",
@@ -131,7 +135,7 @@ ipa_e = {
     "ʕ": "h",
     "ɕ": "ʃ",
     "ʑ": "ʒ",
-    "dʃ": "tʃ",
+    "d͡ʃ": "t͡ʃ",
     "ʲ": "j",
     "ʷ": "w",
     "au": "aʊ",
@@ -148,6 +152,7 @@ ipa_e = {
     "p": "b",
 }
 stc_pair = {
+    "s": "S",
     "t": "D",
     "k": "G",
     "T": "Z",
@@ -171,7 +176,8 @@ stc_pair = {
     "C": "zy",
     "H": "gh",
     "V": "v",
-    "R": "dh"
+    "R": "dh",
+    "S": "z"
 }
 
 dtitles = ["Ää","Ææ","Bb","Cc","Dd","DHdh","Ee","Ff","Gg","GHgh","Hh","Ii","Ïï","Jj","Kk","Ll","Mm","Nn","Oo","Öö","Qq","Rr","Ss","SYsy","Tt","THth","TSts","Uu","Vv","Ww","Xx","Yy","Zz","ZYzy","RHrh"]
@@ -217,7 +223,9 @@ def ipa(x):
     return x
 
 def sylla(x):
-    if (x[0] in cons_b) and (x[1] in son_b):
+    if 1 <= len(x) <= 2:
+        return x
+    elif (x[0] in cons_b) and (x[1] in son_b):
         if x[1] == "y":
             x = x[:1] + "ʲ" + x[2:]
         elif x[1] == "u" and (x[2] in vowels):
@@ -610,7 +618,7 @@ def redup(x):
     word = x.word
     for dia, mon in dia_b.items():
         word = word.replace(dia, mon)
-    if(word[0] in cons_b) and (word[1] not in son_b):
+    if(word[0] in cons_b) and (word[1] != "y"):
         syl = word[:2]
         for un, vo in stc_pair.items():
             syl = syl.replace(un, vo)
@@ -618,8 +626,12 @@ def redup(x):
         for dia, mon in dia_a.items():
             word = word.replace(mon, dia)
             init = init.replace(mon, dia)
-        return word.replace(x.word[:2],init+syl,1)
-    elif (word[0] in cons_b) and (word[1] in son_b):
+            syl = syl.replace(mon, dia)
+        if(word[1] == "h"):
+            return word.replace(x.word[:3], init + syl, 1)
+        else:
+            return word.replace(x.word[:2],init+syl,1)
+    elif (word[0] in cons_b) and (word[1] in son_b) and (word[2] in vowels):
         syl = word[:3]
         for un, vo in stc_pair.items():
             syl = syl.replace(un, vo)
@@ -694,6 +706,8 @@ def decompound(x):
     return sep
 
 def deredup(x):
+    if len(x) <= 2:
+        return x
     ori = x
     if x[0] == x[2]:
         return x[2:]

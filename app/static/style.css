@@ -142,3 +142,8 @@ table{
 .graybg {
   background-color: #bababa;
 }
+
+.fourcol {
+  column-count: 4;
+  margin-left: 10%;
+}

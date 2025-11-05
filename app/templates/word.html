@@ -24,10 +24,10 @@
         {% if word.root %}
         <p><b>{{ word.word }} </b><i>{{ word.anim }}</i> {{ word.alt }} (<i>stem</i> {{ word.root }}, <i>negative stem</i> {{ word.neg }}, <i>reduplicative</i> {{word.redup}})</p>
         {% endif %}
-        {% if word.root == "" and word.pos != "Affix" %}
+        {% if word.root == "" and (word.pos != "Affix" and word.pos != "Unimplemented" and word.pos != "Conjunction") %}
         <p><b>{{ word.word }} </b><i>{{ word.anim }}</i> {{ word.alt }} (<i>reduplicative</i> {{word.redup}})</p>
         {% endif %}
-        {% if word.root == "" and word.pos == "Affix" %}
+        {% if word.root == "" and (word.pos == "Affix" or word.pos == "Unimplemented" or word.pos == "Conjunction") %}
         <p><b>{{ word.word }} </b><i>{{ word.anim }}</i> {{ word.alt }}</p>
         {% endif %}
         <ol>
@@ -202,6 +202,17 @@
         </table>
     {% endif %}
     {% endfor %}
+    {% if related|length > 0 %}
+    <h2>Derived terms</h2>
+    <p>This is an experimental feature that may render false positives.</p>
+    <div class="fourcol">
+        <ul>
+            {% for rel in related %}
+            <li><a href="{{ url_for('show_definition', word=rel.word) }}">{{ rel.word }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
     {% endblock %}
     </body>
 </html>

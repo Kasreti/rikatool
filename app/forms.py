@@ -16,4 +16,5 @@ class searchWord(FlaskForm):
     word = StringField('Search by word or definition:')
     submit = SubmitField('Search by Rikatisyï')
     defsubmit = SubmitField('Search by definition')
+    random = SubmitField('Random word')
     refresh = SubmitField('Refresh Dictionary')
