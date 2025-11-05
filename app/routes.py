@@ -27,21 +27,25 @@ def wresults(term):
     if form.validate_on_submit():
         session['prev'] = form.word.data.strip()
         located = Dictionary.query.filter(Dictionary.word == form.word.data.strip()).all()
-        located2 = Dictionary.query.filter(Dictionary.word == cs.removeInf(form.word.data.strip())).all()
+        located2 = []
         if form.refresh.data:
             cs.refreshDict()
             flash("dictionary refreshed!!")
-        elif len(located) == 0 and len(located2) > 0:
-            return redirect(url_for('show_definition', word=cs.removeInf(form.word.data.strip())))
-        elif len(located) == 0 and len(located2) == 0:
-            if form.defsubmit.data:
-                return redirect(url_for('dresults', term=form.word.data.strip()))
-            else:
+        elif form.defsubmit.data:
+            return redirect(url_for('dresults', term=form.word.data.strip()))
+        if len(located) == 0:
+            located2 = Dictionary.query.filter(Dictionary.word == cs.removeInf(form.word.data.strip())).all()
+            print(cs.removeInf(form.word.data.strip()))
+            if len(located) == 0 and len(located2) > 0:
+                return redirect(url_for('show_definition', word=cs.removeInf(form.word.data.strip())))
+            elif len(located) == 0 and len(located2) == 0:
                 return redirect(url_for('wresults', term=form.word.data.strip()))
         else:
             return redirect(url_for('show_definition', word=form.word.data.strip()))
     matches = Dictionary.query.filter(Dictionary.word.icontains(term)).order_by(collate(Dictionary.word, 'NOCASE')).all()
     form.word.data = session['prev']
+    if len(matches) == 0:
+        matches = cs.decompound(term)
     return render_template('results.html', term=term, matches=matches, form=form)
 @app.route("/search/<term>?st=def", methods=['GET', 'POST'])
 def dresults(term):
@@ -49,16 +53,18 @@ def dresults(term):
     if form.validate_on_submit():
         session['prev'] = form.word.data.strip()
         located = Dictionary.query.filter(Dictionary.word == form.word.data.strip()).all()
-        located2 = Dictionary.query.filter(Dictionary.word == cs.removeInf(form.word.data.strip())).all()
+        located2 = []
         if form.refresh.data:
             cs.refreshDict()
             flash("dictionary refreshed!!")
-        elif len(located) == 0 and len(located2) > 0:
-            return redirect(url_for('show_definition', word=cs.removeInf(form.word.data.strip())))
-        elif len(located) == 0 and len(located2) == 0:
-            if form.defsubmit.data:
-                return redirect(url_for('dresults', term=form.word.data.strip()))
-            else:
+        elif form.defsubmit.data:
+            return redirect(url_for('dresults', term=form.word.data.strip()))
+        if len(located) == 0:
+            located2 = Dictionary.query.filter(Dictionary.word == cs.removeInf(form.word.data.strip())).all()
+            print(cs.removeInf(form.word.data.strip()))
+            if len(located) == 0 and len(located2) > 0:
+                return redirect(url_for('show_definition', word=cs.removeInf(form.word.data.strip())))
+            elif len(located) == 0 and len(located2) == 0:
                 return redirect(url_for('wresults', term=form.word.data.strip()))
         else:
             return redirect(url_for('show_definition', word=form.word.data.strip()))
@@ -76,18 +82,17 @@ def show_definition(word):
         session['prev'] = form.word.data.strip()
         located = Dictionary.query.filter(Dictionary.word == form.word.data.strip()).all()
         located2 = []
-        if len(located) == 0:
-            located2 = Dictionary.query.filter(Dictionary.word == cs.removeInf(form.word.data.strip())).all()
-            print(cs.removeInf(form.word.data.strip()))
         if form.refresh.data:
             cs.refreshDict()
             flash("dictionary refreshed!!")
-        elif len(located) == 0 and len(located2) > 0:
-            return redirect(url_for('show_definition', word=cs.removeInf(form.word.data.strip())))
-        elif len(located) == 0 and len(located2) == 0:
-            if form.defsubmit.data:
-                return redirect(url_for('dresults', term=form.word.data.strip()))
-            else:
+        elif form.defsubmit.data:
+            return redirect(url_for('dresults', term=form.word.data.strip()))
+        if len(located) == 0:
+            located2 = Dictionary.query.filter(Dictionary.word == cs.removeInf(form.word.data.strip())).all()
+            print(cs.removeInf(form.word.data.strip()))
+            if len(located) == 0 and len(located2) > 0:
+                return redirect(url_for('show_definition', word=cs.removeInf(form.word.data.strip())))
+            elif len(located) == 0 and len(located2) == 0:
                 return redirect(url_for('wresults', term=form.word.data.strip()))
         else:
             return redirect(url_for('show_definition', word=form.word.data.strip()))
@@ -148,6 +153,6 @@ def show_definition(word):
             defin = defin[len(defin)-1].split(", borrowed from")[:len(defin)]
         else:
             etym = ""
-        retword.append(cs.definition(x.word.strip(),cs.genIPA(word),cs.genIPA_collo(cs.genIPA(word)),cs.genIPA_eng(cs.genIPA(word)),defin,anim,cs.posword(x.pos),etym,root,cs.getInf(x), alt, neg, cs.redup(x)))
+        retword.append(cs.definition(x.word.strip(),cs.genIPA(word),cs.genIPA_collo(cs.genIPA(word)),cs.genIPA_eng(cs.genIPA(word)),defin,anim,cs.posword(x.pos),etym,root,cs.getInf(x), alt, neg, cs.redup(x), cs.reflex(x.word)))
     form.word.data = session['prev']
     return render_template('word.html', retword=retword, form=form)

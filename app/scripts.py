@@ -1,6 +1,7 @@
 import re
 from app import app, db
 from app.models import Dictionary
+from sqlalchemy import func, desc
 import sqlalchemy as sa
 import sqlalchemy.orm as so
 
@@ -85,6 +86,14 @@ ipa_c = {
     "ʰi": "ʰi̥",
     "ʰu": "ʰɯ̥",
     "adz": "az",
+    "ɕr": "ʂ",
+    "ʑr": "ʐ",
+    "ɕ.r": ".ʂ",
+    "ʑ.r": ".ʐ",
+    "ɕ.ˈr": ".ˈʂ",
+    "ʑ.ˈr": ".ˈʐ"
+}
+ipa_c2 = {
     "ar": "ɑː",
     "ær": "ɑː",
     "ɑr": "ɑː",
@@ -93,13 +102,7 @@ ipa_c = {
     "ur": "yː",
     "ɛr": "ɵː",
     "ɵr": "ɵː",
-    "ɔr": "ɵː",
-    "ɕr": "ʂ",
-    "ʑr": "ʐ",
-    "ɕ.r": ".ʂ",
-    "ʑ.r": ".ʐ",
-    "ɕ.ˈr": ".ˈʂ",
-    "ʑ.ˈr": ".ˈʐ"
+    "ɔr": "ɵː"
 }
 ipa_e = {
     "y": "u",
@@ -131,7 +134,8 @@ ipa_e = {
     "g.": "k.",
     "d.": "t.",
     "ɐ": "a",
-    "x": "h"
+    "x": "h",
+    "p": "b",
 }
 stc_pair = {
     "t": "D",
@@ -161,10 +165,33 @@ stc_pair = {
 }
 
 dtitles = ["Ää","Ææ","Bb","Cc","Dd","DHdh","Ee","Ff","Gg","GHgh","Hh","Ii","Ïï","Jj","Kk","Ll","Mm","Nn","Oo","Öö","Qq","Rr","Ss","SYsy","Tt","THth","TSts","Uu","Vv","Ww","Xx","Yy","Zz","ZYzy","RHrh"]
-inflist = ["syet", "sye", "sran", "sro", "da", "de", "ran", "ro", "den", "do", "sui", "kos", "syan", "sin", "git", "jai", "ja", "lï", "in","ket","kiec","lï", "un", "ki", "kei", "tua", "en", "yaz"]
-inf2list = ["i", "n", "nde", "nda", "ri", "fïn", "uaz", "yari", "yaki", "ru", "gan", "äri", "äki", "waz", "waki", "wari", "unaz"]
+inflist = ["syet", "sye", "sran", "sro", "da", "de", "ran", "ro", "den", "do", "sui", "kos", "syan", "sin", "git", "jai", "ja", "lï", "in","ket","kiec","lï", "un", "ki", "kei", "tua", "en", "yaz", "i", "n", "rande", "srande", "dende", "syetende", "syetenda", "nde", "nda"]
+inf2list = ["ri", "fïn", "uaz", "yari", "yaki", "ru", "gan", "äri", "äki", "waz", "waki", "wari", "unaz"]
 infilist = ["i", "wi", "u", "winu", "yá", "wayá", "e", "wiye", "im", "wim", "yu", "i", "ui", "yo", "ou", "yá", "uyá", "e", "ue", "im", "uim", "yu"]
 infylist = ["ï", "iyï", "ir", "irhï", "á", "iyá", "e", "iye", "ïm", "iyïm", "yiyï","yï", "yiyï", "ï", "iyï", "yá", "iyá", "ye", "iye", "yïm", "iyïm", "yiyï"]
+infyelist = ["yé", "yué", "eyó", "ueyó", "yaná", "yuená", "ya", "yua", "yém", "yuém", "yun"]
+infelist = ["é", "ué", "ó", "uó", "ayá", "uwayá", "a", "ua", "e", "ue", "e"]
+
+class definition:
+    def __init__(self, word, ipa, ipa_c, ipa_e, defin, anim, pos, etym, root, inf, alt, neg, redup, ref):
+        self.word = word
+        self.ipa = ipa
+        self.ipa_c = ipa_c
+        self.ipa_e = ipa_e
+        self.defin = defin
+        self.anim = anim
+        self.pos = pos
+        self.etym = etym
+        self.root = root
+        self.inf = inf
+        self.alt = alt
+        self.neg = neg
+        self.redup = redup
+        self.ref = ref
+
+    def __repr__(self):
+        return '{} ({}) {} with definition {}'.format(self.pos, self.anim, self.word, self.defin)
+
 
 def ipa(x):
     x = x.lower()
@@ -285,6 +312,9 @@ def genIPA(name):
 def genIPA_collo(name):
     for st, co in ipa_c.items():
         name = name.replace(st, co)
+    for st, co in ipa_c2.items():
+        if name.endswith(st):
+            name = name.replace(st,co)
     return name
 
 def genIPA_eng(name):
@@ -473,10 +503,10 @@ def getInf(x):
                     list.append("ru")
                     list.append("gan")
                     list.append("unaz")
-                    list.append("rhari")
-                    list.append("rhaki")
+                    list.append("érhari")
+                    list.append("érhaki")
                 else:
-                    list = ["é", "ué", "ó", "uó", "ayá", "uwayá", "a", "ua", "e", "ue", "e"]
+                    list = ["é", "ué", "ó", "oú", "ayá", "uwayá", "a", "ua", "e", "ue", "un"]
                     for i in range(len(list)):
                         if i == 4 or i == 5:
                             list[i] = unsroot[:len(unsroot) - 1] + list[i]
@@ -489,8 +519,8 @@ def getInf(x):
                     list.append("ru")
                     list.append("gan")
                     list.append("uaz")
-                    list.append("rhari")
-                    list.append("rhaki")
+                    list.append("érhari")
+                    list.append("érhaki")
                 return list
             case "a":
                 if x.word[len(x.word) - 2] == "u":
@@ -566,27 +596,6 @@ def getInf(x):
                 list.append("aki")
                 return list
 
-
-
-class definition:
-    def __init__(self, word, ipa, ipa_c, ipa_e, defin, anim, pos, etym, root, inf, alt, neg, redup):
-        self.word = word
-        self.ipa = ipa
-        self.ipa_c = ipa_c
-        self.ipa_e = ipa_e
-        self.defin = defin
-        self.anim = anim
-        self.pos = pos
-        self.etym = etym
-        self.root = root
-        self.inf = inf
-        self.alt = alt
-        self.neg = neg
-        self.redup = redup
-
-    def __repr__(self):
-        return '{} ({}) {} with definition {}'.format(self.pos, self.anim, self.word, self.defin)
-
 def redup(x):
     word = x.word
     for dia, mon in dia_b.items():
@@ -613,36 +622,67 @@ def redup(x):
 def removeInf(x):
     if x.startswith("s'"):
         x = x.replace("s'","")
-        return x
     if len(Dictionary.query.filter(Dictionary.word == deredup(x.strip())).all()) > 0:
         return deredup(x.strip())
     elif len(Dictionary.query.filter(Dictionary.defin.icontains("alt. " + x.strip())).all()) > 0:
         return Dictionary.query.filter(Dictionary.defin.icontains("alt. " + x.strip())).first().word
+    x = deredup(x)
     for inf in inflist:
         if x.endswith(inf):
             y = ''.join(x.rsplit(inf,1))
             if len(Dictionary.query.filter(Dictionary.word == y.strip()).all()) > 0:
                 return y
-    for inf in inf2list:
-        if x.endswith(inf):
-            y = ''.join(x.rsplit(inf,1))
-            if len(Dictionary.query.filter(Dictionary.word == y.strip()).all()) > 0:
-                return y
-            for vinf in infilist:
-                if y.endswith(vinf):
-                    z = ''.join(x.rsplit(vinf,2))
-                    if len(Dictionary.query.filter(Dictionary.word == z.strip() + "i").all()) > 0:
-                        return z + "i"
-            for vinf in infylist:
-                if y.endswith(vinf):
-                    z = ''.join(x.rsplit(vinf,2))
-                    if len(Dictionary.query.filter(Dictionary.word == z.strip() + "ï").all()) > 0:
-                        return z + "ï"
-                    elif len(Dictionary.query.filter(Dictionary.word == z.strip() + "yï").all()) > 0:
-                        return z + "yï"
+            else:
+                z = removeVinf(y)
+                if len(Dictionary.query.filter(Dictionary.word == z.strip()).all()) > 0:
+                    return z
+    z = removeVinf(x)
+    if len(Dictionary.query.filter(Dictionary.word == z.strip()).all()) > 0:
+        return z
     return x
 
+def removeVinf(x):
+    for inf in inf2list:
+        if x.endswith(inf):
+            x = ''.join(x.rsplit(inf,1))
+            if len(Dictionary.query.filter(Dictionary.word == x.strip()).all()) > 0:
+                return x
+    for vinf in infilist:
+        if x.endswith(vinf):
+            z = ''.join(x.rsplit(vinf, 2))
+            if len(Dictionary.query.filter(Dictionary.word == z.strip() + "i").all()) > 0:
+                return z + "i"
+    for vinf in infylist:
+        if x.endswith(vinf):
+            z = ''.join(x.rsplit(vinf, 2))
+            if len(Dictionary.query.filter(Dictionary.word == z.strip() + "ï").all()) > 0:
+                return z + "ï"
+            elif len(Dictionary.query.filter(Dictionary.word == z.strip() + "yï").all()) > 0:
+                return z + "yï"
+    for vinf in infelist:
+        if x.endswith(vinf):
+            z = ''.join(x.rsplit(vinf, 2))
+            if vinf == "ayá" or vinf == "uwayá":
+                for st, un in stv_pair.items():
+                    z2 = z.replace(st, un)
+                    if len(Dictionary.query.filter(Dictionary.word == z2.strip() + "é").all()) > 0:
+                        return z2 + "é"
+            else:
+                if len(Dictionary.query.filter(Dictionary.word == z.strip() + "é").all()) > 0:
+                    return z + "é"
+    return x
+
+def decompound(x):
+    words = Dictionary.query.order_by(desc(func.length(Dictionary.word))).all()
+    sep = []
+    for i in words:
+        if i.word in x:
+            sep.append(i)
+            x = ''.join(x.rsplit(i.word,1))
+    return sep
+
 def deredup(x):
+    ori = x
     if x[0] == x[2]:
         return x[2:]
     else:
@@ -665,5 +705,21 @@ def deredup(x):
                     return x[:2] + x[5:]
                 else:
                     return x[:1] + x[3:]
-            else:
-                return ""
+    return ori
+
+def reflex(x):
+    refl = 'nsywr'
+    y = x
+    for dia, mon in dia_b.items():
+        y.replace(dia, mon)
+    if y[0] in refl:
+        return "a" + x[0] + x
+    elif x[0] == "ɕ":
+        return "as" + x
+    elif x[0] == "ʑ":
+        return "az" + x
+    elif x[0] == "ʕ":
+        return "al'" + x
+    elif x[0] == "h":
+        return "all" + x
+    return "al" + x
