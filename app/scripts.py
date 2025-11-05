@@ -606,7 +606,9 @@ def redup(x):
             syl = syl.replace(un, vo)
         init = word[:2]
         for dia, mon in dia_b.items():
-            init = init.replace(mon, dia)
+            if dia != "ph":
+                word = word.replace(mon, dia)
+                init = init.replace(mon, dia)
         return word.replace(word[:2],init+syl,1)
     elif (word[0] in cons_b) and (word[1] in son_b):
         syl = word[:3]
