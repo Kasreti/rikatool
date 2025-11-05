@@ -10,6 +10,15 @@ son_b = 'yu'
 stv = 'áéíóúâôî'
 vowels = 'aeiouæïöäyʷʲ' + stv
 validph = vowels + cons_b + "." + stv
+dia_a = {
+    "ts": "T",
+    "th": "θ",
+    "dh": "ð",
+    "sy": "ɕ",
+    "zy": "ʑ",
+    "gh": "ɣ",
+    "rh": "ʕ",
+}
 dia_b = {
     "ts": "T",
     "th": "θ",
@@ -606,21 +615,21 @@ def redup(x):
         for un, vo in stc_pair.items():
             syl = syl.replace(un, vo)
         init = word[:2]
-        for dia, mon in dia_b.items():
-            if dia != "ph":
-                word = word.replace(mon, dia)
-                init = init.replace(mon, dia)
-        return word.replace(word[:2],init+syl,1)
+        for dia, mon in dia_a.items():
+            word = word.replace(mon, dia)
+            init = init.replace(mon, dia)
+        return word.replace(x.word[:2],init+syl,1)
     elif (word[0] in cons_b) and (word[1] in son_b):
         syl = word[:3]
         for un, vo in stc_pair.items():
             syl = syl.replace(un, vo)
         init = word[:3]
         for dia, mon in dia_b.items():
+            word = word.replace(mon, dia)
             init = init.replace(mon, dia)
-        return word.replace(word[:3], init + syl, 1)
+        return word.replace(x.word[:3], init + syl, 1)
     else:
-        return word[0] + "n" + word
+        return x.word[0] + "n" + x.word
 
 def removeInf(x):
     if x.startswith("s'"):
