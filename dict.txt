@@ -247,6 +247,7 @@ azuérei v. // to suspect one’s innocence.
 ändi n. i. // younger sister.
 ära n. iii. // example.
 äravan n. ii. // eternity, forever.
+ärin n. iii. // price.
 äru n. iii. // verdant green.
 
 Ææ 
@@ -284,7 +285,8 @@ cin n. i. // daughter.
 cira n. i. // chance, opportunity.
 cïrin n. iii. // butterfly.
 civiri n. iii. // can, tin.
-cïxyazirré n. iii. // hospital, lit. building where .
+cïxyazirré n. iii. // hospital, lit. building where life is saved.
+cora v. // to feed.
 corro n. iii. // disturbance; rowdiness, annoyance.
 corrosy v. // to argue with, other person takes accusative.
 corryï v. // to disturb; to cause a ruckus.
@@ -458,6 +460,7 @@ harai v. // to be too much of, to exceed; to overflow.
 harhada pron. // third person plural pronoun, considered derogatory or informal.
 hari n. i. // my brother, affectionate term to refer to a friend.
 hasdau n. iii. // tastiness, quality of being tasty.
+hasera n. i. // voice.
 hasi stv. // to feel good, enjoyable.
 hasya n. iii. // dust.
 hasyan n. iii. // leaf, leaves.
@@ -637,6 +640,7 @@ kanusaethari v. // to be possible (formal), formal verb complement to preceding 
 kanyé v. // to feel, to think, to believe, as in to hold an opinion. for conceiving an opinion, see kardi.
 kardi v. // to think, as in to conceive a thought, idea or opinion. for holding an opinion, see kanyé.
 kardité v. // to imagine.
+kardiqedi v. // to remember.
 kar’a v. // to read, considered the proper form, see qarra.
 kar’atauva n. iii. // sign, signboard.
 karté v. // to chop off, cut off.
@@ -915,7 +919,7 @@ qarré v. // to turn over, take down, flip over; to overthrow.
 qasy v. // to draw an illustration, root: qasye.
 qasye n. iii. // drawing, illustration, sketch.
 qaya n. iii. // outside.
-qédi v. // (intransitive) to leave, exit, come out; (transitive) to put out, create something and give it to someone else, offer.
+qédi v. // (intransitive) to leave, exit, come out; (transitive) to put out; (transitive) create something and give it to someone else, offer; (in/transitive) to remember.
 	-qédi aux. // outside of.
 qédidarï n. iii. // new moon.
 qédirikáraet n. iii. // departures (transit context).
@@ -969,6 +973,7 @@ rikánaul n. iii. // politics, matters to do with the governance of a nation.
 rikattovan n. iii. // province, state, often shortened to tovan. (lit: country + section)
 risae n. i. // buttocks.
 risyé stv. // to be full, filling to the maximum capacity, excluding the replenishment of hunger.
+risyé v. // to fulfill, satisfy a condition.
 risyï v. // to lack, to have an insufficient quality of something.
 riya pron. // honorific first person pronoun, listener bears same status as speaker, and has a close relationship, I, me.
 rizyeda v. // to be optimistic, to look forward to, to anticipate with hope, from risyï + jeda.
@@ -1050,6 +1055,7 @@ seya n. iii. // weakness.
 seyé stv. // to be weak, root: seya.
 si n. ii. // life.
 si n. iii. // thread, string.
+sicora v. // to sustain.
 sifïra n. iii. // post, piling at a dock.
 sighaga n. iii. // murder.
 sigahgé v. // to kill, murder, from si + ghagé (to cut a life).
