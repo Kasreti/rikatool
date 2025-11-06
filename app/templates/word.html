@@ -59,7 +59,11 @@
             <td>{{ word.word }}{{ word.inf[3] }}</td>
         </tr>
         <tr>
+            {% if word.anim == "class i. human" %}
+            <td><b>comitative</b></td>
+            {% else %}
             <td><b>instrumental</b></td>
+            {% endif %}
             <td>{{ word.inf[4] }}{{ word.word }}</td>
         </tr>
         </tbody>
