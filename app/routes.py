@@ -14,6 +14,9 @@ def page_not_found(e):
     flash("thats not a real page bro :skull:")
     return redirect(url_for('show_definition', word="aici"))
 
+@app.route('/favicon.ico')
+def favicon():
+    return url_for('static', filename='favicon.ico')
 
 @app.errorhandler(500)
 def internal_server_error(e):
@@ -137,6 +140,10 @@ def show_definition(word):
                     anim = "é-type"
                     root = x.word[:len(x.word) - 1]
                     neg = root + "u"
+                case "á":
+                    anim = "é-type (passive)"
+                    root = x.word[:len(x.word) - 1]
+                    neg = root + "u"
                 case "y":
                     anim = "i-type"
                     root = x.word
@@ -153,20 +160,24 @@ def show_definition(word):
         else:
             alt = ""
         if ", from" in defin[len(defin)-1]:
-            etym = "Derived from " + defin[len(defin)-1].split(", from")[len(defin)]
-            defin = defin[:len(defin)-1] + defin[len(defin)-1].split(", from")[0]
+            etym = "Derived from " + defin[len(defin)-1].split(", from")[len(defin[len(defin)-1].split(", from"))-1]
+            defin[len(defin)-1] = defin[len(defin)-1].split(", from")[0]
         elif ", lit." in defin[len(defin)-1]:
-            etym = "Derived from " + defin[len(defin) - 1].split(", lit.")[len(defin)]
-            defin = defin[len(defin) - 1].split(", lit.")[:len(defin)]
+            etym = "Derived from " + defin[len(defin) - 1].split(", lit.")[len(defin[len(defin)-1].split(", lit."))-1]
+            defin[len(defin)-1] = defin[len(defin)-1].split(", lit.")[0]
         elif ", borrowed from" in defin[len(defin)-1]:
-            etym = "Borrowed from " + defin[len(defin)-1].split(", borrowed from")[len(defin)]
-            defin = defin[len(defin)-1].split(", borrowed from")[:len(defin)]
+            etym = "Borrowed from " + defin[len(defin)-1].split(", borrowed from")[len(defin[len(defin)-1].split(", borrowed from"))-1]
+            defin[len(defin)-1] = defin[len(defin)-1].split(", borrowed from")[0]
         elif ", root noun" in defin[len(defin)-1]:
             etym = "Derivation of root noun " + defin[len(defin)-1].split(", root noun")[len(defin[len(defin)-1].split(", root noun"))-1]
-            defin = defin[:len(defin)]
+            defin[len(defin)-1] = defin[len(defin)-1].split(", root noun")[0]
         else:
             etym = ""
         retword.append(cs.definition(x.word.strip().casefold(),cs.genIPA(word),cs.genIPA_collo(cs.genIPA(word)),cs.genIPA_eng(cs.genIPA(word)),defin,anim,cs.posword(x.pos),etym,root,cs.getInf(x), alt, neg, cs.redup(x), cs.reflex(x.word)))
-    form.word.data = session['prev']
+    if session.get('prev'):
+        if session['prev']:
+            form.word.data = session['prev']
+    else:
+        form.word.data = ""
     related = Dictionary.query.filter(Dictionary.word.icontains(word.strip().casefold()),Dictionary.word != word.strip().casefold()).order_by(collate(Dictionary.word, 'NOCASE')).all()
     return render_template('word.html', retword=retword, related=related, form=form)

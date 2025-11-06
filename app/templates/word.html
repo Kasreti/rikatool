@@ -24,10 +24,10 @@
         {% if word.root %}
         <p><b>{{ word.word }} </b><i>{{ word.anim }}</i> {{ word.alt }} (<i>stem</i> {{ word.root }}, <i>negative stem</i> {{ word.neg }}, <i>reduplicative</i> {{word.redup}})</p>
         {% endif %}
-        {% if word.root == "" and (word.pos != "Affix" and word.pos != "Unimplemented" and word.pos != "Conjunction") %}
+        {% if word.root == "" and (word.pos != "Affix" and word.pos != "Phrase" and word.pos != "Conjunction") %}
         <p><b>{{ word.word }} </b><i>{{ word.anim }}</i> {{ word.alt }} (<i>reduplicative</i> {{word.redup}})</p>
         {% endif %}
-        {% if word.root == "" and (word.pos == "Affix" or word.pos == "Unimplemented" or word.pos == "Conjunction") %}
+        {% if word.root == "" and (word.pos == "Affix" or word.pos == "Phrase" or word.pos == "Conjunction") %}
         <p><b>{{ word.word }} </b><i>{{ word.anim }}</i> {{ word.alt }}</p>
         {% endif %}
         <ol>

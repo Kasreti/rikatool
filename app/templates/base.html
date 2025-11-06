@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href='/static/style.css' />
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico">
     <title>Base template</title>
 </head>
 <body>
- <div class="navbar" style="display: flex; margin-left:8%">
+ <div class="navbar" style="display: flex; margin-left:5%">
         <form action="" method="post" novalidate style="text-align:center, margin-left:10%, margin-right:10%">
             {{ form.hidden_tag() }}
-             <h3>{{ form.word(size=16) }} {{ form.submit }} {{ form.defsubmit }} {{ form.random }} {{ form.refresh }}</h3>
+             <h4>{{ form.word(size=16) }} {{ form.submit }} {{ form.defsubmit }} {{ form.random }}
+                 {{ form.refresh }} </h4>
         </form>
 </div>
 <hr>
