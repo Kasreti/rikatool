@@ -16,7 +16,7 @@ pip install flask flask_migrate flask_sqlalchemy flask_wtf
 ```
 
 # Running the application
-there will be an online-hosted version of this programme on render (sometimes up)
+there will be an online-hosted version of this programme at https://rikatool.onrender.com/ (sometimes up. sometimes)
 otherwise, cd to the file directory and run
 ```
 .venv\Scripts\Activate
