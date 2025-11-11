@@ -245,7 +245,6 @@ fan n. iii. // store, shop.
 fai n. iii. // possession, noun form of fi.
 fayá n. iii. // box.
 fé v. // to heal (transitive).
-yafé n. i // doctor.
 fédoni n. iii. // to visit.
 fenlái n. iii. // black colour.
 feson n. iii. // iron.
@@ -594,9 +593,9 @@ kosa n. iii. // behaviour.
 kosé v. // to behave.
 kosóri v. // to reside somewhere not your own, to borrow someone's residence; to be out of place.
 kosy v. // to build, make, construct; to cook.
-kosya n. i. // (alt. (y)akosy, ako, isko(sy)) builder, developer, constructor. honorific nominal form of kosy, from variants of ya-variants..
+kosya n. i. // (alt. [y]akosy, ako, isko[sy]) builder, developer, constructor; honorific nominal form of kosy, from variants of ya-variants.
 kota n. iii. // song.
-koté v. // to sing, root: kota.
+koté v. // to sing, root noun: kota.
 koto n. i. // male.
 koudo n. iii. // corner.
 kövi n. iii. // to push; to press.
@@ -703,7 +702,7 @@ nei conj. // like, similar to.
 neki n. ii. // planet Earth.
 nekiyïka n. ii. // geography.
 nekyorasi n. iii. // equator.
-nema n. ii // world.
+nema n. ii. // world.
 nemat n. iii. // trash, rubbish
 nemé v. // to throw away, dispose, get rid of, remove.
 nemém v. // to deprive of, to remove access from.
@@ -885,8 +884,8 @@ sena n. iii. // name, archaically pronounced as senya.
 sendi num. // nine.
 sendi n. iii. // southeast.
 seni v. // to name, to call.
-senyé n. iii. // to be late.
- senyem n. iii. // causative, to delay, formally senye.
+senyé stv. // to be late.
+ senyem v. // causative, to delay, formally senye.
 seri n. iii. // hill, small mountain.
 sesai n. iii. // magic.
 seta n. iii. // orchid.
@@ -997,7 +996,7 @@ syïr n. iii. // water, also seen as syï or syïl.
 syïrekas n. iii. // speaker, machine used to play sound.
 syïreva n. iii. // media, lit. root of communication.
 syiri v. // to enjoy, like.
-syïri n. ii // purity, cleanliness of a person.
+syïri n. ii. // purity, cleanliness of a person.
 syirmasi n. iii. // preferences, options, settings.
 syiye n. iii. // steam.
 syïzy v. // to turn, rotate.

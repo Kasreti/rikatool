@@ -34,6 +34,8 @@ def wresults(term):
         if form.refresh.data:
             cs.refreshDict()
             flash("dictionary refreshed!!")
+        elif form.fuzsubmit.data:
+            return redirect(url_for('wresults', term=form.word.data.strip().casefold()))
         elif form.random.data:
             gen = Dictionary.query.order_by(func.random()).first()
             return redirect(url_for('show_definition', word=gen.word))
@@ -63,6 +65,8 @@ def dresults(term):
         if form.refresh.data:
             cs.refreshDict()
             flash("dictionary refreshed!!")
+        elif form.fuzsubmit.data:
+            return redirect(url_for('wresults', term=form.word.data.strip().casefold()))
         elif form.random.data:
             gen = Dictionary.query.order_by(func.random()).first()
             return redirect(url_for('show_definition', word=gen.word))
@@ -94,6 +98,14 @@ def show_definition(word):
         if form.refresh.data:
             cs.refreshDict()
             flash("dictionary refreshed!!")
+            return redirect(url_for('show_definition', word=word))
+        elif form.markentry.data:
+            print("hiii")
+            cs.markEntry(word)
+            flash("entry marked!!")
+            return redirect(url_for('show_definition', word=word))
+        elif form.fuzsubmit.data:
+            return redirect(url_for('wresults', term=form.word.data.strip().casefold()))
         elif form.random.data:
             gen = Dictionary.query.order_by(func.random()).first()
             return redirect(url_for('show_definition', word=gen.word))
@@ -145,7 +157,11 @@ def show_definition(word):
                     root = x.word[:len(x.word) - 1]
                     neg = root + "u"
                 case "y":
-                    anim = "i-type"
+                    anim = "i-type (cons.)"
+                    root = x.word
+                    neg = root + "u"
+                case _:
+                    anim = "i-type (cons.)"
                     root = x.word
                     neg = root + "u"
         match neg[len(neg)-2:]:

@@ -15,6 +15,8 @@ def lengthcheck(min=1, max=255):
 class searchWord(FlaskForm):
     word = StringField('Search by word or definition:')
     submit = SubmitField('Search by Rikatisyï')
+    fuzsubmit = SubmitField('Rikatisyï (Fuzzy)')
     defsubmit = SubmitField('Search by definition')
     random = SubmitField('Random word')
     refresh = SubmitField('Refresh Dictionary')
+    markentry = SubmitField('Mark entry as erroneous')

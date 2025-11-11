@@ -73,7 +73,18 @@ ipa_f = {
     "ʔʲ": "j",
     "ʔʷ": "w",
     "ʰ.": ".",
-    "’": "ˤ"
+    "’": "ˤ",
+    "ua": "ʷa",
+    "ui": "ɨi",
+    "uɛ": "ʷɛ",
+    "uɔ": "ʷɔ",
+    "uy": "ɨi",
+    "uɵ": "ʷɵ",
+    "uɑ": "ʷɑ"
+}
+ipa_f2 = {
+    "kʰ": "k̚",
+    "tʰ": "t̚"
 }
 ipa_c = {
     "n.k": "ŋ.k",
@@ -106,7 +117,8 @@ ipa_c = {
     "fu": "f̩",
     "hi": "çi̥",
     "hʲi": "çi̥",
-    "hʲɛ": "çe"
+    "hʲɛ": "çe",
+    "p": "β"
 }
 ipa_c2 = {
     "ar": "ɑː",
@@ -117,7 +129,7 @@ ipa_c2 = {
     "ur": "yː",
     "ɛr": "ɵː",
     "ɵr": "ɵː",
-    "ɔr": "ɵː"
+    "ɔr": "ɵː",
 }
 ipa_e = {
     "y": "u",
@@ -151,6 +163,11 @@ ipa_e = {
     "ɐ": "a",
     "x": "h",
     "p": "b",
+    "̚": ""
+}
+ipa_e2 = {
+    "d": "t",
+    "g": "k"
 }
 stc_pair = {
     "s": "S",
@@ -225,6 +242,9 @@ def ipa(x):
     x = stress(x)
     for pref, fin in ipa_f.items():
         x = x.replace(pref, fin)
+    for st, co in ipa_f2.items():
+        if x.endswith(st):
+            x = co.join(x.rsplit(st,1))
     return x
 
 def sylla(x):
@@ -235,6 +255,8 @@ def sylla(x):
             x = x[:1] + "ʲ" + x[2:]
         elif x[1] == "u" and (x[2] in vowels):
             x = x[:1] + "ʷ" + x[2:]
+        elif x[1] == "'" and (x[2] in vowels):
+            x = x[:1] + "ˤ" + x[2:]
     i = 1
     x = x + " "
     xlen = len(x)
@@ -249,8 +271,6 @@ def sylla(x):
              elif (x[i+1] in cons_b) and (x[i+2] in son_b):
                  if x[i+2] == "y":
                      x = x[:i+2] + "ʲ" + x[i+3:]
-                 elif x[i+2] == "u":
-                     x = x[:i+2] + "ʷ" + x[i+3:]
                  elif x[i+2] == "'":
                      x = x[:i+2] + "ˤ" + x[i+3:]
                  x = x[:i+1] + "." + x[i+1:]
@@ -339,12 +359,15 @@ def genIPA_collo(name):
         name = name.replace(st, co)
     for st, co in ipa_c2.items():
         if name.endswith(st):
-            name = name.replace(st,co)
+            name = co.join(name.rsplit(st,1))
     return name
 
 def genIPA_eng(name):
     for st, co in ipa_e.items():
         name = name.replace(st, co)
+    for st, co in ipa_e2.items():
+        if name.endswith(st):
+            name = co.join(name.rsplit(st,1))
     return name
 
 def refreshDict():
@@ -655,11 +678,7 @@ def getInf(x):
                 unproot = unproot.replace("j","dy")
                 list = ["", "u", "o", "ou", "á", "uá", "e", "ue", "em", "em", "ï"]
                 for i in range(len(list)):
-                    if i == 2 or i == 3:
-                        list[i] = unproot[:len(unproot) - 1] + list[i]
-                        for j, k in dia_c.items():
-                            list[i] = list[i].replace(j, k)
-                    elif i == 4 or i == 5:
+                    if i == 4 or i == 5:
                         list[i] = unsroot[:len(unsroot)] + list[i]
                         for j, k in dia_c.items():
                             list[i] = list[i].replace(j, k)
@@ -809,3 +828,11 @@ def reflex(x):
     elif x[0] == "h":
         return "all" + x
     return "al" + x
+
+def markEntry(word):
+    print("marked " + word + " as erroneous")
+    with open('badentries.txt', 'r', encoding='utf-8') as f:
+        curr = f.read()
+    with open("badentries.txt", "w", encoding='utf-8') as f:
+        new = curr + "\n" + word
+        f.write(new)
