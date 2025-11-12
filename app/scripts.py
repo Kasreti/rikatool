@@ -5,12 +5,13 @@ from sqlalchemy import func, desc
 import sqlalchemy as sa
 import sqlalchemy.orm as so
 
-cons_b = "mnbtdkgqTzcjsɕʑfvθðxɣhywʕlrʔɹʷʲ’"
+cons_b = "mnbtdkgqTzcjsɕʑfvθðxɣhywʕlrʔɹʷʲ’p"
 son_b = 'yu’ˤ'
 stv = 'áéíóúâôî'
 vowels = 'aeiouæïöäyʷʲ' + stv
 purevowel = 'aeiouæïöä' + stv
 validph = vowels + cons_b + "." + stv
+validsearch = "abcdefghijjklmnopqrstuvwxyz’æïöä-." + stv
 dia_a = {
     "ts": "T",
     "th": "θ",
@@ -224,7 +225,7 @@ infilist = ["i", "wi", "u", "winu", "yá", "wayá", "e", "wiye", "im", "wim", "y
 infylist = ["ï", "iyï", "ir", "irhï", "á", "iyá", "e", "iye", "ïm", "iyïm", "yiyï","yï", "yiyï", "ï", "iyï", "yá", "iyá", "ye", "iye", "yïm", "iyïm", "yiyï"]
 infyelist = ["yé", "yué", "eyó", "ueyó", "yaná", "yuená", "ya", "yua", "yém", "yuém", "yun"]
 infelist = ["é", "ué", "ó", "uó", "ayá", "uwayá", "a", "ua", "e", "ue", "e"]
-sinflist = ["is", "isi", "ya", "yana", "i", "e", "u-", "w-", "w-e" "w-erh", "erh", "en", "w-en"]
+sinflist = ["is", "isi", "ya", "yana", "i", "e", "u-", "w-", "w-e" "w-erh", "erh", "en", "w-en", "alke", "alkerh","erhalke", "erhalkherh"]
 
 class definition:
     def __init__(self, word, ipa, ipa_c, ipa_e, defin, anim, pos, etym, root, inf, aspinf, alt, neg, redup, ref):
@@ -250,7 +251,9 @@ class definition:
 def ipa(x):
     x = x.lower()
     x = x.replace("w-","w")
-    if "-" in x:
+    if x.endswith('-'):
+        x = x[:len(x)-1]
+    elif "-" in x:
         y = x.split('-')
         return ipa(y[0])+"."+ipa(y[1]).replace("ˈ","ˌ")
     for dia, mon in dia_b.items():
@@ -457,6 +460,8 @@ def posword(x):
             return "Particle"
         case "pron.":
             return "Pronoun"
+        case "adv.":
+            return "Adverb"
         case _:
             return "Unimplemented"
 
@@ -473,11 +478,25 @@ def getInf(x):
         match x.anim:
             case "i.":
                 if x.word[0] in vowels:
-                    return ["in","ket","kiec","lï","s'"]
+                    if x.word[len(x.word) - 1] in vowels:
+                        return ["nin","ket","kiec","lï","s'"]
+                    else:
+                        return ["in", "ket", "kiec", "lï", "s'"]
                 else:
-                    return ["in", "ket", "kiec", "lï", "sa "]
+                    if x.word[len(x.word) - 1] in vowels:
+                        return ["nin", "ket", "kiec", "lï", "sa "]
+                    else:
+                        return ["in", "ket", "kiec", "lï", "sa "]
             case "ii.":
-                return ["un", "ki", "kei", "tua", "sa "]
+                if x.word[len(x.word) - 1] == "i":
+                    return ["yun", "ki", "kei", "tua", "sa "]
+                elif x.word[len(x.word) - 1] == "u":
+                    return ["hun", "ki", "kei", "tua", "sa "]
+                elif x.word[len(x.word) - 1] in vowels:
+                    return ["nun", "ki", "kei", "tua", "sa "]
+                else:
+                    return ["un", "ki", "kei", "tua", "sa "]
+
             case _:
                 if x.word[0] in vowels:
                     if x.word[len(x.word) - 1] == "i":
@@ -806,7 +825,7 @@ def redup(x):
     word = x.word
     for dia, mon in dia_b.items():
         word = word.replace(dia, mon)
-    if(word[0] in cons_b) and (word[1] != "y"):
+    if(word[0] in cons_b) and (word[1] not in "y’"):
         syl = word[:2]
         for un, vo in stc_pair.items():
             syl = syl.replace(un, vo)
@@ -827,7 +846,12 @@ def redup(x):
         for dia, mon in dia_b.items():
             word = word.replace(mon, dia)
             init = init.replace(mon, dia)
-        return word.replace(x.word[:3], init + syl, 1)
+        if word[1] == "’":
+            print(init)
+            print(syl)
+            return word.replace(x.word[:3], init + syl[0] + syl[2] , 1)
+        else:
+            return word.replace(x.word[:3], init + syl, 1)
     else:
         return x.word[0] + "n" + x.word
 
