@@ -207,6 +207,9 @@ def show_definition(word):
         elif ", lit." in defin[len(defin)-1]:
             etym = "Derived from " + defin[len(defin) - 1].split(", lit.")[len(defin[len(defin)-1].split(", lit."))-1]
             defin[len(defin)-1] = defin[len(defin)-1].split(", lit.")[0] + "."
+        elif ", derived from" in defin[len(defin)-1]:
+            etym = "Derived from " + defin[len(defin) - 1].split(", derived from")[len(defin[len(defin)-1].split(", derived from"))-1]
+            defin[len(defin)-1] = defin[len(defin)-1].split(", derived from")[0] + "."
         elif ", borrowed from" in defin[len(defin)-1]:
             etym = "Borrowed from " + defin[len(defin)-1].split(", borrowed from")[len(defin[len(defin)-1].split(", borrowed from"))-1]
             defin[len(defin)-1] = defin[len(defin)-1].split(", borrowed from")[0] + "."

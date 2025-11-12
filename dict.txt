@@ -190,6 +190,7 @@ anas n. ii. // moral conduct, moral elements.
 áncartekatan n. iii. // medical certificate, health certificate, from án + caró + te + kata (paper that shows health condition). 
 anda n. iii. // coast.
 ané v. // to require, to be obligated to do something, must.
+ansa n. ii. // swear, promise, pledge.
 ansi v. // to swear, to promise, to pledge.
 aqan n. iii. // suffering, immense pain, torment.
 aqani v. // to be in pain, to suffer.
@@ -206,6 +207,7 @@ aräzayïka n. iii. // chemistry.
 aren n. iii. // motive, reason, purpose.
 ari v. // to exist, “there is, there are” etc. 
 ari- // describes an undetermined instance, poetic substitute for indefinite article.
+arirén adv. // sometimes, at times.
 arré v. // to mend, fix, repair, amend.
 arrevazi v. // to be independent.
 aru n. iii. // continuation.
@@ -215,6 +217,8 @@ aryen n. iii. // something, undetermined object.
 askin n. iii. // fat, blubber.
 assan n. iii. // salt.
 asyani stv. // to be first, formal synonym of ukamé for i-class nouns.
+atan n. iii. // hatred, hate.
+atani v. // to hate, root noun atan.
 atari v. // to adorn on one’s head, to wear upon one’s head.
 atassyat n. iii. // train.
 atua pron. // we, first person exclusive plural pronoun.
@@ -279,6 +283,7 @@ calmané v. // to imply, describe indirectly.
 camín n. iii. // book.
 cari n. iii. // noodles.
 caró n. i. // physical body; physical health.
+carórevazi v. // to rely on fully, lit. for the body to be dependent.
 carótoji v. // to perform maintenance.
 carótoji n. iii. // maintenance.
 cï n. iii. // building, enclosed structure.
@@ -331,6 +336,7 @@ deni n. iii. // public, pertaining to or owned by a community or a greater group
 detaza n. iii. // order, measures, course of action put into place.
 dera n. iii. // block, cube, piece of a larger object in the form of a chunk.
 deva v. // to be incorrect, wrong; to be misinformation, fake, typically unknowingly.
+devalesa n. iii. // mistake.
 devasy v. // to lie, tell a lie (spread fabrications), alternatively devasyï, lit. to speak misinformation.
 devi v. // to search for, to find.
 deviqedi v. // to report findings.
@@ -381,6 +387,7 @@ endi stv. // to be chaotic, in chaos, mess, in turmoil.
 ennagarï stv. // to be efficient, effective, complete to high standards.
 ensu n. iii. // noun.
 esi num. // eleven (archaic), relic of duodecimal system.
+et n. iii. // lightness, ease, original form of ecigit.
 eta part. // very, extremely. intensifies the following verb.
 etosa n. iii. // shell.
 ezara n. i. // blessing.
@@ -458,6 +465,8 @@ haigi v. // to pause, stop temporarily.
 haimi v. // to suppress yourself to remain quiet.
 hairén n. iii. // the past, lit. completed time.
 hairenïké n. iii. // the study of history, the study of the past.
+halas n. i. // back (anatomy).
+halaskari v. // to catch up to, lit. to touch the back.
 hani v. // to create.
 hanni n. iii. // room.
 hanuari adv. // most of the time, usually.
@@ -567,7 +576,7 @@ irakivé v. // to meet again, from irak + ivé.
 iraki v. // bye, informal contraction of irakivé ya.
 kivya v. // bye, informal contraction of irakivé ya.
 irákkavi v. // argue, quarrel.
-irakké v. // to disperse,  to scatter; to separate into two; to travel clockwise (archaic), metaphorical representation of si around Amikyanire, from irakyehi (to become two).
+irakké v. // to disperse,  to scatter; to separate into two; to unlayer, unravel, reveal; to travel clockwise (archaic), metaphorical representation of si around Amikyanire, from irakyehi (to become two).
 iraqédi v. // to refresh.
 irarré v. // to return, to come again, from irak + rahi (to come twice).
 irarrésu n. iii. // reply, response.
@@ -653,6 +662,7 @@ kanyé v. // to feel, to think, to believe, as in to hold an opinion. for concei
 kardi v. // to think, as in to conceive a thought, idea or opinion. for holding an opinion, see kanyé.
 kardité v. // to imagine.
 kardiqedi v. // to remember.
+kari v. // to touch.
 kar’a v. // to read, considered the proper form, see qarra.
 kar’atauva n. iii. // sign, signboard.
 karté v. // to chop off, cut off; to end prematurely.
@@ -706,7 +716,7 @@ kimi v. // to play.
 kimsa n. iii. // yesterday.
 kinis n. iii. // emptiness.
 kindi v. // to wither, to disintegrate.
-kiné v. // to pull.
+kiné v. // to pull; to lead someone.
 kïra n. iii. // level, rank.
 kirei n. iii. // musical beat.
 kiren n. iii. // moment, short period of time, instant.
@@ -736,6 +746,7 @@ kité v. // to agree.
 kité v. // to aim for, root noun kita.
 kito n. iii. // back, behind direction.
 kitoi v. // to disturb lightly.
+kitokeji v. // to chase after, lit. to run behind.
 kiveren n. iii. // modern times, modern era.
 kivi v. // to pull out, pick out specifically.
 kiya n. iii. // blue.
@@ -772,6 +783,7 @@ kurusy n. iii. // cereal.
 kutsï n. iii. // spruce tree.
 kuyé v. // (alt. kui) (intransitive) to layer, to pile up, to accumulate, to build up, to stack; (transitive) to add; to travel anti-clockwise (archaic), metaphorical representation of si around Amikyanire, from koihehi (to rest upon again repeatedly).
 kya n. iii. // front.
+kyarhivé stv. // to be of priority, lit. to meet at the front.
 kyani v. // to pay.
 kye n. i. // generic title used after one’s surname, Mr., Ms., Mrs..
 kyedo n. iii. // burden, tiresome matter.
@@ -822,6 +834,7 @@ mé v. // to fight.
 meté v. // to do to one’s upper limit, to the point of death.
 mec v. // to lose possession.
 men n. iii. // half.
+mentsiri v. // to stumble, lit. half-falling.
 mi num. // five.
 mic v. // to reside, live in.
 mikanda num. // ten thousand, myriad; forever, eternity (dated); thousands of generations.
@@ -857,6 +870,7 @@ natu n. iii. // question.
 naihe conj. // instead.
 narhé stv. // to be long.
 	narhe v. // causative, to lengthen.
+narhésanaro n. iii. // depression, lit. long sadness.
 nari v. // to charge, to rush forward.
 naunnegi n. iii. // authority, alternatively naulinegi.
 -nda part. // but, however, suffixed onto the final word of a clause, contraction of inda.
@@ -1054,12 +1068,14 @@ sazon n. iii. // week.
 se conj. // or (inclusive).
 se pron. // you, honorific second person singular pronoun, listener bears same status as speaker, and has a close relationship.
 	seyá irarrai intj. // formal response to ezara ka seyá aléi lï, lit. please return the blessings to yourself.
+sé n. ii. // trust.
 seci n. iii. // dark oak.
 seda v. // to compare.
 sedäruasu n. iii. // conjunction.
 seimané v. // to hint at, derived from seyémané.
 seké conj. // or above (inclusive).
 sekï v. // to use, utilize.
+sélï v. // to trust, entrust, confide in, lit. to give trust.
 sena n. iii. // name, archaically pronounced as senya.
 sendi num. // nine.
 sendi n. iii. // southeast.
@@ -1198,6 +1214,7 @@ tacerikáraet n. iii. // arrivals (transit context).
 tada v. // to govern.
 tadason n. iii. // government.
 taeri n. iii. // wall.
+taerija alirakké phr. // to express oneself, lay oneself bare lit. to unravel oneself on a wall.
 taerikata n. iii. // poster.
 tai n. iii. // circle.
 taidi v. // to roll.
@@ -1428,6 +1445,8 @@ RHrh
 rhain n. i. // nose.
 rhaini v. // to smell, sniff.
 rhainkartaughó n. i. // derogatory, person clueless to their surroundings and scapegoats issues on the first person they see, from ainen karta u-ghó (dog with their nose chopped off).
+rhala n. i. // throat.
+rhalakövi v. // to swallow forcefully, force down one’s throat.
 rhaxa n. i. // close friend, borrowed from Hwelhosian, kaxqa (female friend).
 rhiji v. // to pull apart.
 rhijákasan n. iii. // divorced family with split up children.
