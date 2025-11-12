@@ -224,7 +224,7 @@ inf2list = ["ri", "fïn", "uaz", "yari", "yaki", "ru", "gan", "äri", "äki", "w
 infilist = ["i", "wi", "u", "winu", "yá", "wayá", "e", "wiye", "im", "wim", "yu", "i", "ui", "yo", "ou", "yá", "uyá", "e", "ue", "im", "uim", "yu"]
 infylist = ["ï", "iyï", "ir", "irhï", "á", "iyá", "e", "iye", "ïm", "iyïm", "yiyï","yï", "yiyï", "ï", "iyï", "yá", "iyá", "ye", "iye", "yïm", "iyïm", "yiyï"]
 infyelist = ["yé", "yué", "eyó", "ueyó", "yaná", "yuená", "ya", "yua", "yém", "yuém", "yun"]
-infelist = ["é", "ué", "ó", "uó", "ayá", "uwayá", "a", "ua", "e", "ue", "e"]
+infelist = ["é", "ué", "ó", "oú", "ayá", "uwayá", "a", "ua", "e", "ue", "e"]
 sinflist = ["is", "isi", "ya", "yana", "i", "e", "u-", "w-", "w-e" "w-erh", "erh", "en", "w-en", "alke", "alkerh","erhalke", "erhalkherh"]
 
 class definition:
@@ -253,6 +253,8 @@ def ipa(x):
     x = x.replace("w-","w")
     if x.endswith('-'):
         x = x[:len(x)-1]
+    elif x.startswith('-'):
+        x = x[0:]
     elif "-" in x:
         y = x.split('-')
         return ipa(y[0])+"."+ipa(y[1]).replace("ˈ","ˌ")
@@ -689,7 +691,7 @@ def getInf(x):
                     list.append("äki")
                     list.append(x.word + "u")
                 else:
-                    list = ["a", "ua", "ó", "uó", "ayá", "uwayá", "a", "ua", "am", "uam", "aun"]
+                    list = ["a", "ua", "ó", "oú", "ayá", "uwayá", "a", "ua", "am", "uam", "aun"]
                     for i in range(len(list)):
                         if i == 4 or i == 5:
                             list[i] = unsroot[:len(unsroot) - 1] + list[i]
@@ -742,7 +744,7 @@ def getInf(x):
                     list.append("äki")
                     list.append(x.word[:len(x.word) - 1] + "un")
                 else:
-                    list = ["a", "ua", "ó", "uó", "ayá", "uwayá", "a", "ua", "am", "uam", "aun"]
+                    list = ["a", "ua", "ó", "oú", "ayá", "uwayá", "a", "ua", "am", "uam", "aun"]
                     for i in range(len(list)):
                         if i == 4 or i == 5:
                             list[i] = unsroot[:len(unsroot) - 1] + list[i]
@@ -1004,7 +1006,7 @@ def markEntry(word):
         f.write(new)
 
 def getAspInf(x):
-    if x.pos == "v.":
+    if x.pos == "v." or "stv.":
         if x.word[len(x.word)-1] in purevowel:
             list = ["syet","sye","sran","srö","da","ran","rö","de", "den","dö"]
             for i in range(len(list)):
