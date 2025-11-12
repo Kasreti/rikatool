@@ -5,10 +5,11 @@ from sqlalchemy import func, desc
 import sqlalchemy as sa
 import sqlalchemy.orm as so
 
-cons_b = 'mnbtdkgqTzcjsɕʑfvθðxɣhywʕlrʔɹʷʲ'
+cons_b = "mnbtdkgqTzcjsɕʑfvθðxɣhywʕlrʔɹʷʲ’"
 son_b = 'yu’ˤ'
 stv = 'áéíóúâôî'
 vowels = 'aeiouæïöäyʷʲ' + stv
+purevowel = 'aeiouæïöä' + stv
 validph = vowels + cons_b + "." + stv
 dia_a = {
     "ts": "T",
@@ -80,11 +81,12 @@ ipa_f = {
     "uɔ": "ʷɔ",
     "uy": "ɨi",
     "uɵ": "ʷɵ",
-    "uɑ": "ʷɑ"
+    "uɑ": "ʷɑ",
 }
 ipa_f2 = {
     "kʰ": "k̚",
-    "tʰ": "t̚"
+    "tʰ": "t̚",
+    "l": "ɹ"
 }
 ipa_c = {
     "n.k": "ŋ.k",
@@ -130,6 +132,7 @@ ipa_c2 = {
     "ɛr": "ɵː",
     "ɵr": "ɵː",
     "ɔr": "ɵː",
+    "l.": "ɹ."
 }
 ipa_e = {
     "y": "u",
@@ -160,7 +163,7 @@ ipa_e = {
     "ʔ": "",
     "g.": "k.",
     "d.": "t.",
-    "ɐ": "a",
+    "ɐ": "ʌ",
     "x": "h",
     "p": "b",
     "̚": ""
@@ -201,17 +204,29 @@ irev_pair = {
     "dei": ["dei", "dewi", "jo", "ju", "já", "juá", "det", "due", "dem", "dewim", "deu", "ri", "fïn", "uaz", "yari", "yaki"],
     "ari": ["ari", "arui", "aro", "arî", "arya", "arua", "are", "arei", "arin", "arun", "arin", "ri", "fïn", "uaz", "yari", "yaki"]
 }
+irepron_pair = {
+    "ali": ["ali", "alye", "alán", "arya", "welya", "xäli"],
+    "adaya": ["adaya", "adé", "adayan", "adiya", "udáya", "hedaya"],
+    "atua": ["atua", "atté", "atuan", "adija", "utsu", "hedua"],
+    "ke": ["ke", "kei", "ken", "kéya", "ukya", "hikyá"],
+    "kesa": ["kesa", "kese", "kesan", "kéya", "ukya", "hikyá"],
+    "to": ["to", "tue", "torhán", "torya", "tuyá", "hedo"],
+    "ina": ["ina", "inye", "inán", "inaya", "önaya", "ina-digari"],
+    "ni": ["ni", "né", "niyan", "niya", "onyá", "hänya"],
+
+}
 
 dtitles = ["Ää","Ææ","Bb","Cc","Dd","DHdh","Ee","Ff","Gg","GHgh","Hh","Ii","Ïï","Jj","Kk","Ll","Mm","Nn","Oo","Öö","Qq","Rr","Ss","SYsy","Tt","THth","TSts","Uu","Vv","Ww","Xx","Yy","Zz","ZYzy","RHrh"]
-inflist = ["syet", "sye", "sran", "sro", "da", "de", "ran", "ro", "den", "do", "sui", "kos", "syan", "sin", "git", "jai", "ja", "lï", "in","ket","kiec","lï", "un", "ki", "kei", "tua", "en", "yaz", "i", "n", "rande", "srande", "dende", "syetende", "syetenda", "nde", "nda"]
+inflist = ["syet", "sye", "sran", "sro", "da", "de", "ran", "ro", "den", "do", "sui", "kos", "syan", "sin", "git", "jai", "ja", "lï", "in","ket","kiec","lï", "un", "ki", "kei", "tua", "en", "yaz", "i", "n", "rande", "srande", "dende", "syetende", "syetenda", "nde", "nda", "ni"]
 inf2list = ["ri", "fïn", "uaz", "yari", "yaki", "ru", "gan", "äri", "äki", "waz", "waki", "wari", "unaz"]
 infilist = ["i", "wi", "u", "winu", "yá", "wayá", "e", "wiye", "im", "wim", "yu", "i", "ui", "yo", "ou", "yá", "uyá", "e", "ue", "im", "uim", "yu"]
 infylist = ["ï", "iyï", "ir", "irhï", "á", "iyá", "e", "iye", "ïm", "iyïm", "yiyï","yï", "yiyï", "ï", "iyï", "yá", "iyá", "ye", "iye", "yïm", "iyïm", "yiyï"]
 infyelist = ["yé", "yué", "eyó", "ueyó", "yaná", "yuená", "ya", "yua", "yém", "yuém", "yun"]
 infelist = ["é", "ué", "ó", "uó", "ayá", "uwayá", "a", "ua", "e", "ue", "e"]
+sinflist = ["is", "isi", "ya", "yana", "i", "e"]
 
 class definition:
-    def __init__(self, word, ipa, ipa_c, ipa_e, defin, anim, pos, etym, root, inf, alt, neg, redup, ref):
+    def __init__(self, word, ipa, ipa_c, ipa_e, defin, anim, pos, etym, root, inf, aspinf, alt, neg, redup, ref):
         self.word = word
         self.ipa = ipa
         self.ipa_c = ipa_c
@@ -222,6 +237,7 @@ class definition:
         self.etym = etym
         self.root = root
         self.inf = inf
+        self.aspinf = aspinf
         self.alt = alt
         self.neg = neg
         self.redup = redup
@@ -230,10 +246,12 @@ class definition:
     def __repr__(self):
         return '{} ({}) {} with definition {}'.format(self.pos, self.anim, self.word, self.defin)
 
-
 def ipa(x):
     x = x.lower()
-    x = x.replace("-","")
+    x = x.replace("w-","w")
+    if "-" in x:
+        y = x.split('-')
+        return ipa(y[0])+"."+ipa(y[1]).replace("ˈ","ˌ")
     for dia, mon in dia_b.items():
         x = x.replace(dia, mon)
     if (x[0] in vowels) is True:
@@ -280,6 +298,12 @@ def sylla(x):
                  x = x[:i+1] + "." + x[i+1:]
                  i+=1
                  # print("3: " + x)
+        elif (x[i] in cons_b) and (x[i+1] in son_b):
+            if x[i + 1] == "y":
+                x = x[:i + 1] + "ʲ" + x[i + 2:]
+            elif x[i + 1] == "'":
+                x = x[:i + 1] + "ˤ" + x[i + 2:]
+            # print("2: " + x)
         elif (x[i] in validph) is False:
             # print("bro ts invalid")
             break
@@ -310,15 +334,15 @@ def stress(x):
                     if ustv in sty[i]:
                         found = ustv
                         fin = i
+                        # print(fin)
                 break
         i += 1
-
     if found != "":
         copys = sty[fin-1]
         for cons in cons_b:
             copys = copys.replace(cons,'')
-        # diphthong check
-        if len(copys) > 1:
+        # diphthong or initial stress check
+        if (len(copys) > 1) or (fin == 0):
             return ".".join(sty)
         # monophthong check
         else:
@@ -362,12 +386,14 @@ def genIPA_collo(name):
             name = co.join(name.rsplit(st,1))
     return name
 
-def genIPA_eng(name):
+def genIPA_eng(name,ori):
     for st, co in ipa_e.items():
         name = name.replace(st, co)
     for st, co in ipa_e2.items():
         if name.endswith(st):
             name = co.join(name.rsplit(st,1))
+    if ori[len(ori) - 1] == "l":
+        name = name[:len(name)-1] + "l"
     return name
 
 def refreshDict():
@@ -428,11 +454,21 @@ def posword(x):
             return "Affix"
         case "part.":
             return "Particle"
+        case "pron.":
+            return "Pronoun"
         case _:
             return "Unimplemented"
 
 def getInf(x):
-    if x.pos == "n.":
+    if x.pos == "pron.":
+        for irep, ireinf in irepron_pair.items():
+            if x.word == irep:
+                return ireinf
+        if x.word[0] in vowels:
+            return [x.word,x.word + "ne", x.word + "yan", x.word + "yá", "w-" + x.word, "h'" + x.word]
+        else:
+            return [x.word,x.word + "ne", x.word + "yan", x.word + "yá", "u-" + x.word, "he " + x.word]
+    elif x.pos == "n.":
         match x.anim:
             case "i.":
                 if x.word[0] in vowels:
@@ -463,7 +499,13 @@ def getInf(x):
         unsroot = x.word
         for uns, st in stv_pair.items():
             unsroot = unsroot.replace(uns,st)
-        match x.word[len(x.word)-1]:
+        if x.word[len(x.word)-1] == "m":
+            rootvowel = x.word[len(x.word)-2]
+        elif x.word[len(x.word)-1] == "c" or x.word[len(x.word)-1] == "j":
+            rootvowel = "y"
+        else:
+            rootvowel = x.word[len(x.word)-1]
+        match rootvowel:
             case "i":
                 if x.word[len(x.word) - 2] in vowels:
                     v = x.word[len(x.word)-2]
@@ -487,6 +529,7 @@ def getInf(x):
                     list.append("waz")
                     list.append("yari")
                     list.append("yaki")
+                    list.append(x.word[:len(x.word) - 1] + "yu/" + x.word[:len(x.word) - 1] + "u")
                 else:
                     list = ["i", "ui", "yo", "ou", "yá", "uyá", "e", "ue", "im", "uim", "yu"]
                     for i in range(len(list)):
@@ -503,10 +546,11 @@ def getInf(x):
                     list.append("uaz")
                     list.append("yari")
                     list.append("yaki")
+                    list.append(x.word[:len(x.word) - 1] + "u")
                 return list
             case "ï":
                 if x.word[len(x.word)-2] == "y":
-                    list = ["yï", "yiyï", "ï", "iyï", "á", "iyá", "ye", "iye", "yïm", "iyïm", "yiyï"]
+                    list = ["yï", "yiyï", "ï", "iyï", "á", "iyá", "ye", "iye", "yïm", "iyïm", "iyï"]
                     for i in range(len(list)):
                         if i == 4 or i == 5:
                             list[i] = unsroot[:len(unsroot) - 1] + list[i]
@@ -521,9 +565,10 @@ def getInf(x):
                     list.append("uaz")
                     list.append("wari")
                     list.append("waki")
+                    list.append(x.word[:len(x.word) - 1] + "u")
                     return list
                 else:
-                    list = ["ï", "iyï", "ir", "irhï", "á", "iyá", "e", "iye", "ïm", "iyïm", "yiyï"]
+                    list = ["ï", "iyï", "ir", "irhï", "á", "iyá", "e", "iye", "ïm", "iyïm", "yu"]
                     for i in range(len(list)):
                         if i == 4 or i == 5:
                             list[i] = unsroot[:len(unsroot) - 1] + list[i]
@@ -535,9 +580,13 @@ def getInf(x):
                                 list[i] = list[i].replace(j, k)
                     list.append("ri")
                     list.append("fïn")
-                    list.append("uaz")
+                    if x.word[len(x.word)-1] == "ï":
+                        list.append("waz")
+                    else:
+                        list.append("uaz")
                     list.append("wari")
                     list.append("waki")
+                    list.append(x.word[:len(x.word) - 1] + "u")
                     return list
             case "é":
                 if x.word[len(x.word) - 2] == "y":
@@ -556,6 +605,7 @@ def getInf(x):
                     list.append("unaz")
                     list.append("érhari")
                     list.append("érhaki")
+                    list.append(x.word[:len(x.word) - 1] + "un")
                 else:
                     list = ["é", "ué", "ó", "oú", "ayá", "uwayá", "a", "ua", "e", "ue", "un"]
                     for i in range(len(list)):
@@ -572,6 +622,7 @@ def getInf(x):
                     list.append("uaz")
                     list.append("érhari")
                     list.append("érhaki")
+                    list.append(x.word[:len(x.word) - 1] + "un")
                 return list
             case "a":
                 if x.word[len(x.word) - 2] == "u":
@@ -590,6 +641,7 @@ def getInf(x):
                     list.append("naz")
                     list.append("äri")
                     list.append("äki")
+                    list.append(x.word[:len(x.word) - 1] + "un")
                 if x.word[len(x.word) - 2] == "y":
                     list = ["ya", "yua", "ayó", "uayó", "yaná", "yuaná", "ya", "yua", "yam", "yuam", "yun"]
                     for i in range(len(list)):
@@ -606,6 +658,7 @@ def getInf(x):
                     list.append("unaz")
                     list.append("äri")
                     list.append("äki")
+                    list.append(x.word + "u")
                 else:
                     list = ["a", "ua", "ó", "uó", "ayá", "uwayá", "a", "ua", "am", "uam", "aun"]
                     for i in range(len(list)):
@@ -622,6 +675,7 @@ def getInf(x):
                     list.append("uaz")
                     list.append("äri")
                     list.append("äki")
+                    list.append(x.word + "u")
                 return list
             case "á":
                 if x.word[len(x.word) - 2] == "u":
@@ -640,6 +694,7 @@ def getInf(x):
                     list.append("naz")
                     list.append("äri")
                     list.append("äki")
+                    list.append(x.word[:len(x.word) - 1] + "un")
                 if x.word[len(x.word) - 2] == "y":
                     list = ["ya", "yua", "ayó", "uayó", "yaná", "yuaná", "ya", "yua", "yam", "yuam", "yun"]
                     for i in range(len(list)):
@@ -656,6 +711,7 @@ def getInf(x):
                     list.append("unaz")
                     list.append("äri")
                     list.append("äki")
+                    list.append(x.word[:len(x.word) - 1] + "un")
                 else:
                     list = ["a", "ua", "ó", "uó", "ayá", "uwayá", "a", "ua", "am", "uam", "aun"]
                     for i in range(len(list)):
@@ -673,10 +729,52 @@ def getInf(x):
                     list.append("äri")
                     list.append("äki")
                 return list
-            case _:
+            case "e":
+                list = ["", "u", "ó", "oú", "ayá", "uwayá", "a", "ua", "e", "ue", ""]
+                for i in range(len(list)):
+                    if i == 4 or i == 5:
+                        list[i] = unsroot + list[i]
+                        for j, k in dia_c.items():
+                            list[i] = list[i].replace(j, k)
+                    else:
+                        list[i] = x.word + list[i]
+                        for j, k in dia_c.items():
+                            list[i] = list[i].replace(j, k)
+                list.append("ru")
+                list.append("gan")
+                list.append("uaz")
+                list.append("érhari")
+                list.append("érhaki")
+                list.append(x.word + "un")
+                return list
+            case "y":
                 unproot = x.word.replace("c","ty")
                 unproot = unproot.replace("j","dy")
-                list = ["", "u", "o", "ou", "á", "uá", "e", "ue", "em", "em", "ï"]
+                list = ["", "u", "o", "ou", "á", "uá", "e", "ue", "em", "um", "ï"]
+                for i in range(len(list)):
+                    if i == 2 or i == 3:
+                        list[i] = unproot[:len(unproot)-1] + list[i]
+                        for j, k in dia_c.items():
+                            list[i] = list[i].replace(j, k)
+                    elif i == 4 or i == 5:
+                        list[i] = unsroot[:len(unsroot)] + list[i]
+                        for j, k in dia_c.items():
+                            list[i] = list[i].replace(j, k)
+                    else:
+                        list[i] = x.word[:len(x.word)] + list[i]
+                        for j, k in dia_c.items():
+                            list[i] = list[i].replace(j, k)
+                list.append("ri")
+                list.append("fïn")
+                list.append("uaz")
+                list.append("ari")
+                list.append("aki")
+                list.append(x.word + "u")
+                return list
+            case _:
+                # unproot = x.word.replace("c","ty")
+                # unproot = unproot.replace("j","dy")
+                list = ["", "u", "o", "ou", "á", "uá", "e", "ue", "em", "um", "ï"]
                 for i in range(len(list)):
                     if i == 4 or i == 5:
                         list[i] = unsroot[:len(unsroot)] + list[i]
@@ -691,6 +789,7 @@ def getInf(x):
                 list.append("uaz")
                 list.append("ari")
                 list.append("aki")
+                list.append(x.word + "u")
                 return list
 
 def redup(x):
@@ -706,7 +805,7 @@ def redup(x):
             word = word.replace(mon, dia)
             init = init.replace(mon, dia)
             syl = syl.replace(mon, dia)
-        if(word[1] == "h"):
+        if(word[1] == "h") or (word[:2] == "sy") or (word[:2] == "zy"):
             return word.replace(x.word[:3], init + syl, 1)
         else:
             return word.replace(x.word[:2],init+syl,1)
@@ -725,11 +824,28 @@ def redup(x):
 def removeInf(x):
     if x.startswith("s'"):
         x = x.replace("s'","")
+    for irep, ireinf in irepron_pair.items():
+        if x in ireinf:
+            return irep
     if len(Dictionary.query.filter(Dictionary.word == deredup(x.strip())).all()) > 0:
         return deredup(x.strip())
     elif len(Dictionary.query.filter(Dictionary.defin.icontains("alt. " + x.strip())).all()) > 0:
         return Dictionary.query.filter(Dictionary.defin.icontains("alt. " + x.strip())).first().word
     x = deredup(x)
+    for inf in sinflist:
+        if x.startswith(inf):
+            y = x.replace(inf,"",1)
+            if len(Dictionary.query.filter(Dictionary.word == y.strip()).all()) > 0:
+                return y
+            for inf2 in inflist:
+                if x.endswith(inf2):
+                    z = ''.join(x.rsplit(inf2, 1))
+                    if len(Dictionary.query.filter(Dictionary.word == z.strip()).all()) > 0:
+                        return z
+                    else:
+                        z2 = removeVinf(z)
+                        if len(Dictionary.query.filter(Dictionary.word == z2.strip()).all()) > 0:
+                            return z2
     for inf in inflist:
         if x.endswith(inf):
             y = ''.join(x.rsplit(inf,1))
@@ -782,10 +898,26 @@ def decompound(x):
         if i.word in x:
             sep.append(i)
             x = ''.join(x.rsplit(i.word,1))
+        elif (i.word[:len(i.word)-1] in x) and (i.pos == "v."):
+            for j in getInf(forcepos_inf(i.word,"v.")):
+                if j in x:
+                    sep.append(i)
+                    x = ''.join(x.rsplit(j,1))
     return sep
 
+class forcepos_inf:
+    def __init__(self, word, pos):
+        self.word = word
+        self.pos = pos
+
+    def __repr__(self):
+        return '{} ({})'.format(self.word, self.pos)
+
 def deredup(x):
-    if len(x) <= 2:
+    monx = x
+    for dia, mon in dia_b.items():
+        monx = monx.replace(dia, mon)
+    if len(monx) <= 2:
         return x
     ori = x
     if x[0] == x[2]:
@@ -836,3 +968,38 @@ def markEntry(word):
     with open("badentries.txt", "w", encoding='utf-8') as f:
         new = curr + "\n" + word
         f.write(new)
+
+def getAspInf(x):
+    if x.pos == "v.":
+        if x.word[len(x.word)-1] in purevowel:
+            list = ["syet","sye","sran","srö","da","ran","rö","de", "den","dö"]
+            for i in range(len(list)):
+                list[i] = x.word + list[i]
+            return list
+        elif x.word[len(x.word)-2:] == "sy":
+            list = ["syet", "sye", "syran", "syrö", "yda", "yran", "yrö", "yde", "yden", "ydö"]
+            for i in range(len(list)):
+                list[i] = x.word[:len(x.word)-1] + list[i]
+            return list
+        elif x.word[len(x.word)-2:] == "zy":
+            list = ["zyet", "zye", "zyran", "zyrö", "yda", "yran", "yrö", "yde", "yden", "ydö"]
+            for i in range(len(list)):
+                list[i] = x.word[:len(x.word)-1] + list[i]
+            return list
+        elif x.word[len(x.word)-1] == "c":
+            list = ["cet", "ce", "cran", "crö", "ta", "ran", "rö", "te", "ten", "tö"]
+            for i in range(len(list)):
+                list[i] = x.word + list[i]
+            return list
+        elif x.word[len(x.word)-1] == "j":
+            list = ["jet", "je", "jiran", "jirö", "ida", "iran", "irö", "ide", "iden", "idö"]
+            for i in range(len(list)):
+                list[i] = x.word + list[i]
+            return list
+        else:
+            list = ["syet", "sye", "esran", "esrö", "da", "ran", "rö", "de", "den", "dö"]
+            for i in range(len(list)):
+                list[i] = x.word + list[i]
+            return list
+    else:
+        return []

@@ -221,6 +221,7 @@ atua pron. // we, first person exclusive plural pronoun.
 inflections: atté (accusative), atuan (ablative), atica (lative), utsu (genitive). 
 atoi v. // to wake up.
 avi n. i. // female.
+avira pron. // I, me, honorific first person singular pronoun, listener is superior to speaker, and has a somewhat close relationship.
 awe num. // seven.
 axi v. // to teach, to instruct, original form of axuri.
 axyá v. // passive, to learn, to be taught.
@@ -234,7 +235,7 @@ aza n. iii. // action, incident, occurrence, time.
 azahai v. // to succeed, triumph, be successful.
 azaharai v. // to exceed by a significant amount; to be hyperactive.
 azareva n. iii. // reason, motive.
-azé irr v. // (transitive) to do; (intransitive) to occur, to happen. root: aza. originally to work, displaced hi.
+azé v. // (transitive) to do; (intransitive) to occur, to happen. root noun aza. originally to work, displaced hi.
 azéson n. iii. // company, corporation.
 	isazéson n. i. // office worker, salaryman.
 azesoré v. // to conduct, hold, allow something to occur.
@@ -288,6 +289,7 @@ cira n. i. // chance, opportunity.
 cïrin n. iii. // butterfly.
 civiri n. iii. // can, tin.
 cïxyazirré n. iii. // hospital, lit. building where life is saved.
+códa pron. // you, honorific second person singular pronoun, listener is inferior to speaker (derogatory)
 cora v. // to feed.
 corro n. iii. // disturbance; rowdiness, annoyance.
 corrosy v. // to argue with, other person takes accusative.
@@ -320,7 +322,7 @@ dau n. iii. // food, drink, edible goods.
 dé stv. // (alt. det) to be situated below, lower; down.
 deci v. // to move down, lower, from deti.
 deciyari v. // to shine down, typically sunlight; to observe from above, look down.
-dei v. // to consume, to drink, to eat, root: dau, from classical dahi.
+dei v. // to consume, to drink, to eat, root noun dau, from classical dahi.
 dekiné v. // to pull down, depose, get rid off.
 dela v. // to conduct with dignity, elegance.
 demmané v. // to command, order.
@@ -382,7 +384,7 @@ esi num. // eleven (archaic), relic of duodecimal system.
 eta part. // very, extremely. intensifies the following verb.
 etosa n. iii. // shell.
 ezara n. i. // blessing.
-	ezara ka seyá aléi lï intj. // formal greeting, literally may blessings be upon you.
+	ezara ka seyá aléi lï intj. // formal greeting, lit. may blessings be upon you.
 ezaré v. // to bless.
 
 Ff
@@ -437,6 +439,7 @@ ghun n. iii. // cow.
 
 Hh 
 ha n. iii. // blue-green colour of an ocean.
+hadan pron. // I, me, honorific first person singular pronoun, listener is superior to speaker, and has a distant relationship.
 hadän n. iii. // brick, bricks.
 härat n. iii. // loyalty to a superior power.
 häré v. // to be loyal to, to be obedient to.
@@ -517,7 +520,7 @@ hoso n. iii. // white.
 hottok n. iii. // hot dog.
 hufu n. iii. // strong wind.
 hye conj. // even, implying an extreme example in the case mentioned; hye to haida! even he finished!.
-hye hayá kindiran phr. // nothing lasts forever, nothing is undefeatable, literally even mountains wither/disintegrate, clipping from a poem.
+hye hayá kindiran phr. // nothing lasts forever, nothing is undefeatable, lit. even mountains wither/disintegrate, clipping from a poem.
 hyevenai conj. // in addition, furthermore.
 hyi n. iii. // ice.
 hyixi v. // to blow.
@@ -541,6 +544,7 @@ ikirïka n. iii. // physics.
 il- n. i. // (alt. al-, an-, in-) descendant of, common prefix for surnames, likely descending from an assimilated form of an.
 inaqa n. iii. // injury, damage.
 inaqa v. // to damage, hurt, cause injury to.
+inisa pron. // you, honorific second person singular pronoun, listener is inferior to speaker (respectful)
 indau n. iii. // (alt. imdau) lunch, contraction of imaidau.
 imai n. i. // noon.
 imé stv. // to be wise.
@@ -592,7 +596,8 @@ izézadai v. // to greet.
 ivúkondïm n. iii. // technology, from i + vú + kondïm (lit. tool to advance skills).
 ivúkondïmïka n. iii. // information technology (subject), i.e. IT/ICT (information communication technology).
 iya n. ii. // light.
-iyatua conj. // reaching completion, nearing the end, sometimes erroneously written as iyai.
+iyatua conj. // (alt. iyai) reaching completion, nearing the end, sometimes erroneously written as iyai.
+iya pron. // you, honorific second person singular pronoun, listener is superior to speaker, and has a distant relationship.
 iyakari n. iii. // calculator.
 iyari v. // to shine.
 izäkari n. iii. // computer, abbreviated form of izaqäkari.
@@ -609,7 +614,7 @@ Jj
 jävi v. // to pass through; to experience.
 jaber n. iii. // island.
 jader n. iii. // uncleanness, dirtiness, the quality of being unclean.
-jadri stv. // to be unclean, dirty. root: jader.
+jadri stv. // to be unclean, dirty. root noun jader.
 jadriyé stv. // to be lazy, from jadri + e.
 jadrekana v. // to decline, stagnate, contracted form of jadriyékana.
 jeda n. iii. // wish, hope.
@@ -728,7 +733,7 @@ kitäza n. iii. // a program(me), project, any long-term investment of effort in
 kitai aqaniyazan insikiec icéran phr. // thank you for your efforts, formal.
 kitakesyon n. iii. // system, group that works for a common goal.
 kité v. // to agree.
-kité v. // to aim for, root: kita.
+kité v. // to aim for, root noun kita.
 kito n. iii. // back, behind direction.
 kitoi v. // to disturb lightly.
 kiveren n. iii. // modern times, modern era.
@@ -742,7 +747,7 @@ kó n. iii. // south.
 kohye adv. // any.
 komi v. // to trial, assess.
 kon n. iii. // chicken.
-konai stv. // to be angry, root: konau.
+konai stv. // to be angry, root noun konau.
 konau n. iii. // anger.
 konj v. // to advance, go forwards.
 kora n. iii. // the quality of being bad.
@@ -778,6 +783,7 @@ kyiva n. iii. // sentence.
 
 Ll
 la n. iii. // tail.
+ladan pron. // I, me, honorific first person singular pronoun, listener is inferior to speaker (respectful)
 lakuyé v. // to suffix, append. add to the end.
 laqat n. iii. // wealth.
 laqatïka n. iii. // economics.
@@ -803,7 +809,7 @@ mai n. i. // mother.
 man part. // although.
 mana n. i. // finger; anatomical digit.
 mandé v. // to complete the remaining part of something, to make something full.
-mané v. // to point at or towards something; root: mana.
+mané v. // to point at or towards something; root noun mana.
 maneré v. // to point out something, to identify, call out.
 masi n. iii. // choice, decision. 
 masi v. // to choose, select, decide.
@@ -897,7 +903,7 @@ ora n. iii. // centre, middle.
 orakövi v. // to mediate, compromise, negotiate (server).
 orakövikata n. iii. // treaty.
 orataki v. // to edit, modify.
-oré v. // to surround, enclose, encircle, root: ora. synonymous with oratai and oraqasy.
+oré v. // to surround, enclose, encircle, root noun ora. synonymous with oratai and oraqasy.
 orayá ka conj. // with regards to, about, regarding.
 ori n. iii. // pink.
 osyama n. iii. // milk.
@@ -929,7 +935,7 @@ qani v. // to send.
 qaran n. iii. // rule, law.
 qarra v. // to read, variant form of kar’a. not to be confused with the imperative of qarré.
 qarré v. // to turn over, take down, flip over; to overthrow.
-qasy v. // to draw an illustration, root: qasye.
+qasy v. // to draw an illustration, root noun qasye.
 qasye n. iii. // drawing, illustration, sketch.
 qaya n. iii. // outside.
 qédi v. // (intransitive) to leave, exit, come out; (transitive) to put out; (transitive) create something and give it to someone else, offer; (in/transitive) to remember.
@@ -949,6 +955,7 @@ raeta n. iii. // hall, chamber, large room.
 raifa n. iii. // victory; long live cheer, typically used with Sitaku.
 rasy v. // to open.
 rasyaki stv. // to be open, unobstructed.
+ravva pron. // you, honorific second person singular pronoun, listener is inferior to speaker (derogatory).
 razal n. iii. // biterness.
 razali stv. // to be bitter.
 ré v. // to come.
@@ -990,7 +997,7 @@ risae n. i. // buttocks.
 risyé stv. // to be full, filling to the maximum capacity, excluding the replenishment of hunger.
 risyé v. // to fulfill, satisfy a condition.
 risyï v. // to lack, to have an insufficient quality of something.
-riya pron. // honorific first person pronoun, listener bears same status as speaker, and has a close relationship, I, me.
+riya pron. // I, me, honorific first person singular pronoun, listener bears same status as speaker, and has a close relationship
 rizyeda v. // to be optimistic, to look forward to, to anticipate with hope, from risyï + jeda.
 rólo n. iii. // shadow.
 rólossi v. // to cast a shadow, to darken.
@@ -1016,7 +1023,7 @@ saifal n. iii. // rifle, gun, borrowed from English rifle.
 sail v. // to estimate, guess based on information.
 sakki v. // to protect, defend, shield.
 sakku n. iii. // shield.
-sal v. // to work, root: sala.
+sal v. // to work, root noun sala.
 sala n. iii. // work.
 salki n. iii. // culture.
 sama n. iii. // onomatopoeia for the sound of wings flapping.
@@ -1045,8 +1052,8 @@ sawi v. // to drink, uncommon, typically dei is used when the distinction is not
 saya hon. // sir, honorific for an imperial descendant or bestowed title by palace, abbreviated as Sy.
 sazon n. iii. // week.
 se conj. // or (inclusive).
-se pron. // honorific second person pronoun, listener bears same status as speaker, and has a close relationship, you.
-	seyá irarrai intj. // formal response to ezara ka seyá aléi lï, literally please return the blessings to yourself.
+se pron. // you, honorific second person singular pronoun, listener bears same status as speaker, and has a close relationship.
+	seyá irarrai intj. // formal response to ezara ka seyá aléi lï, lit. please return the blessings to yourself.
 seci n. iii. // dark oak.
 seda v. // to compare.
 sedäruasu n. iii. // conjunction.
@@ -1062,12 +1069,13 @@ senyé stv. // to be late.
 seri n. iii. // hill, small mountain.
 sesai n. iii. // magic.
 seta n. iii. // orchid.
+seta pron. // you, honorific second person singular pronoun, listener is superior to speaker, and has a somewhat close relationship.
 sete n. iii. // tower, pagoda.
 setti n. iii. // sound.
 sevi n. iii. // control.
 sevi v. // to control, manage.
 seya n. iii. // weakness.
-seyé stv. // to be weak, root: seya.
+seyé stv. // to be weak, root noun seya.
 si n. ii. // life.
 si n. iii. // thread, string.
 sicora v. // to sustain.
@@ -1091,7 +1099,7 @@ sisa n. iii. // sand.
 siva n. iii. // cheese.
 stv. // to be scarred, have a permanent injury, lit. tear on life.
 siya n. iii. // meaning, definition.
-siyarasy v. // to define. (lit: meaning +
+siyarasy v. // to define, lit. to open a meaning.
 sizandé n. iii. // alley, narrow street.
 sizdexé v. // to be outcasted and become a traitor.
 só stv. // to be in front of another.
@@ -1114,7 +1122,7 @@ sowi stv. // to be dyed, coloured.
 sözöri stv. // to be traditional.
 -ssa intj. // so, prompting the listener to respond.
 su n. iii. // word; speech.
-sun onya söri phr. // literally, as the name implies, in a literal sense.
+sun onya söri phr. // lit. as the name implies, in a literal sense.
 sue n. i. // distinguished person, person related to the government or palace.
 	asue hon. // mister, miss, honorific for a person.
 suerika n. i. // parliamentarian.
@@ -1301,7 +1309,7 @@ vara n. iii. // respect.
 varrata n. iii. // chaotic fight, battle, duel.
 varraté v. // to duel, fight, wage battle.
 	-urat, -ïrat n. i. // warrior, honorific form of varraté.
-varé v. // to respect, root: vara.
+varé v. // to respect, root noun vara.
 vaté v. // to overthrow, replace, cause to fall, cause to collapse.
 vatu num. // hundred.
 vatuqan num. // thousand.
@@ -1316,7 +1324,7 @@ vera n. iii. // wood.
 veri stv. // to be shy.
 veyava conj. // unsure.
 vi v. // to get, take, grab.
-vï v. // to be able to, root: vú.
+vï v. // to be able to, root noun vú.
 	vïm v. // causative, to permit, allow, approve of.
 vïri v. // to be possible, plausible, derived from uncertain inflection of vï.
 vïsré v. // to permit, allow, synonym of vïm.
@@ -1334,7 +1342,7 @@ wafai v. // to love.
 wafi v. // to anticipate, to expect before it comes.
 wafyenhayé v. // to prevent.
 wafyaza n. iii. // plan.
-wafyazé v. // to plan, literally to do before it comes.
+wafyazé v. // to plan, lit. to do before it comes.
 wakami n. iii. // dance.
 wakami v. // to dance.
 wakó n. iii. // vertical.

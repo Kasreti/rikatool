@@ -20,3 +20,4 @@ class searchWord(FlaskForm):
     random = SubmitField('Random word')
     refresh = SubmitField('Refresh Dictionary')
     markentry = SubmitField('Mark entry as erroneous')
+    genipa = SubmitField('Generate IPA')

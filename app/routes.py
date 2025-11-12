@@ -36,6 +36,11 @@ def wresults(term):
             flash("dictionary refreshed!!")
         elif form.fuzsubmit.data:
             return redirect(url_for('wresults', term=form.word.data.strip().casefold()))
+        elif form.genipa.data:
+            flash("IPA for " + '"' + form.word.data.strip().casefold() + '"')
+            flash("(Hayalese): /" + cs.genIPA(form.word.data.strip().casefold()) + "/")
+            flash("(Distaye): /" + cs.genIPA_collo(cs.genIPA(form.word.data.strip().casefold())) + "/")
+            flash("(Hasiph): /" + cs.genIPA_eng(cs.genIPA(form.word.data.strip().casefold()),form.word.data.strip().casefold()) + "/")
         elif form.random.data:
             gen = Dictionary.query.order_by(func.random()).first()
             return redirect(url_for('show_definition', word=gen.word))
@@ -67,6 +72,11 @@ def dresults(term):
             flash("dictionary refreshed!!")
         elif form.fuzsubmit.data:
             return redirect(url_for('wresults', term=form.word.data.strip().casefold()))
+        elif form.genipa.data:
+            flash("IPA for " + '"' + form.word.data.strip().casefold() + '"')
+            flash("(Hayalese): /" + cs.genIPA(form.word.data.strip().casefold()) + "/")
+            flash("(Distaye): /" + cs.genIPA_collo(cs.genIPA(form.word.data.strip().casefold())) + "/")
+            flash("(Hasiph): /" + cs.genIPA_eng(cs.genIPA(form.word.data.strip().casefold()),form.word.data.strip().casefold()) + "/")
         elif form.random.data:
             gen = Dictionary.query.order_by(func.random()).first()
             return redirect(url_for('show_definition', word=gen.word))
@@ -100,9 +110,14 @@ def show_definition(word):
             flash("dictionary refreshed!!")
             return redirect(url_for('show_definition', word=word))
         elif form.markentry.data:
-            print("hiii")
             cs.markEntry(word)
             flash("entry marked!!")
+            return redirect(url_for('show_definition', word=word))
+        elif form.genipa.data:
+            flash("IPA for " + '"' + form.word.data.strip().casefold() + '"')
+            flash("(Hayalese): /" + cs.genIPA(form.word.data.strip().casefold()) + "/")
+            flash("(Distaye): /" + cs.genIPA_collo(cs.genIPA(form.word.data.strip().casefold())) + "/")
+            flash("(Hasiph): /" + cs.genIPA_eng(cs.genIPA(form.word.data.strip().casefold()),form.word.data.strip().casefold()) + "/")
             return redirect(url_for('show_definition', word=word))
         elif form.fuzsubmit.data:
             return redirect(url_for('wresults', term=form.word.data.strip().casefold()))
@@ -135,18 +150,29 @@ def show_definition(word):
                 case "iii.":
                     anim = "class iii. inanimate and non-human animate"
         elif x.pos == "v." or x.pos == "stv.":
-            match x.word[len(x.word)-1]:
+            if x.word[len(x.word)-1] == "m":
+                endvowel = x.word[len(x.word)-2]
+            else:
+                endvowel = x.word[len(x.word)-1]
+            match endvowel:
                 case "i":
                     anim = "i-type"
                     root = x.word[:len(x.word) - 1]
                     neg = root + "u"
                 case "ï":
-                    anim = "ï-type"
-                    root = x.word[:len(x.word) - 2]
+                    anim = "yï-type"
+                    if x.word[:len(x.word)-2] == "y":
+                        root = x.word[:len(x.word) - 2]
+                    else:
+                        root = x.word[:len(x.word) - 2] + "ï"
                     neg = root + "iy"
                 case "é":
                     anim = "é-type"
                     root = x.word[:len(x.word) - 1]
+                    neg = root + "u"
+                case "e":
+                    anim = "é-type (caus.)"
+                    root = x.word
                     neg = root + "u"
                 case "a":
                     anim = "é-type"
@@ -157,7 +183,7 @@ def show_definition(word):
                     root = x.word[:len(x.word) - 1]
                     neg = root + "u"
                 case "y":
-                    anim = "i-type (cons.)"
+                    anim = "i-type (palatal.)"
                     root = x.word
                     neg = root + "u"
                 case _:
@@ -177,19 +203,22 @@ def show_definition(word):
             alt = ""
         if ", from" in defin[len(defin)-1]:
             etym = "Derived from " + defin[len(defin)-1].split(", from")[len(defin[len(defin)-1].split(", from"))-1]
-            defin[len(defin)-1] = defin[len(defin)-1].split(", from")[0]
+            defin[len(defin)-1] = defin[len(defin)-1].split(", from")[0] + "."
         elif ", lit." in defin[len(defin)-1]:
             etym = "Derived from " + defin[len(defin) - 1].split(", lit.")[len(defin[len(defin)-1].split(", lit."))-1]
-            defin[len(defin)-1] = defin[len(defin)-1].split(", lit.")[0]
+            defin[len(defin)-1] = defin[len(defin)-1].split(", lit.")[0] + "."
         elif ", borrowed from" in defin[len(defin)-1]:
             etym = "Borrowed from " + defin[len(defin)-1].split(", borrowed from")[len(defin[len(defin)-1].split(", borrowed from"))-1]
-            defin[len(defin)-1] = defin[len(defin)-1].split(", borrowed from")[0]
+            defin[len(defin)-1] = defin[len(defin)-1].split(", borrowed from")[0] + "."
         elif ", root noun" in defin[len(defin)-1]:
             etym = "Derivation of root noun " + defin[len(defin)-1].split(", root noun")[len(defin[len(defin)-1].split(", root noun"))-1]
-            defin[len(defin)-1] = defin[len(defin)-1].split(", root noun")[0]
+            defin[len(defin)-1] = defin[len(defin)-1].split(", root noun")[0] + "."
+        elif ", contraction of" in defin[len(defin)-1]:
+            etym = "Derivation from a contraction of " + defin[len(defin)-1].split(", contraction of")[len(defin[len(defin)-1].split(", contraction of"))-1]
+            defin[len(defin)-1] = defin[len(defin)-1].split(", contraction of")[0] + "."
         else:
             etym = ""
-        retword.append(cs.definition(x.word.strip().casefold(),cs.genIPA(word),cs.genIPA_collo(cs.genIPA(word)),cs.genIPA_eng(cs.genIPA(word)),defin,anim,cs.posword(x.pos),etym,root,cs.getInf(x), alt, neg, cs.redup(x), cs.reflex(x.word)))
+        retword.append(cs.definition(x.word.strip().casefold(),cs.genIPA(word),cs.genIPA_collo(cs.genIPA(word)),cs.genIPA_eng(cs.genIPA(word),word),defin,anim,cs.posword(x.pos),etym,root,cs.getInf(x),cs.getAspInf(x),alt, neg, cs.redup(x), cs.reflex(x.word)))
     if session.get('prev'):
         if session['prev']:
             form.word.data = session['prev']

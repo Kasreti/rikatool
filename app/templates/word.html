@@ -21,13 +21,15 @@
         <p>{{ word.etym }}</p>
         {% endif %}
         <h2>{{ word.pos }}</h2>
-        {% if word.root %}
+        {% if word.pos == "Pronoun" %}
+        <p><b>{{ word.word }} </b></p>
+        {% elif word.root %}
         <p><b>{{ word.word }} </b><i>{{ word.anim }}</i> {{ word.alt }} (<i>stem</i> {{ word.root }}, <i>negative stem</i> {{ word.neg }}, <i>reduplicative</i> {{word.redup}})</p>
-        {% endif %}
-        {% if word.root == "" and (word.pos != "Affix" and word.pos != "Phrase" and word.pos != "Conjunction") %}
+        {% elif word.root == "" and (word.pos != "Affix" and word.pos != "Phrase" and word.pos != "Conjunction") %}
         <p><b>{{ word.word }} </b><i>{{ word.anim }}</i> {{ word.alt }} (<i>reduplicative</i> {{word.redup}})</p>
-        {% endif %}
-        {% if word.root == "" and (word.pos == "Affix" or word.pos == "Phrase" or word.pos == "Conjunction") %}
+        {% elif word.root == "" and (word.pos == "Affix" or word.pos == "Phrase" or word.pos == "Conjunction") %}
+        <p><b>{{ word.word }} </b><i>{{ word.anim }}</i> {{ word.alt }}</p>
+        {% elif word.root == "" and (word.pos == "Affix" or word.pos == "Phrase" or word.pos == "Conjunction") %}
         <p><b>{{ word.word }} </b><i>{{ word.anim }}</i> {{ word.alt }}</p>
         {% endif %}
         <ol>
@@ -65,6 +67,36 @@
             <td><b>instrumental</b></td>
             {% endif %}
             <td>{{ word.inf[4] }}{{ word.word }}</td>
+        </tr>
+        </tbody>
+        </table>
+    {% endif %}
+    {% if word.pos == "Pronoun" %}
+    <p><b>Declension</b></p>
+        <table><tbody>
+        <tr>
+            <td><b>nominative</b></td>
+            <td>{{ word.word }}</td>
+        </tr>
+        <tr>
+            <td><b>accusative</b></td>
+            <td>{{ word.inf[1] }}</td>
+        </tr>
+        <tr>
+            <td><b>locative/ablative</b></td>
+            <td>{{ word.inf[2] }}</td>
+        </tr>
+        <tr>
+            <td><b>lative</b></td>
+            <td>{{ word.inf[3] }}</td>
+        </tr>
+        <tr>
+            <td><b>genitive</b></td>
+            <td>{{ word.inf[4] }}</td>
+        </tr>
+        <tr>
+            <td><b>comitative</b></td>
+            <td>{{ word.inf[5] }}</td>
         </tr>
         </tbody>
         </table>
@@ -130,11 +162,15 @@
           </tr>
           <tr>
             <td colspan="2"><b>simultaneous</b></td>
-            <td colspan="3">{{ word.inf[10] }}</td>
+            <td colspan="3">{{ word.inf[16] }}</td>
           </tr>
           <tr>
             <td colspan="2"><b>generic stative</b></td>
-            <td colspan="3">{{ word.word }}yaz/{{ word.root }}{{ word.inf[13] }}</td>
+            {% if word.word[word.word|length -1] == "y" %}
+                <td colspan="3">{{ word.word }}az/{{ word.root }}{{ word.inf[13] }}</td>
+            {% else %}
+                <td colspan="3">{{ word.word }}yaz/{{ word.root }}{{ word.inf[13] }}</td>
+            {% endif %}
           </tr>
           <tr>
             <td colspan="2"><b>middle voice</b></td>
@@ -153,24 +189,24 @@
           </tr>
           <tr>
             <td><b>kawifduan</b></td>
-            <td>{{ word.word }}syet</td>
-            <td>{{ word.word }}sye</td>
-            <td>{{ word.word }}sran</td>
-            <td>{{ word.word }}srö</td>
+            <td>{{ word.aspinf[0] }}</td>
+            <td>{{ word.aspinf[1] }}</td>
+            <td>{{ word.aspinf[2] }}</td>
+            <td>{{ word.aspinf[3] }}</td>
           </tr>
           <tr>
             <td><b>present</b></td>
-            <td>{{ word.word }}da</td>
+            <td>{{ word.aspinf[4] }}</td>
             <td>{{ word.word }}</td>
-            <td>{{ word.word }}ran</td>
-            <td>{{ word.word }}rö</td>
+            <td>{{ word.aspinf[5] }}</td>
+            <td>{{ word.aspinf[6] }}</td>
           </tr>
           <tr>
             <td><b>past</b></td>
-            <td>{{ word.word }}da</td>
-            <td>{{ word.word }}de</td>
-            <td>{{ word.word }}den</td>
-            <td>{{ word.word }}dö</td>
+            <td>{{ word.aspinf[4] }}</td>
+            <td>{{ word.aspinf[7] }}</td>
+            <td>{{ word.aspinf[8] }}</td>
+            <td>{{ word.aspinf[9] }}</td>
           </tr>
         </tbody>
         </table>
@@ -180,7 +216,11 @@
         <table><tbody>
         <tr>
             <td><b>generic</b></td>
-            <td>{{ word.word }}yaz</td>
+            {% if word.word[word.word|length -1] == "y" %}
+                <td>{{ word.word }}az</td>
+            {% else %}
+                <td>{{ word.word }}yaz</td>
+            {% endif %}
         </tr>
         <tr>
             <td><b>colour</b></td>

@@ -84,7 +84,7 @@ snavbold {
 /* Divs */
 
 .main {
-  margin-left: 20%; /* Same as the width of the sidenav */
+  margin-left: 10%; /* Same as the width of the sidenav */
   width: 80%;
   height: 100%;
   object-fit: fill;
@@ -98,21 +98,6 @@ snavbold {
   overflow: auto;
 }
 
-.navbar a {
-  float: left;
-  color: black;
-  font-family: "Arial";
-  text-decoration: none;
-  font-size: 12px;
-  width: 10%; /* Four links of equal widths */
-  text-align: center;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-.navbar a:hover {
-  background-color: #adadad;
-}
 
 /* Element ordering */
 .sbs{
