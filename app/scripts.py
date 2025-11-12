@@ -120,7 +120,8 @@ ipa_c = {
     "hi": "çi̥",
     "hʲi": "çi̥",
     "hʲɛ": "çe",
-    "p": "β"
+    "p": "β",
+    ".l": ".ɾ"
 }
 ipa_c2 = {
     "ar": "ɑː",
@@ -223,7 +224,7 @@ infilist = ["i", "wi", "u", "winu", "yá", "wayá", "e", "wiye", "im", "wim", "y
 infylist = ["ï", "iyï", "ir", "irhï", "á", "iyá", "e", "iye", "ïm", "iyïm", "yiyï","yï", "yiyï", "ï", "iyï", "yá", "iyá", "ye", "iye", "yïm", "iyïm", "yiyï"]
 infyelist = ["yé", "yué", "eyó", "ueyó", "yaná", "yuená", "ya", "yua", "yém", "yuém", "yun"]
 infelist = ["é", "ué", "ó", "uó", "ayá", "uwayá", "a", "ua", "e", "ue", "e"]
-sinflist = ["is", "isi", "ya", "yana", "i", "e"]
+sinflist = ["is", "isi", "ya", "yana", "i", "e", "u-", "w-", "w-e" "w-erh", "erh", "en", "w-en"]
 
 class definition:
     def __init__(self, word, ipa, ipa_c, ipa_e, defin, anim, pos, etym, root, inf, aspinf, alt, neg, redup, ref):
@@ -562,15 +563,24 @@ def getInf(x):
                                 list[i] = list[i].replace(j, k)
                     list.append("ri")
                     list.append("fïn")
-                    list.append("uaz")
+                    list.append("waz")
                     list.append("wari")
                     list.append("waki")
                     list.append(x.word[:len(x.word) - 1] + "u")
                     return list
                 else:
-                    list = ["ï", "iyï", "ir", "irhï", "á", "iyá", "e", "iye", "ïm", "iyïm", "yu"]
+                    list = ["ï", "iyï", "ï", "iyï", "á", "iyá", "e", "iye", "ïm", "iyïm", "yu"]
                     for i in range(len(list)):
-                        if i == 4 or i == 5:
+                        if i == 2 or i == 3:
+                            if x.word[len(x.word)-2] == "l":
+                                list[i] = x.word[:len(x.word)-2] + "r" + list[i]
+                            elif x.word[len(x.word)-2] == "v":
+                                list[i] = x.word[:len(x.word) - 2] + "h" + list[i]
+                            else:
+                                list[i] = x.word[:len(x.word) - 1] + list[i]
+                            for j, k in dia_c.items():
+                                list[i] = list[i].replace(j, k)
+                        elif i == 4 or i == 5:
                             list[i] = unsroot[:len(unsroot) - 1] + list[i]
                             for j, k in dia_c.items():
                                 list[i] = list[i].replace(j, k)

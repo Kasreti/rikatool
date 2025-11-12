@@ -161,11 +161,11 @@ def show_definition(word):
                     neg = root + "u"
                 case "ï":
                     anim = "yï-type"
-                    if x.word[:len(x.word)-2] == "y":
-                        root = x.word[:len(x.word) - 2]
+                    if x.word[len(x.word)-2] == "y":
+                        root = x.word
                     else:
-                        root = x.word[:len(x.word) - 2] + "ï"
-                    neg = root + "iy"
+                        root = x.word[:len(x.word) - 1] + "ï"
+                    neg = root[:len(x.word)-1] + "iy"
                 case "é":
                     anim = "é-type"
                     root = x.word[:len(x.word) - 1]
