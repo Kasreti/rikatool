@@ -83,11 +83,14 @@ ipa_f = {
     "uy": "ɨi",
     "uɵ": "ʷɵ",
     "uɑ": "ʷɑ",
+    "n.t": "n.d",
+    "d͡z.": "z."
 }
 ipa_f2 = {
     "kʰ": "k̚",
     "tʰ": "t̚",
-    "l": "ɹ"
+    "l": "ɹ",
+    "d͡z": "z"
 }
 ipa_c = {
     "n.k": "ŋ.k",
@@ -109,7 +112,6 @@ ipa_c = {
     "ʰʊ": "ʰɯ̥",
     "ʰi": "ʰi̥",
     "ʰu": "ʰɯ̥",
-    "ad͡z": "az",
     "ɕr": "ʂ",
     "ʑr": "ʐ",
     "ɕ.r": ".ʂ",
@@ -122,7 +124,8 @@ ipa_c = {
     "hʲi": "çi̥",
     "hʲɛ": "çe",
     "p": "β",
-    ".l": ".ɾ"
+    ".l": ".ɾ",
+    "(n).t": "n.d"
 }
 ipa_c2 = {
     "ar": "ɑː",
@@ -272,7 +275,7 @@ def ipa(x):
     return x
 
 def sylla(x):
-    if 1 <= len(x) <= 2:
+    if (1 <= len(x) <= 2) or ((len(x) == 3) and (x[2] in cons_b)):
         return x
     elif (x[0] in cons_b) and (x[1] in son_b):
         if x[1] == "y":
@@ -479,13 +482,13 @@ def getInf(x):
     elif x.pos == "n.":
         match x.anim:
             case "i.":
-                if x.word[0] in vowels:
-                    if x.word[len(x.word) - 1] in vowels:
+                if x.word[0] in purevowel:
+                    if x.word[len(x.word) - 1] in purevowel:
                         return ["nin","ket","kiec","lï","s'"]
                     else:
                         return ["in", "ket", "kiec", "lï", "s'"]
                 else:
-                    if x.word[len(x.word) - 1] in vowels:
+                    if x.word[len(x.word) - 1] in purevowel:
                         return ["nin", "ket", "kiec", "lï", "sa "]
                     else:
                         return ["in", "ket", "kiec", "lï", "sa "]
@@ -494,23 +497,22 @@ def getInf(x):
                     return ["yun", "ki", "kei", "tua", "sa "]
                 elif x.word[len(x.word) - 1] == "u":
                     return ["hun", "ki", "kei", "tua", "sa "]
-                elif x.word[len(x.word) - 1] in vowels:
+                elif x.word[len(x.word) - 1] in purevowel:
                     return ["nun", "ki", "kei", "tua", "sa "]
                 else:
                     return ["un", "ki", "kei", "tua", "sa "]
-
             case _:
-                if x.word[0] in vowels:
+                if x.word[0] in purevowel:
                     if x.word[len(x.word) - 1] == "i":
                         return ["n", "ja", "jai", "ni", "s'"]
-                    elif x.word[len(x.word) - 1] in vowels:
+                    elif x.word[len(x.word) - 1] in purevowel:
                         return ["n", "ja", "jai", "i", "s'"]
                     else:
                         return ["en", "ja", "jai", "i", "s'"]
                 else:
                     if x.word[len(x.word)-1] == "i":
                         return ["n", "ja", "jai", "ni", "sa "]
-                    elif x.word[len(x.word)-1] in vowels:
+                    elif x.word[len(x.word)-1] in purevowel:
                         return ["n", "ja", "jai", "i", "sa "]
                     else:
                         return ["en", "ja", "jai", "i", "sa "]

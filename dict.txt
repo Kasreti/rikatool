@@ -290,6 +290,8 @@ cï n. iii. // building, enclosed structure.
 cicei n. iii. // park, garden.
 cimi v. // to be stupid, idiotic, lack common sense.
 cin n. i. // daughter.
+cisara n. iii. // difficulty, hardness, hardship.
+cisara stv. // to be difficult.
 cira n. i. // chance, opportunity.
 cïrin n. iii. // butterfly.
 civiri n. iii. // can, tin.
@@ -337,6 +339,7 @@ detaza n. iii. // order, measures, course of action put into place.
 dera n. iii. // block, cube, piece of a larger object in the form of a chunk.
 deva v. // to be incorrect, wrong; to be misinformation, fake, typically unknowingly.
 devalesa n. iii. // mistake.
+devakagi v. // to fool, to cheat.
 devasy v. // to lie, tell a lie (spread fabrications), alternatively devasyï, lit. to speak misinformation.
 devi v. // to search for, to find.
 deviqedi v. // to report findings.
@@ -370,6 +373,7 @@ e n. iii. // action, movement.
 e- n. iii. // nominalizer for verbs; converts a verb into a non-lexical verb.
 ec stv. // to be light in mass.
 edari stv. // to be heavy; to be important.
+edarimasi v. // to judge.
 edon n. iii. // tip, peak.
 ei intj. // greeting in response to aici, hello, hi, see aici.
 eira n. iii. // swamp, mangrove. only in place names.
