@@ -171,7 +171,8 @@ ipa_e = {
     "ɐ": "ʌ",
     "x": "h",
     "p": "b",
-    "̚": ""
+    "̚": "",
+    "ˤ": "̩."
 }
 ipa_e2 = {
     "d": "t",
@@ -254,6 +255,7 @@ class definition:
 def ipa(x):
     x = x.lower()
     x = x.replace("w-","w")
+    x = x.replace("'","’")
     if x.endswith('-'):
         x = x[:len(x)-1]
     elif x.startswith('-'):
@@ -531,7 +533,7 @@ def getInf(x):
             rootvowel = x.word[len(x.word)-1]
         match rootvowel:
             case "i":
-                if x.word[len(x.word) - 2] in vowels:
+                if (x.word[len(x.word) - 2] in vowels) and (x.word[len(x.word) - 2] is not "i"):
                     v = x.word[len(x.word)-2]
                     list = ["i", "wi", "u", "winu", "yá", "wayá", "e", "wiye", "im", "wim", "yu"]
                     list2 = ["uw"+v+"i","un"+v+"u","uw"+v+"yá","un"+v+"ye","uw"+v+"im"]
@@ -554,7 +556,7 @@ def getInf(x):
                     list.append("yari")
                     list.append("yaki")
                     list.append(x.word[:len(x.word) - 1] + "yu/" + x.word[:len(x.word) - 1] + "u")
-                else:
+                elif x.word[len(x.word) - 1] not in cons_b:
                     list = ["i", "ui", "yo", "ou", "yá", "uyá", "e", "ue", "im", "uim", "yu"]
                     for i in range(len(list)):
                         if i == 4 or i == 5:
@@ -563,6 +565,23 @@ def getInf(x):
                                 list[i] = list[i].replace(j, k)
                         else:
                             list[i] = x.word[:len(x.word) - 1] + list[i]
+                            for j, k in dia_c.items():
+                                list[i] = list[i].replace(j, k)
+                    list.append("ri")
+                    list.append("fïn")
+                    list.append("uaz")
+                    list.append("yari")
+                    list.append("yaki")
+                    list.append(x.word[:len(x.word) - 1] + "u")
+                else:
+                    list = ["i", "ui", "yo", "ou", "yá", "uyá", "e", "ue", "im", "uim", "yu"]
+                    for i in range(len(list)):
+                        if i == 4 or i == 5:
+                            list[i] = unsroot + list[i]
+                            for j, k in dia_c.items():
+                                list[i] = list[i].replace(j, k)
+                        else:
+                            list[i] = x.word + list[i]
                             for j, k in dia_c.items():
                                 list[i] = list[i].replace(j, k)
                     list.append("ri")
@@ -591,7 +610,7 @@ def getInf(x):
                     list.append("waki")
                     list.append(x.word[:len(x.word) - 1] + "u")
                     return list
-                else:
+                elif x.word[len(x.word)-1] not in cons_b:
                     list = ["ï", "iyï", "ï", "iyï", "á", "iyá", "e", "iye", "ïm", "iyïm", "yu"]
                     for i in range(len(list)):
                         if i == 2 or i == 3:
@@ -620,6 +639,28 @@ def getInf(x):
                     list.append("wari")
                     list.append("waki")
                     list.append(x.word[:len(x.word) - 1] + "u")
+                    return list
+                else:
+                    list = ["", "iyï", "ï", "ui", "yá", "iyá", "ye", "iye", "em", "uem", "yu"]
+                    for i in range(len(list)):
+                        if i == 2 or i == 3:
+                            list[i] = x.word + list[i]
+                            for j, k in dia_c.items():
+                                list[i] = list[i].replace(j, k)
+                        elif i == 4 or i == 5:
+                            list[i] = unsroot + list[i]
+                            for j, k in dia_c.items():
+                                list[i] = list[i].replace(j, k)
+                        else:
+                            list[i] = x.word + list[i]
+                            for j, k in dia_c.items():
+                                list[i] = list[i].replace(j, k)
+                    list.append("ri")
+                    list.append("fïn")
+                    list.append("waz")
+                    list.append("wari")
+                    list.append("waki")
+                    list.append(x.word + "u")
                     return list
             case "é":
                 if x.word[len(x.word) - 2] == "y":
@@ -763,23 +804,42 @@ def getInf(x):
                     list.append("äki")
                 return list
             case "e":
-                list = ["", "u", "ó", "oú", "ayá", "uwayá", "a", "ua", "e", "ue", ""]
-                for i in range(len(list)):
-                    if i == 4 or i == 5:
-                        list[i] = unsroot + list[i]
-                        for j, k in dia_c.items():
-                            list[i] = list[i].replace(j, k)
-                    else:
-                        list[i] = x.word + list[i]
-                        for j, k in dia_c.items():
-                            list[i] = list[i].replace(j, k)
-                list.append("ru")
-                list.append("gan")
-                list.append("uaz")
-                list.append("érhari")
-                list.append("érhaki")
-                list.append(x.word + "un")
-                return list
+                if x.word[len(x.word)-1] == "m":
+                    list = ["", "u", "ó", "oú", "ayá", "uwayá", "a", "ua", "e", "ue", ""]
+                    for i in range(len(list)):
+                        if i == 4 or i == 5:
+                            list[i] = unsroot + list[i]
+                            for j, k in dia_c.items():
+                                list[i] = list[i].replace(j, k)
+                        else:
+                            list[i] = x.word + list[i]
+                            for j, k in dia_c.items():
+                                list[i] = list[i].replace(j, k)
+                    list.append("ru")
+                    list.append("gan")
+                    list.append("uaz")
+                    list.append("érhari")
+                    list.append("érhaki")
+                    list.append(x.word + "un")
+                    return list
+                else:
+                    list = ["e", "ue", "erhó", "erhoú", "ewayá", "uweyá", "a", "ua", "ene", "enue", "ene"]
+                    for i in range(len(list)):
+                        if i == 4 or i == 5:
+                            list[i] = unsroot[:len(unsroot) - 1] + list[i]
+                            for j, k in dia_c.items():
+                                list[i] = list[i].replace(j, k)
+                        else:
+                            list[i] = x.word[:len(x.word) - 1] + list[i]
+                            for j, k in dia_c.items():
+                                list[i] = list[i].replace(j, k)
+                    list.append("ru")
+                    list.append("gan")
+                    list.append("waz")
+                    list.append("rhari")
+                    list.append("rhaki")
+                    list.append(x.word + "rhun")
+                    return list
             case "y":
                 unproot = x.word.replace("c","ty")
                 unproot = unproot.replace("j","dy")
@@ -851,8 +911,8 @@ def redup(x):
             word = word.replace(mon, dia)
             init = init.replace(mon, dia)
         if word[1] == "’":
-            print(init)
-            print(syl)
+            # print(init)
+            # print(syl)
             return word.replace(x.word[:3], init + syl[0] + syl[2] , 1)
         else:
             return word.replace(x.word[:3], init + syl, 1)
@@ -860,15 +920,21 @@ def redup(x):
         return x.word[0] + "n" + x.word
 
 def removeInf(x):
+    x = x.strip()
     if x.startswith("s'"):
+        xapos = x.replace("s'","s’")
         x = x.replace("s'","")
+        if len(Dictionary.query.filter(Dictionary.word == deredup(xapos)).all()) > 0:
+            return xapos
+        elif len(Dictionary.query.filter(Dictionary.word == deredup(x)).all()):
+            return x
     for irep, ireinf in irepron_pair.items():
         if x in ireinf:
             return irep
-    if len(Dictionary.query.filter(Dictionary.word == deredup(x.strip())).all()) > 0:
+    if len(Dictionary.query.filter(Dictionary.word == deredup(x)).all()) > 0:
         return deredup(x.strip())
-    elif len(Dictionary.query.filter(Dictionary.defin.icontains("alt. " + x.strip())).all()) > 0:
-        return Dictionary.query.filter(Dictionary.defin.icontains("alt. " + x.strip())).first().word
+    elif len(Dictionary.query.filter(Dictionary.defin.icontains("alt. " + x)).all()) > 0:
+        return Dictionary.query.filter(Dictionary.defin.icontains("alt. " + x)).first().word
     x = deredup(x)
     for inf in sinflist:
         if x.startswith(inf):
