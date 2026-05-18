@@ -16,6 +16,7 @@
             <li><i>(Hasiph)</i>: /{{ retword[0].ipa_e }}/</li>
         </ul>
         {% for word in retword %}
+        <hr>
         {% if word.etym %}
         <h2>Etymology</h2>
         <p>{{ word.etym }}</p>
@@ -23,7 +24,7 @@
         <h2>{{ word.pos }}</h2>
         {% if word.pos == "Pronoun" %}
         <p><b>{{ word.word }} </b></p>
-        {% elif word.root %}
+        {% elif word.root and word.pos == "Verb" %}
         <p><b>{{ word.word }} </b><i>{{ word.anim }}</i> {{ word.alt }} (<i>stem</i> {{ word.root }}, <i>negative stem</i> {{ word.neg }}, <i>reduplicative</i> {{word.redup}})</p>
         {% elif word.root == "" and (word.pos != "Affix" and word.pos != "Phrase" and word.pos != "Conjunction") %}
         <p><b>{{ word.word }} </b><i>{{ word.anim }}</i> {{ word.alt }} (<i>reduplicative</i> {{word.redup}})</p>
@@ -46,19 +47,19 @@
         </tr>
         <tr>
             <td><b>accusative</b></td>
-            <td>{{ word.word }}{{ word.inf[0] }}</td>
+            <td>{{ word.root }}{{ word.inf[0] }}</td>
         </tr>
         <tr>
             <td><b>locative</b></td>
-            <td>{{ word.word }}{{ word.inf[1] }}</td>
+            <td>{{ word.root }}{{ word.inf[1] }}</td>
         </tr>
         <tr>
             <td><b>ablative</b></td>
-            <td>{{ word.word }}{{ word.inf[2] }}</td>
+            <td>{{ word.root }}{{ word.inf[2] }}</td>
         </tr>
         <tr>
             <td><b>lative</b></td>
-            <td>{{ word.word }}{{ word.inf[3] }}</td>
+            <td>{{ word.root }}{{ word.inf[3] }}</td>
         </tr>
         <tr>
             {% if word.anim == "class i. human" %}
@@ -216,37 +217,35 @@
         <table><tbody>
         <tr>
             <td><b>generic</b></td>
-            {% if word.word[word.word|length -1] == "y" %}
-                <td>{{ word.word }}az</td>
-            {% else %}
-                <td>{{ word.word }}yaz</td>
-            {% endif %}
+            <td>{{ word.stvinf[0] }}</td>
         </tr>
         <tr>
             <td><b>colour</b></td>
-            <td>{{ word.word }}sui</td>
+            <td>{{ word.stvinf[1] }}</td>
         </tr>
         <tr>
             <td><b>material, behaviour</b></td>
-            <td>{{ word.word }}kos</td>
+            <td>{{ word.stvinf[2] }}</td>
         </tr>
         <tr>
             <td><b>origin</b></td>
-            <td>{{ word.word }}syan</td>
+            <td>{{ word.stvinf[3] }}</td>
         </tr>
         <tr>
             <td><b>size, location</b></td>
-            <td>{{ word.word }}sin</td>
+            <td>{{ word.stvinf[4] }}</td>
         </tr>
         <tr>
             <td><b>degree, magnitude</b></td>
-            <td>{{ word.word }}git</td>
+            <td>{{ word.stvinf[5] }}</td>
         </tr>
         </tbody>
         </table>
     {% endif %}
+    <br><br>
     {% endfor %}
     {% if related|length > 0 %}
+    <hr>
     <h2>Derived terms</h2>
     <p>This is an experimental feature that may render false positives.</p>
     <div class="fourcol">

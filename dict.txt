@@ -318,6 +318,8 @@ cumé stv. // to be fast, generic.
 Dd 
 dá n. iii. // transportation station.
 dahan n. iii. // problem.
+dahangali v. // to cause problems, from dahan + kali.
+dahangali stv. // to be problematic.
 dahanqedi v. // to report issues.
 damat n. ii. // sin, moral crime.
 dami n. iii. // stream, small river.
@@ -367,6 +369,7 @@ dharaeki n. iii. // fingernail.
 dharrese n. iii. // toenail, from dhar + lese.
 
 dhati v. // to close, to turn off, to shut.
+dhäté v. // to inspect, scrutinize, examine, from dhar + té.
 
 Ee 
 e n. iii. // action, movement. 
@@ -470,7 +473,9 @@ haimi v. // to suppress yourself to remain quiet.
 hairén n. iii. // the past, lit. completed time.
 hairenïké n. iii. // the study of history, the study of the past.
 halas n. i. // back (anatomy).
+halasi v. // to carry on one’s back, to shoulder, to carry the weight of.
 halaskari v. // to catch up to, lit. to touch the back.
+hanari v. // to smile.
 hani v. // to create.
 hanni n. iii. // room.
 hanuari adv. // most of the time, usually.
@@ -494,7 +499,7 @@ hawiya n. iii. // morning, particularly near dawn, sunrise; rising sun.
 	hawiya kéya intj. // good morning, lit. morning to you.
 hayá n. iii. // tall mountain.
 hayé n. iii. // to stop movement.
-he conj. // and; with, denoting the accompaniment of another in an action, comitative case; he hos disye I will go with my father.
+he conj. // and; with, denoting the accompaniment of another in an action, comitative case, he hos disye I will go with my father.
 hé n. iii. // east.
 hé v. // to move east.
 hegi part. // again, from he + ki (and one).
@@ -511,6 +516,7 @@ hidaema n. i. // elbow.
 hide n. iii. // agricultural field.
 hïlya v. // to call, in the sense of reaching out to another.
 hini n. iii. // fur, feather.
+hinin hye azesorua phr. // must not let happen, lit. must not let even a feather’s worth happen.
 hira n. iii. // wheel.
 hisuké stv. // to be shallow in terms of depth.
 hisy n. iii. // coldness.
@@ -590,6 +596,7 @@ iratté v. // to distinguish, separate from one another, from irak + tahi (to se
 irazé v. // to repeat, from irá + azé (to do twice).
 isa n. iii. // northeast direction.
 isa part. // with, denoting the use of a tool or medium, instrumental particle, instrumental precedes the particle, variant of sa.
+isakïka n. i. // scholar, professor, from is + akïka (great studies).
 isamisakki n. i. // homemaker
 isazéson n. i. // office worker.
 isriká n. i. // citizen of a nation, see riká.
@@ -776,7 +783,7 @@ kota n. iii. // song.
 koté v. // to sing, root noun: kota.
 koto n. i. // male.
 koudo n. iii. // corner.
-kövi n. iii. // to push; to press.
+kövi v. // to push; to press.
 köviriji v. // to disagree, argue leading to hindrance, delays or issues, lit. to push and pull apart.
 kövisurekas n. iii. // printer.
 kövo n. iii. // button.
@@ -920,6 +927,7 @@ ora n. iii. // centre, middle.
 	-ora aux. // inside of, in, within.
 orakövi v. // to mediate, compromise, negotiate (server).
 orakövikata n. iii. // treaty.
+orarekha n. iii. // internal conflict, infighting, self conflict.
 orataki v. // to edit, modify.
 oré v. // to surround, enclose, encircle, root noun ora. synonymous with oratai and oraqasy.
 orayá ka conj. // with regards to, about, regarding.
@@ -1201,6 +1209,7 @@ syïreva n. iii. // media, lit. root of communication.
 syiri v. // to enjoy, like.
 syïri n. ii. // purity, cleanliness of a person.
 syirmasi n. iii. // preferences, options, settings.
+syitera n. ii. // peace.
 syiye n. iii. // steam.
 syïzy v. // to turn, rotate.
 syïzylesé v. // to detour, to take an indirect route, to be roundabout.

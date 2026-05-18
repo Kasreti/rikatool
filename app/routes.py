@@ -149,6 +149,7 @@ def show_definition(word):
                     anim = "class ii. deitic"
                 case "iii.":
                     anim = "class iii. inanimate and non-human animate"
+            root = cs.nroot(x.word)
         elif x.pos == "v." or x.pos == "stv.":
             if x.word[len(x.word)-1] == "m":
                 endvowel = x.word[len(x.word)-2]
@@ -221,7 +222,7 @@ def show_definition(word):
             defin[len(defin)-1] = defin[len(defin)-1].split(", contraction of")[0] + "."
         else:
             etym = ""
-        retword.append(cs.definition(x.word.strip().casefold(),cs.genIPA(word),cs.genIPA_collo(cs.genIPA(word)),cs.genIPA_eng(cs.genIPA(word),word),defin,anim,cs.posword(x.pos),etym,root,cs.getInf(x),cs.getAspInf(x),alt, neg, cs.redup(x), cs.reflex(x.word)))
+        retword.append(cs.definition(x.word.strip().casefold(),cs.genIPA(word),cs.genIPA_collo(cs.genIPA(word)),cs.genIPA_eng(cs.genIPA(word),word),defin,anim,cs.posword(x.pos),etym,root,cs.getInf(x),cs.getAspInf(x),alt, neg, cs.redup(x), cs.reflex(x.word), cs.getStvInf(x.word)))
     if session.get('prev'):
         if session['prev']:
             form.word.data = session['prev']

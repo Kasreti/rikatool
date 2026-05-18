@@ -84,7 +84,8 @@ ipa_f = {
     "uɵ": "ʷɵ",
     "uɑ": "ʷɑ",
     "n.t": "n.d",
-    "d͡z.": "z."
+    "d͡z.": "z.",
+    "dʰ": "d"
 }
 ipa_f2 = {
     "kʰ": "k̚",
@@ -93,6 +94,7 @@ ipa_f2 = {
     "d͡z": "z"
 }
 ipa_c = {
+    "n.kʰ": "ŋ.k",
     "n.k": "ŋ.k",
     "ʷi": "ɨi",
     "ɛi": "eː",
@@ -221,6 +223,15 @@ irepron_pair = {
     "ni": ["ni", "né", "niyan", "niya", "onyá", "hänya"],
 
 }
+degem_pair = {
+    "s": ["s", "ss", "tts","zz", "cc", "jj", "ssy", "zzy"],
+    "z": ["z", "zz", "zz","zz", "jj", "jj", "zzy", "zzy"],
+    "c": ["c", "cc", "cc", "jj", "cc", "jj", "cc", "jj"],
+    "j": ["j", "jj", "jj", "jj", "jj", "jj", "jj", "jj"],
+    "S": ["sy", "ssy", "ssy", "zzy", "cc", "jj", "ssy", "zzy"],
+    "Z": ["zy", "zzy", "zzy", "zzy", "jj", "jj", "zzy", "zzy"]
+}
+sibcoda = ["s", "z", "c", "j", "S", "Z"]
 
 dtitles = ["Ää","Ææ","Bb","Cc","Dd","DHdh","Ee","Ff","Gg","GHgh","Hh","Ii","Ïï","Jj","Kk","Ll","Mm","Nn","Oo","Öö","Qq","Rr","Ss","SYsy","Tt","THth","TSts","Uu","Vv","Ww","Xx","Yy","Zz","ZYzy","RHrh"]
 inflist = ["syet", "sye", "sran", "sro", "da", "de", "ran", "ro", "den", "do", "sui", "kos", "syan", "sin", "git", "jai", "ja", "lï", "in","ket","kiec","lï", "un", "ki", "kei", "tua", "en", "yaz", "i", "n", "rande", "srande", "dende", "syetende", "syetenda", "nde", "nda", "ni"]
@@ -232,7 +243,7 @@ infelist = ["é", "ué", "ó", "oú", "ayá", "uwayá", "a", "ua", "e", "ue", "e
 sinflist = ["is", "isi", "ya", "yana", "i", "e", "u-", "w-", "w-e" "w-erh", "erh", "en", "w-en", "alke", "alkerh","erhalke", "erhalkherh"]
 
 class definition:
-    def __init__(self, word, ipa, ipa_c, ipa_e, defin, anim, pos, etym, root, inf, aspinf, alt, neg, redup, ref):
+    def __init__(self, word, ipa, ipa_c, ipa_e, defin, anim, pos, etym, root, inf, aspinf, alt, neg, redup, ref, stvinf):
         self.word = word
         self.ipa = ipa
         self.ipa_c = ipa_c
@@ -248,6 +259,7 @@ class definition:
         self.neg = neg
         self.redup = redup
         self.ref = ref
+        self.stvinf = stvinf
 
     def __repr__(self):
         return '{} ({}) {} with definition {}'.format(self.pos, self.anim, self.word, self.defin)
@@ -509,6 +521,9 @@ def getInf(x):
                         return ["n", "ja", "jai", "ni", "s'"]
                     elif x.word[len(x.word) - 1] in purevowel:
                         return ["n", "ja", "jai", "i", "s'"]
+                    elif (x.word[len(x.word)-1] in sibcoda) or (x.word[len(x.word)-2:] in ["sy","zy"]):
+                        dgem = degeminate("n",x.word)
+                        return [dgem[0]+"en", dgem[5]+"a", dgem[5]+"ai", dgem[0]+"i", "s'"]
                     else:
                         return ["en", "ja", "jai", "i", "s'"]
                 else:
@@ -516,6 +531,9 @@ def getInf(x):
                         return ["n", "ja", "jai", "ni", "sa "]
                     elif x.word[len(x.word)-1] in purevowel:
                         return ["n", "ja", "jai", "i", "sa "]
+                    elif (x.word[len(x.word)-1] in sibcoda) or (x.word[len(x.word)-2:] in ["sy","zy"]):
+                        dgem = degeminate("n",x.word)
+                        return [dgem[0]+"en", dgem[5]+"a", dgem[5]+"ai", dgem[0]+"i", "sa "]
                     else:
                         return ["en", "ja", "jai", "i", "sa "]
     elif x.pos == "v." or "stv.":
@@ -1107,3 +1125,46 @@ def getAspInf(x):
             return list
     else:
         return []
+
+def degeminate(pos, word):
+    if word[len(word)-2:] == "sy":
+        return degem_pair["S"]
+    elif word[len(word)-2:] == "zy":
+        return degem_pair["Z"]
+    for coda, gem in degem_pair.items():
+        if coda == word[len(word)-1]:
+            return gem
+    return ""
+
+def nroot(word):
+    tword = word
+    if tword[len(tword)-2:] == "sy":
+        tword = word[:len(word)-2] + "S"
+    elif tword[len(tword)-2:] == "zy":
+        tword = word[:len(word)-2] + "Z"
+    elif tword[len(tword)-2:] == "ph":
+        return tword[:len(tword)-2] + "f"
+    for sib in sibcoda:
+        if tword[len(tword)-1] == sib:
+            return tword[:len(tword)-1]
+    return word
+
+def getStvInf(word):
+    r = nroot(word)
+    for sib, lis in degem_pair.items():
+        if word[len(word)-1] == sib:
+            if sib in ["s", "z"]:
+                return [word + "yaz", r + lis[0] + "ui", word + "ekos", r + lis[5] + "an", r + lis[0] + "in",
+                        word + "egit"]
+            return [word+"az",r+lis[0]+"ui",word+"ekos",r+lis[5]+"an",r+lis[0]+"in",word+"egit"]
+    if word[len(word)-2:] == "ph":
+        return [r+"yaz",r+"sui",r+"kos",r+"syan",r+"sin",r+"git"]
+    elif word[len(word)-2:]  == "sy":
+        return [word + "az", r + degem_pair["S"][1] + "ui", word + "ekos", r + degem_pair["S"][5] + "an", r + degem_pair["S"][1] + "in", word + "egit"]
+    elif word[len(word)-2:]  == "zy":
+        return [word + "az", r + degem_pair["Z"][1] + "ui", word + "ekos", r + degem_pair["Z"][5] + "an", r + degem_pair["Z"][1] + "in", word + "egit"]
+    elif word[len(word)-1] == "a":
+        return [word + "z", word + "sui", word + "kos", word + "syan", word + "sin", word + "git"]
+    elif word[len(word) - 1] in purevowel:
+        return [word + "yaz", word + "sui", word + "kos", word + "syan", word + "sin", word + "git"]
+    return [word+"yaz",word+"sui",word+"kos",word+"syan",word+"sin",word+"git"]
