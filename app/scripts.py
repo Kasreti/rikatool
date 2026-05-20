@@ -500,22 +500,44 @@ def getInf(x):
                 if x.word[0] in purevowel:
                     if x.word[len(x.word) - 1] in purevowel:
                         return ["nin","ket","kiec","lï","s'"]
+                    elif (x.word[len(x.word) - 1] in sibcoda) or (x.word[len(x.word) - 2:] in ["sy", "zy"]):
+                        dgem = degeminate("n", x.word)
+                        return [dgem[0] + "in", dgem[0] + "ket", dgem[0] + "kiec", dgem[0] + "lï", "s'"]
                     else:
                         return ["in", "ket", "kiec", "lï", "s'"]
                 else:
                     if x.word[len(x.word) - 1] in purevowel:
                         return ["nin", "ket", "kiec", "lï", "sa "]
+                    elif (x.word[len(x.word) - 1] in sibcoda) or (x.word[len(x.word) - 2:] in ["sy", "zy"]):
+                        dgem = degeminate("n", x.word)
+                        return [dgem[0] + "in", dgem[0] + "ket", dgem[0] + "kiec", dgem[0] + "lï", "sa "]
                     else:
                         return ["in", "ket", "kiec", "lï", "sa "]
             case "ii.":
-                if x.word[len(x.word) - 1] == "i":
-                    return ["yun", "ki", "kei", "tua", "sa "]
-                elif x.word[len(x.word) - 1] == "u":
-                    return ["hun", "ki", "kei", "tua", "sa "]
-                elif x.word[len(x.word) - 1] in purevowel:
-                    return ["nun", "ki", "kei", "tua", "sa "]
+                if x.word[0] in purevowel:
+                    if x.word[len(x.word) - 1] == "i":
+                        return ["yun", "ki", "kei", "tua", "s'"]
+                    elif x.word[len(x.word) - 1] == "u":
+                        return ["hun", "ki", "kei", "tua", "s'"]
+                    elif x.word[len(x.word) - 1] in purevowel:
+                        return ["nun", "ki", "kei", "tua", "s'"]
+                    elif (x.word[len(x.word) - 1] in sibcoda) or (x.word[len(x.word) - 2:] in ["sy", "zy"]):
+                        dgem = degeminate("n", x.word)
+                        return [dgem[0] + "un", dgem[5] + "ki", dgem[5] + "kei", dgem[0] + "tua", "s'"]
+                    else:
+                        return ["un", "ki", "kei", "tua", "s'"]
                 else:
-                    return ["un", "ki", "kei", "tua", "sa "]
+                    if x.word[len(x.word) - 1] == "i":
+                        return ["yun", "ki", "kei", "tua", "sa "]
+                    elif x.word[len(x.word) - 1] == "u":
+                        return ["hun", "ki", "kei", "tua", "sa "]
+                    elif x.word[len(x.word) - 1] in purevowel:
+                        return ["nun", "ki", "kei", "tua", "sa "]
+                    elif (x.word[len(x.word) - 1] in sibcoda) or (x.word[len(x.word) - 2:] in ["sy", "zy"]):
+                        dgem = degeminate("n", x.word)
+                        return [dgem[0] + "un", dgem[5] + "ki", dgem[5] + "kei", dgem[0] + "tua", "sa "]
+                    else:
+                        return ["un", "ki", "kei", "tua", "sa "]
             case _:
                 if x.word[0] in purevowel:
                     if x.word[len(x.word) - 1] == "i":
