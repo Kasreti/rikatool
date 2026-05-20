@@ -26,11 +26,11 @@
         <p><b>{{ word.word }} </b></p>
         {% elif word.root and word.pos == "Verb" %}
         <p><b>{{ word.word }} </b><i>{{ word.anim }}</i> {{ word.alt }} (<i>stem</i> {{ word.root }}, <i>negative stem</i> {{ word.neg }}, <i>reduplicative</i> {{word.redup}})</p>
-        {% elif word.root == "" and (word.pos != "Affix" and word.pos != "Phrase" and word.pos != "Conjunction") %}
+        {% elif word.root and (word.pos != "Affix" and word.pos != "Phrase" and word.pos != "Conjunction") %}
         <p><b>{{ word.word }} </b><i>{{ word.anim }}</i> {{ word.alt }} (<i>reduplicative</i> {{word.redup}})</p>
-        {% elif word.root == "" and (word.pos == "Affix" or word.pos == "Phrase" or word.pos == "Conjunction") %}
+        {% elif word.root and (word.pos == "Affix" or word.pos == "Phrase" or word.pos == "Conjunction") %}
         <p><b>{{ word.word }} </b><i>{{ word.anim }}</i> {{ word.alt }}</p>
-        {% elif word.root == "" and (word.pos == "Affix" or word.pos == "Phrase" or word.pos == "Conjunction") %}
+        {% elif word.root and (word.pos == "Affix" or word.pos == "Phrase" or word.pos == "Conjunction") %}
         <p><b>{{ word.word }} </b><i>{{ word.anim }}</i> {{ word.alt }}</p>
         {% endif %}
         <ol>

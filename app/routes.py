@@ -229,4 +229,6 @@ def show_definition(word):
     else:
         form.word.data = ""
     related = Dictionary.query.filter(Dictionary.word.icontains(word.strip().casefold()),Dictionary.word != word.strip().casefold()).order_by(collate(Dictionary.word, 'NOCASE')).all()
+    print(retword[0].root)
+    print(retword[0].alt)
     return render_template('word.html', retword=retword, related=related, form=form)
